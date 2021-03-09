@@ -1,0 +1,98 @@
+
+<div class="container">
+    
+    <header>
+        <div id="container-logo">
+            <img id="logo" src="../Imagens/LogoMercadogue.png" alt="Logo Mercadogue">
+        </div>
+        <div id="titulo">
+            <h2>Cadastro de Produto</h2>
+        </div>
+    </header>
+    
+    <ul class="nav justify-content-center" id="navegacao">
+        <li class="nav-item">
+            <a class="nav-link" href="../Paginas/ListaDeProdutos.html">Listagem</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="../Paginas/CadastroProduto.html">Cadastro</a>
+        </li>
+    </ul>
+    
+    <div id="linha"></div>
+    
+    <br>
+    
+    <form id="Informacoes">
+        <div class="form-group">
+            <label for="exampleFormControlInput1" class="label">
+                <span style="color: #F77759">*</span>Nome</label>
+            <input type="text" class="form-control" id="nome" placeholder="Digite o nome do produto">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1" class="label">
+                <span style="color: #F77759">*</span>Descrição</label>
+            <textarea class="form-control" id="descricao" rows="3" placeholder="Digite a descrição do produto"></textarea>
+        </div>
+        
+        <div class="column-count">
+            <div class="form-group">
+                <label for="exampleFormControlInput1" class="label">
+                    <span style="color: #F77759">*</span>Estrelas</label>
+                <select class="custom-select" id="estrelas">
+                    <option selected>Selecione</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1" class="label">
+                    <span style="color: #F77759">*</span>Estoque</label>
+                <input type="text" class="form-control" id="estoque" placeholder="0000">
+            </div>
+            
+            <div class="form-group">
+                <label for="exampleFormControlInput1" class="label">
+                    <span style="color: #F77759">*</span>Preço</label>
+                <input type="text" class="form-control" id="preco" placeholder="0000,00">
+            </div>
+
+            <fieldset class="form-group">                    
+                <label for="exampleFormControlInput1" class="label">
+                    <span style="color: #F77759">*</span>Status</label>                        
+                <div class="column-count-status">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Ativacao" id="Ativo" value="Ativo">
+                        <label class="form-check-label" for="Ativo">
+                            Ativo
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Ativacao" id="Inativo" value="Inativo">
+                        <label class="form-check-label" for="Inativo">
+                            Inativo
+                        </label>
+                    </div>
+                </div>                    
+            </fieldset>                
+        </div>
+        
+        <!--
+        <div class="form-group">
+            <label for="exampleFormControlInput1" class="label">Quantidade</label>
+            <input type="text" class="form-control" id="qtd">
+        </div>
+        -->
+
+        <div class="botoes">
+            <button type="submit" id="btn-cancelar">Cancelar</button>
+            <button type="submit" id="btn-confirmar">Confirmar</button>
+        </div>
+
+    </form>
+
+</div>
