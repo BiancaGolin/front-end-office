@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Produto } from '../model/Produto';
+import { ProdutoService } from '../service/produto.service';
+
 
 @Component({
   selector: 'app-cadastro-produto',
@@ -7,9 +11,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CadastroProdutoComponent implements OnInit {
 
-  constructor() { }
+  produto: Produto = new Produto()
+  listaProduto: Produto[]
 
-  ngOnInit(): void {
+  constructor(
+    private router: Router,
+    private produtoService: ProdutoService     
+  ) { }
+
+  ngOnInit() {
+  // this.findAllProduto()
   }
+
+ //  findAllProduto() {
+    // this.produtoService.getAllProduto().subscribe((resp: Produto[]) =>{
+     //  this.listaProduto = resp
+    // })
+ //  }
 
 }

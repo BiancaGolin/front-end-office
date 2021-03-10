@@ -1,6 +1,7 @@
 @import url(//db.onlinewebfonts.com/c/fe2027c27b6a24505f548c6fd2e1076d?family=Berlin+Sans+FB);
 @import url(//db.onlinewebfonts.com/c/a78cfad3beb089a6ce86d4e280fa270b?family=Calibri);
 @import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap');
+
 body{
     background-color: #EFEFEF;
     font-family: Calibri;
@@ -44,45 +45,24 @@ body{
     height: 5px;
 }
 
-/*Labels e campos de preenchimento*/
-.label{
-    color: #5560AA;
-    font-family: 'Didact Gothic', sans-serif;
-    font-weight: bold;
+.Linha{
+        margin-top: 5%;
+        margin-bottom: 5%;
+        display: flex;
+        justify-content: space-around;
 }
-.column-count{
-    column-count: 4;
-}
-.column-count-status{
-    column-count: 2;
-}
-.form-control, .custom-select{
-    border: none;
-    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
-}
-input:placeholder-shown, textarea:placeholder-shown{
-    font-style: italic;
+.table-responsive{
+    margin-bottom: 3%;
 }
 
-/*Botões*/
-.botoes{
-    margin-left: 73%;
+/*Botões e links*/
+.botao{
+    margin-left: 80%;
     padding: 2vw;
     font-family: 'Didact Gothic', sans-serif;
 }
-.botoes #btn-cancelar{    
-    background-color: #F77759;
-    border-radius: 5px;
-    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.3);
-    border-color: transparent; 
-    font-weight: bold;
-    color: white;
-    padding: 8px 15px;
-    margin-right: 0.5vw;
-    outline: none;    
-}
-.botoes #btn-confirmar{
-    background-color: #00D9CA;
+.botao #btn-confirmar{
+    background-color: #5560AA;
     border-radius: 5px;
     box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.3);
     border-color: transparent;
@@ -91,11 +71,65 @@ input:placeholder-shown, textarea:placeholder-shown{
     padding: 8px 15px;
     outline: none;
 }
-.botoes #btn-cancelar:hover{
+.botao #btn-confirmar:hover{
+    border-color: #5560AA;
+}
+.pesquisar #btn-pesquisar{
+    font-family: Century Gothic;
+    background-color: #F77759;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1);
+    border-color: transparent;
+    font-weight: bold;
+    color: white;
+    padding: 4.5px 13px;
+    outline: none;
+}
+.pesquisar #btn-pesquisar:hover{
     border-color: #F77759;
 }
-.botoes #btn-confirmar:hover{
-    border-color: #00D9CA;
+.container-icone{
+    width: 10%;
+}
+.btn-visualizar{
+    width: 50%;
+}
+.btn-editar{
+    width: 30%;
+}
+tbody a{
+    text-decoration: underline;
+    color: black;
+}
+tbody a:visited{
+    color: black;
+}
+tbody a:hover{
+    color: #F77759;
+}
+.form-control{
+    border: none;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+}
+input:placeholder-shown{
+    font-style: italic;
+}
+.paginas{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Tabela*/
+tbody tr:nth-child(2n+1){
+    background-color: white;
+}
+tbody tr:nth-child(2n){
+    background-color: #DEDEDE;
+}
+thead{
+    font-family: 'Didact Gothic', sans-serif;
+    font-weight: bolder;
 }
 
 /*Customizações responsivas*/
@@ -104,42 +138,42 @@ input:placeholder-shown, textarea:placeholder-shown{
         width: 5vw;
         margin-top: 0.9vw;
     }
-    .botoes{
-        margin-left: 70%;
+    .botao{
+        margin-left: 77%;
         padding: 2vw;
         font-family: 'Didact Gothic', sans-serif;
-    }
+    } 
 }
 @media (max-width: 1000px){
     #container-logo #logo{
         width: 6vw;
         margin-top: 0.8vw;
     }
-    .botoes{
-        margin-left: 60%;
+    .botao{
+        margin-left: 65%;
         padding: 2vw;
         font-family: 'Didact Gothic', sans-serif;
-    }
+    } 
 }
 @media (max-width: 800px){
     #container-logo #logo{
         width: 7vw;
         margin-top: 0.8vw;
     }
-    .botoes{
-        margin-left: 50%;
+    .botao{
+        margin-left: 60%;
         padding: 2vw;
         font-family: 'Didact Gothic', sans-serif;
-    }
+    } 
 }
 @media (max-width: 600px){
     #container-logo #logo{
         width: 8vw;
         margin-top: 1.5vw;
     }
-    .botoes{
-        margin-left: 40%;
+    .botao{
+        margin-left: 60%;
         padding: 2vw;
         font-family: 'Didact Gothic', sans-serif;
-    }
+    }   
 }

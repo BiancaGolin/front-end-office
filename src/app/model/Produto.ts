@@ -8,5 +8,5 @@ export class Produto {
     public status: boolean
     public qtdEstoque: number
     public preco: number
-    public imagem: Imagem
+    public imagem: Imagem[]
 }

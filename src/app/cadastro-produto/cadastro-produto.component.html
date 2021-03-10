@@ -1,9 +1,8 @@
-
 <div class="container">
     
     <header>
         <div id="container-logo">
-            <img id="logo" src="../Imagens/LogoMercadogue.png" alt="Logo Mercadogue">
+            <img id="logo" src="/assets/img/LogoMercadogue.png" alt="Logo Mercadogue">
         </div>
         <div id="titulo">
             <h2>Cadastro de Produto</h2>
@@ -12,10 +11,10 @@
     
     <ul class="nav justify-content-center" id="navegacao">
         <li class="nav-item">
-            <a class="nav-link" href="../Paginas/ListaDeProdutos.html">Listagem</a>
+            <a class="nav-link" routerLink='/listar-produto'>Listagem</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="../Paginas/CadastroProduto.html">Cadastro</a>
+            <a class="nav-link" routerLink='/cadastro-produto'>Cadastro</a>
         </li>
     </ul>
     
@@ -32,7 +31,7 @@
         <div class="form-group">
             <label for="exampleFormControlTextarea1" class="label">
                 <span style="color: #F77759">*</span>Descrição</label>
-            <textarea class="form-control" id="descricao" rows="3" placeholder="Digite a descrição do produto"></textarea>
+              <textarea class="form-control" id="descricao" rows="3" placeholder="Digite a descrição do produto"></textarea>
         </div>
         
         <div class="column-count">

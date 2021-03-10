@@ -4,14 +4,16 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { RodapeComponent } from './rodape/rodape.component';
 import { CadastroProdutoComponent } from './cadastro-produto/cadastro-produto.component';
+import { ListarProdutoComponent } from './listar-produto/listar-produto.component';
+import { VisualizarProdutoComponent } from './visualizar-produto/visualizar-produto.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    RodapeComponent,
-    CadastroProdutoComponent
+    CadastroProdutoComponent,
+    ListarProdutoComponent,
+    VisualizarProdutoComponent
   ],
   imports: [
     BrowserModule,
