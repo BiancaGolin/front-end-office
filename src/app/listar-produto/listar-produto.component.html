@@ -26,7 +26,7 @@
         <div class="pesquisar">
             <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="search" placeholder="Digite o nome do produto" aria-label="Search"
-                    style="width: 300px;">
+                    style="width: 300px;" [(ngModel)]='nomePrdo' (keyup)='findByNomeProduto()'>
                 <button type="button" id="btn-pesquisar">Pesquisar</button>
             </form>
         </div>
@@ -44,60 +44,12 @@
                     <th scope="col">Visualizar</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody *ngFor='let mercadoria of listaProduto'>
                 <tr>
-                    <td>Areia Higiênica Biodegradável para Gatos 2kg</td>
-                    <td>25</td>
-                    <td>32,50</td>
-                    <td><a routerLink='/cadastro-produto'>Ativo</a></td>
-                    <td class="container-icone"><a routerLink='/cadastro-produto'>
-                        <img src="../assets/img/EditarCinza.png" class="btn-editar" 
-                        alt="Ícone para a página de alteração do produto"></a></td>
-                    <td class="container-icone"><a routerLink='/visualizar-produto'>
-                        <img src="../assets/img/VisualizarCinza.png" class="btn-visualizar" 
-                        alt="Ícone para a página de visualização do produto"></a></td>
-                </tr>
-                <tr>
-                    <td>Petisco KelDog Cães Adultos Tekinhos - 500g</td>
-                    <td>114</td>
-                    <td>19,90</td>
-                    <td><a routerLink='/cadastro-produto'>Ativo</a></td>
-                    <td class="container-icone"><a routerLink='/cadastro-produto'>
-                        <img src="../assets/img/EditarBranco.png" class="btn-editar" 
-                        alt="Ícone para a página de alteração do produto"></a></td>
-                    <td class="container-icone"><a routerLink='/visualizar-produto'>
-                        <img src="../assets/img/VisualizarBranco.png" class="btn-visualizar" 
-                        alt="Ícone para a página de visualização do produto"></a></td>
-                </tr>
-                <tr>
-                    <td>Cama Pawise para Cães Round Azul</td>
-                    <td>3</td>
-                    <td>120,00</td>
-                    <td><a routerLink='/cadastro-produto'>Inativo</a></td>
-                    <td class="container-icone"><a routerLink='/cadastro-produto'>
-                        <img src="../assets/img/EditarCinza.png" class="btn-editar" 
-                        alt="Ícone para a página de alteração do produto"></a></td>
-                    <td class="container-icone"><a routerLink='/visualizar-produto'>
-                        <img src="../assets/img/VisualizarCinza.png" class="btn-visualizar" 
-                        alt="Ícone para a página de visualização do produto"></a></td>
-                </tr>
-                <tr>
-                    <td>Ração Golden Fórmula - 3kg</td>
-                    <td>88</td>
-                    <td>36,78</td>
-                    <td><a routerLink='/cadastro-produto'>Ativo</a></td>
-                    <td class="container-icone"><a routerLink='/cadastro-produto'>
-                        <img src="../assets/img/EditarBranco.png" class="btn-editar" 
-                        alt="Ícone para a página de alteração do produto"></a></td>
-                    <td class="container-icone"><a routerLink='/visualizar-produto'>
-                        <img src="../assets/img/VisualizarBranco.png" class="btn-visualizar" 
-                        alt="Ícone para a página de visualização do produto"></a></td>
-                </tr>
-                <tr>
-                    <td>Aquário Aquaterrário Retangular Lapidado para Peixes</td>
-                    <td>8</td>
-                    <td>215,89</td>
-                    <td><a routerLink='/cadastro-produto'>Inativo</a></td>
+                    <td>{{mercadoria.nomeProduto}}</td>
+                    <td>{{mercadoria.qtdEstoque}}</td>
+                    <td>{{mercadoria.preco}}</td>
+                    <td><a routerLink='/cadastro-produto'>{{mercadoria.status}}</a></td>
                     <td class="container-icone"><a routerLink='/cadastro-produto'>
                         <img src="../assets/img/EditarCinza.png" class="btn-editar" 
                         alt="Ícone para a página de alteração do produto"></a></td>
