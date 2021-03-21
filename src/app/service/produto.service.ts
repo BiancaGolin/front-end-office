@@ -30,7 +30,8 @@ export class ProdutoService {
     return this.http.post<Produto>('http://localhost:8080/produto', prod)
   }
 
-
-
+  putProduto(produto: Produto) : Observable<Produto> {
+    return this.http.put<Produto>('http://localhost:8080/produto', produto)
+  }
 
 }

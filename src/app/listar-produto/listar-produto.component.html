@@ -24,11 +24,11 @@
 
     <div class="Linha">
         <div class="pesquisar">
-            <form class="form-inline my-2 my-lg-0">
+            <!-- <form class="form-inline my-2 my-lg-0"> -->
                 <input class="form-control mr-sm-2" type="search" placeholder="Digite o nome do produto" aria-label="Search"
-                    style="width: 300px;" [(ngModel)]='nomePrdo' (keyup)='findByNomeProduto()'>
+                    style="width: 300px;" [(ngModel)]='nomeProduto' (keyup)='findByNomeProduto()'>
                 <button type="button" id="btn-pesquisar">Pesquisar</button>
-            </form>
+            <!-- </form> -->
         </div>
     </div>
 
@@ -50,12 +50,16 @@
                     <td>{{mercadoria.qtdEstoque}}</td>
                     <td>{{mercadoria.preco}}</td>
                     <td><a routerLink='/cadastro-produto'>{{mercadoria.status}}</a></td>
-                    <td class="container-icone"><a routerLink='/cadastro-produto'>
-                        <img src="../assets/img/EditarCinza.png" class="btn-editar" 
-                        alt="Ícone para a página de alteração do produto"></a></td>
-                    <td class="container-icone"><a routerLink='/visualizar-produto'>
-                        <img src="../assets/img/VisualizarCinza.png" class="btn-visualizar" 
-                        alt="Ícone para a página de visualização do produto"></a></td>
+                    <td class="container-icone">
+                        <a [routerLink]="['/editar-produto', mercadoria.id]">
+                            <img src="../assets/img/EditarCinza.png" class="btn-editar" alt="Ícone para a página de alteração do produto">
+                        </a>
+                    </td>
+                    <td class="container-icone">
+                        <a routerLink='/visualizar-produto'>
+                        <img src="../assets/img/VisualizarCinza.png" class="btn-visualizar"alt="Ícone para a página de visualização do produto">
+                        </a>
+                    </td>
                 </tr>
             </tbody>
         </table>

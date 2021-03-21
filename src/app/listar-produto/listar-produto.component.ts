@@ -15,7 +15,7 @@ export class ListarProdutoComponent implements OnInit {
   produto: Produto = new Produto()
   listaProduto: Produto[]
   idProduto: number
-  nomePrd: string
+  nomeProduto: string
 
   constructor(
     private router:  Router,
@@ -45,7 +45,7 @@ export class ListarProdutoComponent implements OnInit {
   }
 
   findByNomeProduto(){
-    this.produtoService.getByNomeProduto(this.nomePrd).subscribe((resp : Produto[])=>{
+    this.produtoService.getByNomeProduto(this.nomeProduto).subscribe((resp : Produto[])=>{
       this.listaProduto = resp
     })
   }
