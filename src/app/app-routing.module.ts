@@ -12,6 +12,7 @@ const routes: Routes = [
   { path: 'visualizar-produto', component: VisualizarProdutoComponent },
   { path: 'editar-produto', component: EditarProdutoComponent },
   { path: 'editar-produto/:id', component: EditarProdutoComponent},
+  { path: 'visualizar-produto/:id', component: VisualizarProdutoComponent}
 ];
 
 @NgModule({  

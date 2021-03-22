@@ -1,11 +1,14 @@
 @import url(//db.onlinewebfonts.com/c/fe2027c27b6a24505f548c6fd2e1076d?family=Berlin+Sans+FB);
 @import url(//db.onlinewebfonts.com/c/a78cfad3beb089a6ce86d4e280fa270b?family=Calibri);
-@import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap');
-/*@import url(//db.onlinewebfonts.com/c/0d78b12d6be09203d1fbeb76871a369a?family=Century+Gothic);*/
+@import url(//db.onlinewebfonts.com/c/0d78b12d6be09203d1fbeb76871a369a?family=Century+Gothic);
 
 body{
     background-color: #EFEFEF;
     font-family: Calibri;
+}
+
+.bg {
+    background-color: #efefef;
 }
 
 /*Header*/
@@ -32,7 +35,7 @@ body{
 /*Menu*/
 #navegacao{
     background-color: white;
-    font-family: 'Didact Gothic', sans-serif;
+    font-family: 'Century Gothic', sans-serif;
     font-weight: bolder;
 }
 .nav-link{
@@ -49,7 +52,7 @@ body{
 /*Labels e campos de preenchimento*/
 .label{
     color: #5560AA;
-    font-family: 'Didact Gothic', sans-serif;
+    font-family: 'Century Gothic', sans-serif;
     font-weight: bold;
 }
 .column-count{
@@ -68,9 +71,9 @@ input:placeholder-shown, textarea:placeholder-shown{
 
 /*Botões*/
 .botoes{
-    margin-left: 73%;
+    margin-left: 70%;
     padding: 2vw;
-    font-family: 'Didact Gothic', sans-serif;
+    font-family: 'Century Gothic', sans-serif;
 }
 .botoes #btn-cancelar{    
     background-color: #F77759;
@@ -109,7 +112,7 @@ input:placeholder-shown, textarea:placeholder-shown{
     .botoes{
         margin-left: 70%;
         padding: 2vw;
-        font-family: 'Didact Gothic', sans-serif;
+        font-family: 'Century Gothic', sans-serif;
     }
 }
 @media (max-width: 1000px){
@@ -120,7 +123,7 @@ input:placeholder-shown, textarea:placeholder-shown{
     .botoes{
         margin-left: 60%;
         padding: 2vw;
-        font-family: 'Didact Gothic', sans-serif;
+        font-family: 'Century Gothic', sans-serif;
     }
 }
 @media (max-width: 800px){
@@ -131,7 +134,7 @@ input:placeholder-shown, textarea:placeholder-shown{
     .botoes{
         margin-left: 50%;
         padding: 2vw;
-        font-family: 'Didact Gothic', sans-serif;
+        font-family: 'Century Gothic', sans-serif;
     }
 }
 @media (max-width: 600px){
@@ -142,6 +145,6 @@ input:placeholder-shown, textarea:placeholder-shown{
     .botoes{
         margin-left: 40%;
         padding: 2vw;
-        font-family: 'Didact Gothic', sans-serif;
+        font-family: 'Century Gothic', sans-serif;
     }
 }

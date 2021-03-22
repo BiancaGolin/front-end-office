@@ -28,7 +28,6 @@ export class ListarProdutoComponent implements OnInit {
     window.scroll(0, 0)
 
     this.findAllProduto()
-    this.findByIdProduto()
   }
 
   findAllProduto() {

@@ -32,15 +32,14 @@
     <br>
     <br>
 
-    <div class="nomeProduto">
         <div id="container-voltar">
             <a routerLink='/listar-produto'>
             <img class="icone" src="../assets/img/Voltar.png" alt="Voltar para a listagem de produtos"></a>
         </div>
+
         <div class="descricao">
-            <h5>Ração Golden Fórmula - 3kg</h5>
+            <h5>{{produto.nomeProduto}}</h5>
         </div>
-    </div>
     
     <br>
 
@@ -77,19 +76,24 @@
         <div class="infos">
             <div class="estrelas">
                 <img class="icone" id="estrela" src="../assets/img/Estrela.png" alt="Quantidade de estrelas">
-                <p>5</p>
+                <p>{{produto.qtdEstrelas}}</p>
             </div>
             <ul>
-                <li>Indicada para cães de pequeno porte.</li>
-                <li>Desenvolvida para cães com paladar exigente.</li>
-                <li>Apresenta grãos de tamanho adequado para animais de pequeno porte, facilitando a mastigação.</li>
-                <li>Não contém corantes e aromatizantes artificiais e traz o equilíbrio entre ômegas 3 e 6.</li>
+                <li>{{produto.nomeExtenso}}</li>
             </ul>
         </div>
         
         <div class="container-infos2">
-            <h4>R$36,78</h4>
-            <p>*Em estoque*</p>
+            <h4>R${{produto.preco}}</h4>
+            <div *ngIf="produto.qtdEstoque > 0; else semEstoque">
+                <p>*Em estoque*</p>
+            </div>
+            <ng-template #semEstoque>
+                <p>
+                    *Sem estoque*
+                </p>
+            </ng-template>
+            
             <br>
             <div id="quantidade">
                 <div>
@@ -97,16 +101,8 @@
                 </div>
                 <div>
                     <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-                        <option selected>Selecione</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
+                        <option selected *ngFor='let mercadoria of listaProdutos'>Selecione</option>
+                        <option>{{produto.qtdEstoque}}</option>                        
                     </select>
                 </div>
             </div>

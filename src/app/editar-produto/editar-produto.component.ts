@@ -28,7 +28,9 @@ export class EditarProdutoComponent implements OnInit {
 
   ngOnInit() {
     window.scroll(0,0)
+    this.idProduto = this.route.snapshot.params['id']
     this.findByIdProduto(this.idProduto)
+    console.log("id editar=",this.idProduto)
   }
 
   findByIdProduto(id: number) {
@@ -39,7 +41,6 @@ export class EditarProdutoComponent implements OnInit {
 
   salvar() {
     this.produto.id = this.idProduto
-    console.log("id = ", this.produto.id)
     this.produtoService.putProduto(this.produto).subscribe((resp: Produto) => {
       this.produto = resp
       this.router.navigate(['/listar-produto'])
