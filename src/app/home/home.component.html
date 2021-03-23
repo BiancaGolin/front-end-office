@@ -1,0 +1,72 @@
+<div class="container-lg">
+
+    <header>
+        <nav class="navbar navbar-light" style="background-color: #5560AA;">
+            <div id="container-logo">
+                <a routerLink='/home'><img id="logo" src="../assets/img/LogoMercadogue.png" alt="Logo Mercadogue"></a>
+            </div>
+            <div id="titulo">
+                <h2>Mercadogue</h2>
+            </div>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-3" type="search" placeholder="Procure no Mercadogue"
+                    aria-label="Pesquisar">
+                <button type="submit" id="btn-pesquisar">Pesquisar</button>
+            </form>
+        </nav>
+    </header>
+
+    <ul class="nav justify-content-center" id="navegacao">
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Cães
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Rações</a>
+                <a class="dropdown-item" href="#">Medicamentos</a>
+                <a class="dropdown-item" href="#">Brinquedos</a>
+            </div>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Gatos
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Rações</a>
+                <a class="dropdown-item" href="#">Medicamentos</a>
+                <a class="dropdown-item" href="#">Brinquedos</a>
+            </div>
+        </li>
+    </ul>
+
+    <div id="linha"></div>
+
+
+    <div class="produtos">
+        <section class="painel">
+            <ol>
+                <!-- primeiro produto -->
+                <li>
+                    <div class="card" *ngFor="let mercadoria of listaProdutos">
+                        <img class="card-img-top" src="../assets/img/casaCaes_1.webp" alt="Imagem de capa do card">
+                        <div class="card-body">
+                            <h5 class="card-title">{{mercadoria.nomeProduto}}</h5>
+                            <p>{{mercadoria.qtdEstrelas}}<i class="fas fa-star"></i></p>
+                            <h4>R${{mercadoria.preco}}</h4>
+                        </div>
+                        <div class="card-body">
+                            <a [routerLink]="['/comprar-produto', mercadoria.id]" class="card-link">
+                                <button type="submit" id="btn-pesquisar">Comprar</button>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+                <!-- fim do primeiro produto -->
+            </ol>
+        </section>
+    </div>
+
+
+</div>

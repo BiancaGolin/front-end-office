@@ -2,6 +2,7 @@ import { ThrowStmt } from '@angular/compiler';
 import { i18nMetaToJSDoc } from '@angular/compiler/src/render3/view/i18n/meta';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Imagem } from '../model/Imagem';
 import { Produto } from '../model/Produto';
 import { AlertasService } from '../service/alertas.service';
 import { ProdutoService } from '../service/produto.service';
@@ -15,7 +16,7 @@ import { ProdutoService } from '../service/produto.service';
 export class CadastroProdutoComponent implements OnInit {
   selectedStatus: number;
   status: any = [0, 1];
-
+  
   radioChangeHandler (event: any) {
     this.selectedStatus = event.target.value;
     if (this.selectedStatus == 1) {
@@ -28,7 +29,10 @@ export class CadastroProdutoComponent implements OnInit {
   }
 
   produto: Produto = new Produto()
+  imagemTeste: Imagem = new Imagem()
   listaProduto: Produto[]
+  listaImagem: Imagem[]
+  imgx: Imagem = new Imagem()
 
   constructor(
     private router: Router,
@@ -37,7 +41,7 @@ export class CadastroProdutoComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-   this.findAllProduto()
+
   }
 
    findAllProduto() {
@@ -54,10 +58,17 @@ export class CadastroProdutoComponent implements OnInit {
         this.produto = resp
         console.log("produtooooo",this.produto.status)
         this.router.navigate(['/listar-produto'])
+        console.log("imagem = ", this.produto.imagem)
         this.alerta.showAlertSucess('Produto cadastrado com sucesso!')
         
       })
     }
+  }
+
+  debug() {
+    console.log(this.produto.nomeProduto)
+    this.imgx.path = "xyz.jpg"
+    this.listaImagem.push(this.imgx)
   }
 
 }

@@ -73,22 +73,7 @@
                         <input
                         type="radio" name="statusProduto" value="{{0}}" (change)="radioChangeHandler($event)">
                         <i>Inativo</i>
-                    <!--                   
-                <div class="column-count-status">
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="Ativacao" id="Ativo" value="true">
-                        <label class="form-check-label" for="Ativo">
-                            Ativo
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="Ativacao" id="Inativo" value="false">
-                        <label class="form-check-label" for="Inativo">
-                            Inativo
-                        </label>
-                    </div>
-                </div>
-            -->                    
+                  
             </fieldset>
 
         <br>
@@ -96,18 +81,19 @@
             <div class="form-group">
                 <label for="exampleFormControlInput1" class="label">
                     <span style="color: #F77759">*</span>Imagem</label>
-                <input type="text" class="form-control" id="imagem1" placeholder="Indique o caminho da imagem"><br>
+                <input type="text" class="form-control" id="imagem1" placeholder="Indique o caminho da imagem" [(ngModel)]='produto.imagem'><br>
             </div>
-        <!--
-        <div class="form-group">
-            <label for="exampleFormControlInput1" class="label">Quantidade</label>
-            <input type="text" class="form-control" id="qtd">
-        </div>
-        -->
+
+            <div class="form-group">
+                <label for="exampleFormControlInput1" class="label">
+                    <span style="color: #F77759">*</span>Imagem</label>
+                <input type="text" class="form-control" id="imagem1" placeholder="Indique o caminho da imagem" [(ngModel)]='produto.imagem'><br>
+            </div>
 
         <div class="botoes">
             <button type="submit" id="btn-cancelar">Cancelar</button>
             <button type="submit" id="btn-confirmar" (click)='cadastrar()'>Confirmar</button>
+            <button type="submit" id="btn-confirmar" (click)='debug()'>Debug</button>
         </div>
 
 </div>

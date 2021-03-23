@@ -13,6 +13,8 @@ import { VisualizarProdutoComponent } from './visualizar-produto/visualizar-prod
 import { AlertasComponent } from './alertas/alertas.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { EditarProdutoComponent } from './editar-produto/editar-produto.component';
+import { HomeComponent } from './home/home.component';
+import { ComprarProdutoComponent } from './comprar-produto/comprar-produto.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { EditarProdutoComponent } from './editar-produto/editar-produto.componen
     ListarProdutoComponent,
     VisualizarProdutoComponent,
     AlertasComponent,
-    EditarProdutoComponent
+    EditarProdutoComponent,
+    HomeComponent,
+    ComprarProdutoComponent
   ],
   imports: [
     BrowserModule,
