@@ -29,10 +29,7 @@ export class CadastroProdutoComponent implements OnInit {
   }
 
   produto: Produto = new Produto()
-  imagemTeste: Imagem = new Imagem()
-  listaProduto: Produto[]
-  listaImagem: Imagem[]
-  imgx: Imagem = new Imagem()
+  imgPathInput = ""
 
   constructor(
     private router: Router,
@@ -41,13 +38,7 @@ export class CadastroProdutoComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-
-  }
-
-   findAllProduto() {
-     this.produtoService.getAllProduto().subscribe((resp: Produto[]) =>{
-       this.listaProduto = resp
-     })
+    this.produto.imagem = []
   }
 
   cadastrar() {
@@ -65,10 +56,15 @@ export class CadastroProdutoComponent implements OnInit {
     }
   }
 
-  debug() {
-    console.log(this.produto.nomeProduto)
-    this.imgx.path = "xyz.jpg"
-    this.listaImagem.push(this.imgx)
+  addToList(){
+    let newImage = new Imagem()
+
+    newImage.path = this.imgPathInput
+    this.produto.imagem.push(newImage);
+  }
+
+  removeToList(index : number) {
+    this.produto.imagem.splice(index,1)
   }
 
 }

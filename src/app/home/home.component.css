@@ -101,6 +101,10 @@ input:placeholder-shown{
     text-align: right;
 }
 
+.fa-star {
+    background-image: url(/assets/img/star.svg);
+}
+
 /*Produtos*/
 /*
 .Linha1{

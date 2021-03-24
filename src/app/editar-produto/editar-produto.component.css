@@ -29,6 +29,11 @@ body{
     font-size: 2em;    
 }
 
+#btn-adicionar-img {
+    width: 20px;
+}
+
+
 /*Menu*/
 #navegacao{
     background-color: white;
