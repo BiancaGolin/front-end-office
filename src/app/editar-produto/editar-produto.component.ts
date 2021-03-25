@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Imagem } from '../model/Imagem';
 import { Produto } from '../model/Produto';
 import { AlertasService } from '../service/alertas.service';
 import { ProdutoService } from '../service/produto.service';
@@ -17,6 +18,7 @@ export class EditarProdutoComponent implements OnInit {
   produto: Produto = new Produto ()
   listaProdutos: Produto[]
   idProduto: number
+  imgPathInput = ""
 
 
   constructor(
@@ -31,6 +33,9 @@ export class EditarProdutoComponent implements OnInit {
     this.idProduto = this.route.snapshot.params['id']
     this.findByIdProduto(this.idProduto)
     console.log("id editar=",this.idProduto)
+    
+    this.produto.imagem = []
+    console.log("imagem=",this.produto.imagem)
   }
 
   findByIdProduto(id: number) {
@@ -65,5 +70,17 @@ export class EditarProdutoComponent implements OnInit {
     
     console.log("event target", event.target.value)
   }
+
+  addToList(){
+    let newImage = new Imagem()
+
+    newImage.path = this.imgPathInput
+    this.produto.imagem.push(newImage);
+  }
+
+  removeToList(index : number) {
+    this.produto.imagem.splice(index,1)
+  }
+
 
 }

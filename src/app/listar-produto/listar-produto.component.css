@@ -44,7 +44,9 @@ body{
     background-color: #C8C8C8;
     height: 5px;
 }
-
+form{
+    margin: 0 5vw;
+}
 .Linha{
         margin-top: 5%;
         margin-bottom: 5%;

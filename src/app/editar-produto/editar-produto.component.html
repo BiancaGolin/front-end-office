@@ -1,8 +1,8 @@
-<div class="container">
+<div class="container-large">
     
     <header>
         <div id="container-logo">
-            <img id="logo" src="/assets/img/LogoMercadogue.png" alt="Logo Mercadogue">
+            <a routerLink='/home'><img id="logo" src="../assets/img/LogoMercadogue.png" alt="Logo Mercadogue"></a>
         </div>
         <div id="titulo">
             <h2>Cadastro de Produto</h2>
@@ -93,21 +93,19 @@
 
         <br>
 
-            <div class="form-group">
-                <label for="exampleFormControlInput1" class="label">
-                    <span style="color: #F77759">*</span>Imagem</label>
-                <input type="text" class="form-control" id="imagem1" placeholder="Indique o caminho da imagem"><br>
-                <input type="text" class="form-control" id="imagem2" placeholder="Indique o caminho da imagem"><br>
-                <input type="text" class="form-control" id="imagem3" placeholder="Indique o caminho da imagem"><br>
-                <input type="text" class="form-control" id="imagem4" placeholder="Indique o caminho da imagem"><br>
-                <input type="text" class="form-control" id="imagem5" placeholder="Indique o caminho da imagem"><br>
-            </div>
-        <!--
         <div class="form-group">
-            <label for="exampleFormControlInput1" class="label">Quantidade</label>
-            <input type="text" class="form-control" id="qtd">
+            <label for="exampleFormControlInput1" class="label">
+                <span style="color: #F77759">*</span>Imagem</label>
+            <input type="text" class="form-control" [(ngModel)]="imgPathInput">
+            <ul>
+                <img id="btn-adicionar-img" src="../assets/img/add.svg" alt="" (click)="addToList()">
+                <li *ngFor="let imagem of produto.imagem; let i = index">
+                    <input [(ngModel)]='imagem.path'>{{imagem.path}}
+                    <img id="btn-adicionar-img" src="../assets/img/minus.svg" alt="" (click)="removeToList(i)">
+                </li>
+            </ul>
+            
         </div>
-        -->
 
         <div class="botoes">
             <button type="submit" id="btn-cancelar" routerLink='/listar-produto'>Cancelar</button>

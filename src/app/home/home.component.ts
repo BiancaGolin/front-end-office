@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Produto } from '../model/Produto';
 import { ProdutoService } from '../service/produto.service';
+import { Imagem } from '../model/Imagem';
 
 @Component({
   selector: 'app-home',
@@ -11,6 +12,7 @@ export class HomeComponent implements OnInit {
 
   produto: Produto = new Produto()
   listaProdutos: Produto[]
+  imgPathInput = ""
 
   constructor(
     private produtoService: ProdutoService
@@ -18,6 +20,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.findAllProdutos()
+    this.produto.imagem = []
   }
 
   findAllProdutos() {
