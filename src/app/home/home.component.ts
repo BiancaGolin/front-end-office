@@ -10,6 +10,9 @@ import { Imagem } from '../model/Imagem';
 })
 export class HomeComponent implements OnInit {
 
+  imagem: Imagem = new Imagem()
+  listaImagens: Imagem[]
+
   produto: Produto = new Produto()
   listaProdutos: Produto[]
   imgPathInput = ""

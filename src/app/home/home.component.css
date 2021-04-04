@@ -37,7 +37,7 @@ body{
     color: white;
     padding: 8px 15px;
     margin-right: 0.5vw;
-    outline: none;    
+    outline: none;
 }
 #btn-pesquisar:hover{
     border-color: #F77759;
@@ -99,6 +99,12 @@ input:placeholder-shown{
     font-family: Century Gothic;
     font-weight: bolder;
     text-align: right;
+}
+
+.estrela {
+    width: 15px;
+    height: 15px;
+    margin-left: 5px;
 }
 
 /*Produtos*/

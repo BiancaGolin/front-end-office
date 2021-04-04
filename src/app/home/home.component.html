@@ -26,29 +26,57 @@
     </ul>
     <div id="linha"></div>
 
+    <div class="container" *ngFor="let mercadoria of listaProdutos">
+        <div class="row py-3">
+          <div class="col-sm" *ngFor="let imagem of listaImagens">
+            <div class="card" >
+                <img class="card-img-top" src="{{imagem.path}}" alt="Imagem de capa do card">
+                <p>{{imagem.path}}</p>
+                <div class="card-body">
+                    <h5 class="card-title">{{mercadoria.nomeProduto}}</h5>
+                    <img class="estrela" src="../assets/img/estrela.png" alt=""><p>{{mercadoria.qtdEstrelas}}</p>
+                    <h4>R${{mercadoria.preco}}</h4>
+                </div>
+                <div class="card-body">
+                    <a [routerLink]="['/comprar-produto', mercadoria.id]" class="card-link">
+                        <button type="submit" id="btn-pesquisar">Comprar</button>
+                    </a>
+                </div>
+            </div>
+          </div>
 
-    <div class="produtos">
-        <section class="painel" *ngFor="let mercadoria of listaProdutos">
-            <ol>
-                <!-- primeiro produto -->
-                <li>
-                    <div class="card" >
-                        <img class="card-img-top" src="../assets/img/casaCaes_1.webp" alt="Imagem de capa do card">
-                        <div class="card-body">
-                            <h5 class="card-title">{{mercadoria.nomeProduto}}</h5>
-                            <p>{{mercadoria.qtdEstrelas}}<i class="fa-star"></i></p>
-                            <h4>R${{mercadoria.preco}}</h4>
-                        </div>
-                        <div class="card-body">
-                            <a [routerLink]="['/comprar-produto', mercadoria.id]" class="card-link">
-                                <button type="submit" id="btn-pesquisar">Comprar</button>
-                            </a>
-                        </div>
-                    </div>
-                </li>
-                 <!--fim do primeiro produto-->
-            </ol>
-        </section>
-    </div>
+          <div class="col-sm">
+            <div class="card" >
+                <img class="card-img-top" src="../assets/img/casaCaes_1.webp" alt="Imagem de capa do card">
+                <div class="card-body">
+                    <h5 class="card-title">{{mercadoria.nomeProduto}}</h5>
+                    <img class="estrela" src="../assets/img/estrela.png" alt=""><p>{{mercadoria.qtdEstrelas}}</p>
+                    <h4>R${{mercadoria.preco}}</h4>
+                </div>
+                <div class="card-body">
+                    <a [routerLink]="['/comprar-produto', mercadoria.id]" class="card-link">
+                        <button type="submit" id="btn-pesquisar">Comprar</button>
+                    </a>
+                </div>
+            </div>
+          </div>
+
+          <div class="col-sm">
+            <div class="card" >
+                <img class="card-img-top" src="../assets/img/casaCaes_1.webp" alt="Imagem de capa do card">
+                <div class="card-body">
+                    <h5 class="card-title">{{mercadoria.nomeProduto}}</h5>
+                    <img class="estrela" src="../assets/img/estrela.png" alt=""><p>{{mercadoria.qtdEstrelas}}</p>
+                    <h4>R${{mercadoria.preco}}</h4>
+                </div>
+                <div class="card-body">
+                    <a [routerLink]="['/comprar-produto', mercadoria.id]" class="card-link">
+                        <button type="submit" id="btn-pesquisar">Comprar</button>
+                    </a>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
 </div>
