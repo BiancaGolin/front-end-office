@@ -1,0 +1,91 @@
+<div class="container-large">
+
+    <header>
+        <div id="container-logo">
+            <a routerLink='/home'><img id="logo" src="../assets/img/LogoMercadogue.png" alt="Logo Mercadogue"></a>
+        </div>
+        <div id="titulo">
+            <h2>Listagem de Usuarios</h2>
+        </div>
+    </header>
+    
+    <ul class="nav justify-content-center" id="navegacao">
+        <li class="nav-item">
+            <a class="nav-link" routerLink='/listar-usuario'>Listagem</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink='/cadastro-usuario'>Cadastro</a>
+        </li>
+    </ul>
+    
+    <div id="linha"></div>
+    
+    <br>
+
+    <div class="Linha">
+        <div class="pesquisar">
+            <!-- <form class="form-inline my-2 my-lg-0"> -->
+                <input class="form-control mr-sm-2" type="search" placeholder="Digite o nome do usuario" aria-label="Search"
+                    style="width: 300px;" [(ngModel)]='nomeUsuario' (keyup)='findByNomeUsuario()'>
+                <button type="button" id="btn-pesquisar">Pesquisar</button>
+            <!-- </form> -->
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table">
+            <thead class="thead" style="background-color: #00d8c9;color: whitesmoke;">
+                <tr>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Tipo</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Editar</th>
+                    <th scope="col">Visualizar</th>
+                </tr>
+            </thead>
+            <tbody *ngFor='let mercadoria of listaUsuario'>
+                <tr>
+                    <td>{{usuario.nomeUsuario}}</td>
+                    <td>{{usuario.emailUsuario}}</td>
+                    <td>{{usuario.tipoUsuario}}</td>
+                    <td><a routerLink='/cadastro-usuario'>{{usuario.status}}</a></td>
+                    <td class="container-icone">
+                        <a [routerLink]="['/editar-usuario', usuario.id]">
+                            <img src="../assets/img/EditarCinza.png" class="btn-editar" alt="Ícone para a página de alteração do produto">
+                        </a>
+                    </td>
+                    <td class="container-icone">
+                        <a [routerLink]="['/visualizar-produto', usuario.id]">
+                        <img src="../assets/img/VisualizarCinza.png" class="btn-visualizar"alt="Ícone para a página de visualização do produto">
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="paginas">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+                <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Previous" style="color: black;">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#" style="color: black;">Anterior</a></li>
+                <li class="page-item"><a class="page-link" href="#" style="color: black;">Próximo</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Next" style="color: black;">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+        
+    <div class="botao">
+        <button type="button" id="btn-confirmar">Cadastrar Novo</button>
+    </div>
+
+</div>

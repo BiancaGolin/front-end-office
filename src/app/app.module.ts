@@ -15,6 +15,9 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { EditarProdutoComponent } from './editar-produto/editar-produto.component';
 import { HomeComponent } from './home/home.component';
 import { ComprarProdutoComponent } from './comprar-produto/comprar-produto.component';
+import { CadastroUsuarioComponent } from './cadastro-usuario/cadastro-usuario.component';
+import { ListarUsuarioComponent } from './listar-usuario/listar-usuario.component';
+import { EditarUsuarioComponent } from './editar-usuario/editar-usuario.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,10 @@ import { ComprarProdutoComponent } from './comprar-produto/comprar-produto.compo
     AlertasComponent,
     EditarProdutoComponent,
     HomeComponent,
-    ComprarProdutoComponent
+    ComprarProdutoComponent,
+    CadastroUsuarioComponent,
+    ListarUsuarioComponent,
+    EditarUsuarioComponent
   ],
   imports: [
     BrowserModule,

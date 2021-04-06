@@ -19,7 +19,7 @@ export class ListarProdutoComponent implements OnInit {
 
   constructor(
     private router:  Router,
-    private produtoService: ProdutoService,
+    private produtoService: ProdutoService, 
     private alerta: AlertasService,
     private route: ActivatedRoute
   ) { }

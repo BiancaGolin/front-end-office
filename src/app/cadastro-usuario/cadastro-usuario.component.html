@@ -1,0 +1,72 @@
+<div class="bg"></div>
+<div class="container-large">
+    <header>
+        <div id="container-logo">
+            <a routerLink='/home'><img id="logo" src="../assets/img/LogoMercadogue.png" alt="Logo Mercadogue"></a>
+        </div>
+        <div id="titulo">
+            <h2>Cadastro de Usuario</h2>
+        </div>
+    </header>
+    
+    <ul class="nav justify-content-center" id="navegacao">
+        <li class="nav-item">
+            <a class="nav-link" routerLink='/listar-usuario'>Listagem de Usuario</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink='/cadastro-usuario'>Cadastro Usuario</a>
+        </li>
+    </ul>
+    
+    <div id="linha"></div>
+    
+    <br>
+    
+
+
+        <div class="form-group">
+            <label for="exampleFormControlInput1" class="label">
+                <span style="color: #F77759">*</span>Nome</label>
+            <input type="text" class="form-control" id="nome" placeholder="Digite o seu nome" [(ngModel)]='usuario.nomeUsuario'>
+        </div>
+
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1" class="label">
+                <span style="color: #F77759">*</span>Email: </label>
+                <input type="text" name="email" [(ngModel)]='usuario.emailUsuario'>
+        </div>
+    
+            
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1" class="label">
+                    <span style="color: #F77759">*</span>Senha</label>
+                <input type="password" class="form-control" id="senha" placeholder="*****" [(ngModel)]='usuario.senhaUsuario'>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlInput1" class="label">
+                    <span style="color: #F77759">*</span>Tipo de Cadastro</label>
+                <input type="number" class="form-control" id="tipo" placeholder="Tipo: " [(ngModel)]='usuario.tipoUsuario'>
+            </div>
+
+            <fieldset class="form-group">                    
+                <label for="exampleFormControlInput1" class="label">
+                    <span style="color: #F77759">*</span>Status</label>
+                        <input
+                        type="radio" name="status" value="{{1}}" (change)="radioChangeHandler($event)">
+                        <i>Ativo</i>
+<br>
+                        <input
+                        type="radio" name="status" value="{{0}}" (change)="radioChangeHandler($event)">
+                        <i>Inativo</i>
+                  
+            </fieldset>
+
+        <br>
+
+
+        <div class="botoes">
+            <button type="submit" id="btn-cancelar">Cancelar</button>
+            <button type="submit" id="btn-confirmar" (click)='cadastrarUsuario()'>Confirmar</button>
+        </div>
+
+</div>
