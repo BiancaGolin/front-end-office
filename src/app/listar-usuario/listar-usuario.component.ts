@@ -17,7 +17,7 @@ export class ListarUsuarioComponent implements OnInit {
   idUsuario: number
   nomeUsuario: string
 
-  constructor(
+  constructor( 
     private router:  Router,
     private usuarioService: UsuarioService, 
     private alerta: AlertasService,
@@ -38,7 +38,7 @@ export class ListarUsuarioComponent implements OnInit {
 
   }
 
-  findByIdProduto(){
+  findByIdUsuario(){
     this.usuarioService.getByIdUsuario(this.idUsuario).subscribe((resp : Usuario)=>{
       this.usuario = resp
     })
