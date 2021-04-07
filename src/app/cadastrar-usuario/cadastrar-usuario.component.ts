@@ -38,14 +38,22 @@ export class CadastrarUsuarioComponent implements OnInit {
 
   cadastrar() {
     console.log(JSON.stringify(this.usuario))
-    if (this.usuario.nomeUsuario == null || this.usuario.email == null || this.usuario.senha == null || this.usuario.statusUsuario == null || this.usuario.tipoUsuario == null) {
+    if (this.usuario.nomeUsuario == null || this.usuario.email == null || this.usuario.senha == null 
+      || this.usuario.statusUsuario == null || this.usuario.tipoUsuario == null) {
       console.log(this.usuario)
       this.alerta.showAlertInfo('Preencha o campo de nome do usuário corretamente')
     } else {
       this.authService.cadastrar(this.usuario).subscribe((resp: Usuario) =>{
         this.usuario = resp
         this.router.navigate(['/home'])
-        this.alerta.showAlertSucess('Usuário cadastrado com sucesso!')        
+        if(this.usuario.email == 'email ja cadastrado'){
+        console.log("email  ja cadastrado step")
+        this.router.navigate(['/cadastrar-usuario'])
+        this.alerta.showAlertSucess('Email já cadastrado')        
+         } else{
+          console.log("email n cadastrado step")
+          this.alerta.showAlertSucess('Usuário cadastrado com sucesso!')        
+        }
       })
     }
   }
