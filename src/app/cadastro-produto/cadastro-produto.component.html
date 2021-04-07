@@ -11,10 +11,16 @@
     
     <ul class="nav justify-content-center" id="navegacao">
         <li class="nav-item">
-            <a class="nav-link" routerLink='/listar-produto'>Listagem</a>
+            <a class="nav-link" routerLink='/listar-produto'>Listar Produto</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" routerLink='/cadastro-produto'>Cadastro</a>
+            <a class="nav-link" routerLink='/cadastro-produto'>Cadastro Produto</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink='/cadastrar-usuario'>Cadastro Usuario</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink='/listar-usuario'>Listar Usuário</a>
         </li>
     </ul>
     
@@ -68,29 +74,35 @@
                     <span style="color: #F77759">*</span>Status</label>
                         <input
                         type="radio" name="statusProduto" value="{{1}}" (change)="radioChangeHandler($event)">
-                        <i>Ativo</i>
+                        <p>Ativo</p>
 <br>
                         <input
                         type="radio" name="statusProduto" value="{{0}}" (change)="radioChangeHandler($event)">
-                        <i>Inativo</i>
+                        <p>Inativo</p>
                   
             </fieldset>
 
         <br>
 
-            <div class="form-group">
-                <label for="exampleFormControlInput1" class="label">
-                    <span style="color: #F77759">*</span>Imagem</label>
+        <div class="form-group">
+            <label for="exampleFormControlInput1" class="label">
+                <span style="color: #F77759">*</span>
+                Imagem
+            </label>
+            <ul>
                 <input type="text" class="form-control" [(ngModel)]="imgPathInput">
-                <ul>
-                    <img id="btn-adicionar-img" src="../assets/img/add.svg" alt="" (click)="addToList()">
-                    <li *ngFor="let imagem of produto.imagem; let i = index">
-                        <label>{{imagem.path}}</label>
-                        <img id="btn-adicionar-img" src="../assets/img/minus.svg" alt="" (click)="removeToList(i)">
-                    </li>
-                </ul>
-                
-            </div>
+                <img id="btn-adicionar-img" src="../assets/img/add.svg" alt="" (click)="addToList()">
+
+                <li *ngFor="let imagem of produto.imagem; let i = index">
+                    <span *ngIf="prevImgListUrl[i] !== undefined" ><img [src]="prevImgListUrl[i]" width="100px" height="100px"/></span>
+                    <label>{{imagem.path}}</label>
+                    <br/>
+                    <input type="file" name="myfile" (change)="addImage($event)">
+                    <img id="btn-adicionar-img" src="../assets/img/minus.svg" alt="" (click)="removeToList(i)">
+                </li>
+            </ul>
+    
+        </div>
 
         <div class="botoes">
             <button type="submit" id="btn-cancelar">Cancelar</button>

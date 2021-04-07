@@ -16,6 +16,23 @@ import { ProdutoService } from '../service/produto.service';
 export class CadastroProdutoComponent implements OnInit {
   selectedStatus: number;
   status: any = [0, 1];
+  produto: Produto = new Produto()
+  imgPathInput = ""
+
+  selectedFile: File;
+
+  prevImgListUrl: any[] = [];
+
+  addImage(event: any){
+    if(event.target.files){
+      var reader = new FileReader()
+      reader.readAsDataURL(event.target.files[0])
+      reader.onload = (event: any) => {
+        this.prevImgListUrl.push(event.target.result)
+        this.selectedFile = event.target.files[0]
+      }
+    }
+  }
   
   radioChangeHandler (event: any) {
     this.selectedStatus = event.target.value;
@@ -27,9 +44,6 @@ export class CadastroProdutoComponent implements OnInit {
     
     console.log("event target", event.target.value)
   }
-
-  produto: Produto = new Produto()
-  imgPathInput = ""
 
   constructor(
     private router: Router,
@@ -58,13 +72,13 @@ export class CadastroProdutoComponent implements OnInit {
 
   addToList(){
     let newImage = new Imagem()
-
     newImage.path = this.imgPathInput
     this.produto.imagem.push(newImage);
   }
 
   removeToList(index : number) {
     this.produto.imagem.splice(index,1)
+    this.prevImgListUrl.splice(index,1)
   }
 
 }

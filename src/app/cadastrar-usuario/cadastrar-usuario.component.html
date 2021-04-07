@@ -1,0 +1,105 @@
+
+    <div class="container-large">
+        
+        <header>
+            <div id="container-logo">
+                <a routerLink='/home'><img id="logo" src="../assets/img/LogoMercadogue.png" alt="Logo Mercadogue"></a>
+            </div>
+            <div id="titulo">
+                <h2>Cadastro de Funcionario</h2>
+            </div>
+        </header>
+        
+        <ul class="nav justify-content-center" id="navegacao">
+            <li class="nav-item">
+                <a class="nav-link" routerLink='/listar-produto'>Listagem</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink='/cadastro-produto'>Cadastro</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink='/cadastrar-usuario'>Usuario</a>
+            </li>
+        </ul>
+        
+        <div id="linha"></div>
+        
+        <br>
+        
+        <div id="Informacoes">
+
+            <div class="form-group">
+                <label for="exampleFormControlInput1" class="label">
+                    <span style="color: #F77759">*</span> Nome</label>
+                <input type="text" class="form-control" id="nome" placeholder="Nome do funcionário" [(ngModel)]='usuario.nomeUsuario'>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlInput1" class="label">
+                    <span style="color: #F77759">*</span> CPF</label>
+                <input type="text" class="form-control" id="cpf" placeholder="CPF do funcionário">
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlInput1" class="label">
+                    <span style="color: #F77759">*</span> Endereço</label>
+                <input type="text" class="form-control" id="Endereço" placeholder="Endereço do funcionário">
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlInput1" class="label">
+                    <span style="color: #F77759">*</span> Nascimento</label>
+                <input type="date" class="form-control" id="Nascimento" placeholder="Nascimento do Funcionario - DD/MM/YYYY">
+            </div>    
+
+            <div class="column-count">
+                <div class="form-group">
+                    <label for="exampleFormControlInput1" class="label">
+                        <span style="color: #F77759">*</span> Cargo</label>
+                    <select class="custom-select" id="estrelas" [(ngModel)]='usuario.tipoUsuario'>
+                        <option selected>Selecione</option>
+                        <option value="{{0}}">Administrador</option>
+                        <option value="{{1}}">Estoquista</option>
+                    </select>
+                </div>
+            </div>  
+
+                <fieldset class="form-group">                    
+                    <label for="exampleFormControlInput1" class="label">
+                        <span style="color: #F77759">*</span>Status</label>
+                            <input
+                            type="radio" name="statusUsuario" value="{{1}}" (change)="radioChangeHandler($event)">
+                            <p>Ativo</p>
+    <br>
+                            <input
+                            type="radio" name="statusUsuario" value="{{0}}" (change)="radioChangeHandler($event)">
+                            <p>Inativo</p>
+                </fieldset>
+
+            
+            <br>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="exampleFormControlInput1" class="label">
+                        <span style="color: #F77759">*</span> @Usuário
+                        <input type="text" class="form-control" id="Usuario" placeholder="Usuário do funcionário" [(ngModel)]='usuario.email'>
+                    </label>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="exampleFormControlInput1" class="label">
+                        <span style="color: #F77759">*</span> Senha
+                        <input type="password" class="form-control" id="Senha" placeholder="Senha do funcionário" [(ngModel)]='usuario.senha'>
+                    </label>
+                </div>
+            </div>        
+            <br>
+            <div class="form-group">
+                <label for="exampleFormControlInput1" class="label">
+                    <span style="color: #F77759">*</span> Foto</label>
+                <input type="file" class="form-control" id="imagem1" placeholder="Escolha sua imagem"><br>
+            </div>
+            <div class="botoes">
+                <button type="submit" id="btn-cancelar">Cancelar</button>
+                <button type="submit" id="btn-confirmar" (click)='cadastrar()'>Confirmar</button>
+            </div>
+
+        </div>
+
+    </div>

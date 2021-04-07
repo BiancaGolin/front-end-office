@@ -27,7 +27,6 @@
             <!-- <form class="form-inline my-2 my-lg-0"> -->
                 <input class="form-control mr-sm-2" type="search" placeholder="Digite o nome do produto" aria-label="Search"
                     style="width: 300px;" [(ngModel)]='nomeProduto' (keyup)='findByNomeProduto()'>
-                <button type="button" id="btn-pesquisar">Pesquisar</button>
             <!-- </form> -->
         </div>
     </div>
@@ -49,7 +48,8 @@
                     <td>{{mercadoria.nomeProduto}}</td>
                     <td>{{mercadoria.qtdEstoque}}</td>
                     <td>{{mercadoria.preco | currency:'BRL':'symbol':'0.1-2'}}</td>
-                    <td><a routerLink='/cadastro-produto'>{{mercadoria.status}}</a></td>
+                    <td><a routerLink='/cadastro-produto'><span *ngIf="mercadoria.status; else elseBlock">Ativo</span>
+                        <ng-template #elseBlock>Inativo</ng-template></a></td>
                     <td class="container-icone">
                         <a [routerLink]="['/editar-produto', mercadoria.id]">
                             <img src="../assets/img/EditarCinza.png" class="btn-editar" alt="Ícone para a página de alteração do produto">
