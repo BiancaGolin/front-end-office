@@ -16,7 +16,7 @@ export class UsuarioService {
     
   validaEmailExist(email: String) : Observable<Boolean> {
     console.log("chamada api");
-    return this.http.get<Boolean>('http://localhost:8080/usuario/validemail');
+    return this.http.get<Boolean>(`http://localhost:8080/usuario/validemail/${email}`);
   }
 
   getAllUsuario() : Observable<Usuario[]> {
