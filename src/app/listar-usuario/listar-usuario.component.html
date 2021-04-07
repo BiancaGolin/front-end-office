@@ -1,93 +1,105 @@
-<div class="container-large">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Document</title>
+</head>
+<body>
+    <div class="container-large">
 
-    <header>
-        <div id="container-logo">
-            <a routerLink='/home'><img id="logo" src="../assets/img/LogoMercadogue.png" alt="Logo Mercadogue"></a>
+        <header>
+            <div id="container-logo">
+                <a routerLink='/home'><img id="logo" src="../assets/img/LogoMercadogue.png" alt="Logo Mercadogue"></a>
+            </div>
+            <div id="titulo">
+                <h2>Listagem de Funcionario</h2>
+            </div>
+        </header>
+    
+        <ul class="nav justify-content-center" id="navegacao">
+            <li class="nav-item">
+                <a class="nav-link" routerLink='/listar-produto'>Listar Produto</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink='/cadastro-produto'>Cadastro Produto</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink='/cadastrar-usuario'>Cadastro Usuario</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink='/cadastrar-usuario'>Listar Usuário</a>
+            </li>
+        </ul>
+    
+        <div id="linha"></div>
+    
+        <br>
+    
+        <div class="Linha">
+            <div class="pesquisar">
+                <!-- <form class="form-inline my-2 my-lg-0"> -->
+                    <input class="form-control mr-sm-2" type="search" placeholder="Digite o nome do Funcionario"
+                        aria-label="Search" style="width: 300px;" [(ngModel)]='nomeUsuario' (keyup)='findByNomeUsuario()'>
+             <!-- </form> -->
+            </div>
         </div>
-        <div id="titulo">
-            <h2>Listagem de Funcionario</h2>
+    
+        <div class="container-tabela">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead class="thead" style="background-color: #00d8c9;color: whitesmoke;">
+                        <tr>
+                            <th scope="col">Nome</th>
+                            <th scope="col">Matricula</th>
+                            <th scope="col">Cargo</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Editar</th>
+                        </tr>
+                    </thead>
+                    <tbody *ngFor='let funcionarios of listaUsuarios'>
+                        <tr>
+                            <td>{{funcionarios.nomeUsuario}}</td>
+                            <td>{{funcionarios.id}}</td>
+                            <td><span *ngIf="funcionarios.tipoUsuario == 0; else elseBlock">Administrador</span>
+                                <ng-template #elseBlock>Estoquista</ng-template></td>
+                            <td><a href="../Paginas/CadastroProduto.html"> <span *ngIf="funcionarios.statusUsuario; else elseStatus">Ativo</span>
+                                <ng-template #elseStatus>Inativo</ng-template>
+                            </a></td>
+                            <td class="container-icone"><a [routerLink]="['/editar-usuario', funcionarios.id]">
+                                    <img src="../assets/img/EditarCinza.png" class="btn-editar"
+                                        alt="Ícone para a página de alteração do produto"></a></td>
+                            </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
-    </header>
-
-    <ul class="nav justify-content-center" id="navegacao">
-        <li class="nav-item">
-            <a class="nav-link" routerLink='/listar-produto'>Listar Produto</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" routerLink='/cadastro-produto'>Cadastro Produto</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" routerLink='/cadastrar-usuario'>Cadastro Usuario</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" routerLink='/cadastrar-usuario'>Listar Usuário</a>
-        </li>
-    </ul>
-
-    <div id="linha"></div>
-
-    <br>
-
-    <div class="Linha">
-        <div class="pesquisar">
-            <!-- <form class="form-inline my-2 my-lg-0"> -->
-                <input class="form-control mr-sm-2" type="search" placeholder="Digite o nome do Funcionario"
-                    aria-label="Search" style="width: 300px;" [(ngModel)]='nomeUsuario' (keyup)='findByNomeUsuario()'>
-         <!-- </form> -->
+    
+        <div class="paginas">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Previous" style="color: black;">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#" style="color: black;">Anterior</a></li>
+                    <li class="page-item"><a class="page-link" href="#" style="color: black;">Próximo</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next" style="color: black;">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
         </div>
-    </div>
-
-    <div class="container-tabela">
-        <div class="table-responsive">
-            <table class="table">
-                <thead class="thead" style="background-color: #00d8c9;color: whitesmoke;">
-                    <tr>
-                        <th scope="col">Nome</th>
-                        <th scope="col">Matricula</th>
-                        <th scope="col">Cargo</th>
-                        <th scope="col">Status</th>
-                        <th scope="col">Editar</th>
-                    </tr>
-                </thead>
-                <tbody *ngFor='let funcionarios of listaUsuarios'>
-                    <tr>
-                        <td>{{funcionarios.nomeUsuario}}</td>
-                        <td>{{funcionarios.id}}</td>
-                        <td><span *ngIf="funcionarios.tipoUsuario == 0; else elseBlock">Administrador</span>
-                            <ng-template #elseBlock>Estoquista</ng-template></td>
-                        <td><a href="../Paginas/CadastroProduto.html"> <span *ngIf="funcionarios.statusUsuario; else elseStatus">Ativo</span>
-                            <ng-template #elseStatus>Inativo</ng-template>
-                        </a></td>
-                        <td class="container-icone"><a [routerLink]="['/editar-usuario', funcionarios.id]">
-                                <img src="../assets/img/EditarCinza.png" class="btn-editar"
-                                    alt="Ícone para a página de alteração do produto"></a></td>
-                    </tr>
-                </tbody>
-            </table>
+    
+        <div class="botao">
+            <a href="../Paginas/CadastroDeUsuario.html"><button type="button" id="btn-confirmar">Cadastrar Novo</button></a>
         </div>
+    
     </div>
-
-    <div class="paginas">
-        <nav aria-label="Page navigation example">
-            <ul class="pagination">
-                <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Previous" style="color: black;">
-                        <span aria-hidden="true">&laquo;</span>
-                    </a>
-                </li>
-                <li class="page-item"><a class="page-link" href="#" style="color: black;">Anterior</a></li>
-                <li class="page-item"><a class="page-link" href="#" style="color: black;">Próximo</a></li>
-                <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Next" style="color: black;">
-                        <span aria-hidden="true">&raquo;</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </div>
-
-    <div class="botao">
-        <a href="../Paginas/CadastroDeUsuario.html"><button type="button" id="btn-confirmar">Cadastrar Novo</button></a>
-    </div>
-
-</div>
+</body>
+</html>
