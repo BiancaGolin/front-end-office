@@ -45,7 +45,7 @@ export class CadastrarUsuarioComponent implements OnInit {
     } else {
       this.authService.cadastrar(this.usuario).subscribe((resp: Usuario) =>{
         this.usuario = resp
-        this.router.navigate(['/home'])
+        this.router.navigate(['/listar-usuario'])
         if(this.usuario.email == 'email ja cadastrado'){
         console.log("email  ja cadastrado step")
         this.router.navigate(['/cadastrar-usuario'])
