@@ -9,21 +9,6 @@
         </div>
     </header>
 
-    <ul class="nav justify-content-center" id="navegacao">
-        <li class="nav-item">
-            <a class="nav-link" routerLink='/listar-produto'>Listar Produto</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" routerLink='/cadastro-produto'>Cadastro Produto</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" routerLink='/cadastrar-usuario'>Cadastro Usuario</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" routerLink='/cadastrar-usuario'>Listar Usuário</a>
-        </li>
-    </ul>
-
     <div id="linha"></div>
 
     <br>
@@ -58,9 +43,14 @@
                         <td><a href="../Paginas/CadastroProduto.html"> <span *ngIf="funcionarios.statusUsuario; else elseStatus">Ativo</span>
                             <ng-template #elseStatus>Inativo</ng-template>
                         </a></td>
-                        <td class="container-icone"><a [routerLink]="['/editar-usuario', funcionarios.id]">
+
+                        <td class="container-icone">
+                            <a *ngIf="usuarioLogadoAdmin" [routerLink]="['/editar-usuario', funcionarios.id]">
                                 <img src="../assets/img/EditarCinza.png" class="btn-editar"
-                                    alt="Ícone para a página de alteração do produto"></a></td>
+                                    alt="Ícone para a página de alteração do produto">
+                            </a>
+                        </td>
+
                     </tr>
                 </tbody>
             </table>
@@ -87,7 +77,8 @@
     </div>
 
     <div class="botao">
-        <a href="../Paginas/CadastroDeUsuario.html"><button type="button" id="btn-confirmar">Cadastrar Novo</button></a>
+        <button type="submit" id="btn-cancelar" routerLink='/backoffice'>Cancelar</button>
+        <button type="button" id="btn-confirmar" routerLink='/cadastrar-usuario'>Cadastrar Novo</button>
     </div>
 
 </div>

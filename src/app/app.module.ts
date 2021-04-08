@@ -19,6 +19,7 @@ import { CadastrarUsuarioComponent } from './cadastrar-usuario/cadastrar-usuario
 import { ListarUsuarioComponent } from './listar-usuario/listar-usuario.component';
 import { EditarUsuarioComponent } from './editar-usuario/editar-usuario.component';
 import { LoginUsuarioComponent } from './login-usuario/login-usuario.component';
+import { BackofficeComponent } from './backoffice/backoffice.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { LoginUsuarioComponent } from './login-usuario/login-usuario.component';
     CadastrarUsuarioComponent,
     ListarUsuarioComponent,
     EditarUsuarioComponent,
-    LoginUsuarioComponent
+    LoginUsuarioComponent,
+    BackofficeComponent
   ],
   imports: [
     BrowserModule,

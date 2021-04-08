@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment.prod';
 import { Produto } from '../model/Produto';
 import { ProdutoService } from '../service/produto.service';
 
@@ -10,12 +11,14 @@ import { ProdutoService } from '../service/produto.service';
 export class HomeComponent implements OnInit {
 
   listaProdutos: Produto[]
+  usuarioLogado: boolean
 
   constructor(
     private produtoService: ProdutoService
   ) { }
 
   ngOnInit() {
+    this.usuarioLogado = this.checaUsuarioLogado();
     this.findAllProdutos()
   }
 
@@ -25,5 +28,15 @@ export class HomeComponent implements OnInit {
       console.log(resp)
     })
 
+  }
+
+  checaUsuarioLogado(){
+    if(environment.nomeUsuario != ''){
+      console.log("usuario ta logado")
+      console.log(environment.nomeUsuario)
+      return true;
+    }
+    console.log("usuario nao ta logado")
+    return false;
   }
 }

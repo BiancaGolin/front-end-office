@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { BackofficeComponent } from './backoffice/backoffice.component';
 import { CadastrarUsuarioComponent } from './cadastrar-usuario/cadastrar-usuario.component';
 import { CadastroProdutoComponent } from './cadastro-produto/cadastro-produto.component';
 import { ComprarProdutoComponent } from './comprar-produto/comprar-produto.component';
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'editar-produto', component: EditarProdutoComponent },
   { path: 'cadastrar-usuario', component: CadastrarUsuarioComponent },
   { path: 'listar-usuario', component: ListarUsuarioComponent },
+  { path: 'backoffice', component: BackofficeComponent },
   { path: 'login-usuario', component: LoginUsuarioComponent },
   { path: 'editar-produto/:id', component: EditarProdutoComponent},
   { path: 'editar-usuario/:id', component: EditarUsuarioComponent},

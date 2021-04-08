@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment.prod';
+import { UsuarioLogin } from '../model/UsuarioLogin';
+import { AlertasService } from '../service/alertas.service';
+import { AuthService } from '../service/auth.service';
 
 @Component({
   selector: 'app-login-usuario',
@@ -7,9 +12,38 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginUsuarioComponent implements OnInit {
 
-  constructor() { }
+  usuarioLogin: UsuarioLogin = new UsuarioLogin()
 
-  ngOnInit(): void {
+  constructor(
+    private alerta : AlertasService,
+    private authService: AuthService,
+    private router: Router
+  ) { }
+
+  ngOnInit() {
+  }
+
+  entrar() {
+    
+    this.authService.entrar(this.usuarioLogin).subscribe((resp: UsuarioLogin ) => {
+      this.usuarioLogin = resp
+      environment.token = this.usuarioLogin.token
+      environment.nomeUsuario = this.usuarioLogin.nomeUsuario
+      environment.email = this.usuarioLogin.email
+      environment.tipoUsuario = this.usuarioLogin.tipoUsuario
+      environment.statusUsuario = this.usuarioLogin.statusUsuario
+      console.log(environment.token)
+      console.log(environment.email)
+    
+     
+     
+      this.router.navigate(['/backoffice'])
+    }, erro =>{
+      if(erro.status == 500){
+        this.alerta.showAlertDanger('Usuario ou senha incorretos!')
+        
+      }
+    })
   }
 
 }

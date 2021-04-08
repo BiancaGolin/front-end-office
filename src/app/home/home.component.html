@@ -13,22 +13,14 @@
                     aria-label="Pesquisar">
                 <button type="submit" id="btn-pesquisar">Pesquisar</button>
             </form>
-            <button type="submit" id="btn-pesquisar" a routerLink='/login-usuario'>Login</button>
+            <button *ngIf="!usuarioLogado" type="submit" id="btn-pesquisar" routerLink='/login-usuario'>Login</button>
         </nav>
     </header>
-
-    <ul class="nav justify-content-center" id="navegacao">
-        <li class="nav-item">
-            <a class="nav-link" routerLink='/listar-produto'>Listagem</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" routerLink='/cadastro-produto'>Cadastro</a>
-        </li>
-    </ul>
+    <br>
     <div id="linha"></div>
 
     <div class="container">
-        <div class="card mt-3" *ngFor="let mercadoria of listaProdutos">
+        <div class="card mt-4" *ngFor="let mercadoria of listaProdutos">
             <img class="card-img-top" src="{{mercadoria.imagem[0].path}}" alt="Imagem de capa do card">
             <div class="card-body">
                 <h5 class="card-title">{{mercadoria.nomeProduto}}</h5>

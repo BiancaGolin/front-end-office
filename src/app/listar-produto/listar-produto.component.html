@@ -5,19 +5,10 @@
             <a routerLink='/home'><img id="logo" src="../assets/img/LogoMercadogue.png" alt="Logo Mercadogue"></a>
         </div>
         <div id="titulo">
-            <h2>Listagem de Produtos</h2>
+            <h2>Listagem de Produto</h2>
         </div>
     </header>
-    
-    <ul class="nav justify-content-center" id="navegacao">
-        <li class="nav-item">
-            <a class="nav-link" routerLink='/listar-produto'>Listagem</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" routerLink='/cadastro-produto'>Cadastro</a>
-        </li>
-    </ul>
-    
+
     <div id="linha"></div>
     
     <br>
@@ -85,7 +76,8 @@
     </div>
         
     <div class="botao">
-        <button type="button" id="btn-confirmar">Cadastrar Novo</button>
+        <button type="submit" id="btn-cancelar" routerLink='/backoffice'>Cancelar</button>
+        <a routerLink='/cadastro-produto'> <button type="button" id="btn-confirmar">Cadastrar Novo</button></a>
     </div>
 
 </div>
