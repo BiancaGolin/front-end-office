@@ -1,42 +1,11 @@
-
-    <div class="container-large">
-        
-        <header>
-            <div id="container-logo">
-                <a routerLink='/home'><img id="logo" src="../assets/img/LogoMercadogue.png" alt="Logo Mercadogue"></a>
-            </div>
-            <div id="titulo">
-                <h2>Cadastro de Funcionario</h2>
-            </div>
-        </header>
-
-        <div id="linha"></div>
-        
-        <br>
-        
-        <div id="Informacoes">
+<body>
+    <div class="form pt-4">
 
             <div class="form-group">
                 <label for="exampleFormControlInput1" class="label">
                     <span style="color: #F77759">*</span> Nome</label>
                 <input type="text" class="form-control" id="nome" placeholder="Nome do funcionário" [(ngModel)]='usuario.nomeUsuario'>
             </div>
-            <div class="form-group">
-                <label for="exampleFormControlInput1" class="label">
-                    <span style="color: #F77759"></span> CPF</label>
-                <input type="text" class="form-control" id="cpf" placeholder="CPF do funcionário">
-            </div>
-            <div class="form-group">
-                <label for="exampleFormControlInput1" class="label">
-                    <span style="color: #F77759"></span> Endereço</label>
-                <input type="text" class="form-control" id="Endereço" placeholder="Endereço do funcionário">
-            </div>
-            <div class="form-group">
-                <label for="exampleFormControlInput1" class="label">
-                    <span style="color: #F77759"></span> Nascimento</label>
-                <input type="date" class="form-control" id="Nascimento" placeholder="Nascimento do Funcionario - DD/MM/YYYY">
-            </div>    
-
             <div class="column-count">
                 <div class="form-group">
                     <label for="exampleFormControlInput1" class="label">
@@ -47,19 +16,18 @@
                         <option value="{{1}}">Estoquista</option>
                     </select>
                 </div>
-            </div>  
+             
 
                 <fieldset class="form-group">                    
                     <label for="exampleFormControlInput1" class="label">
                         <span style="color: #F77759">*</span>Status</label>
-                            <input
-                            type="radio" name="statusUsuario" value="{{1}}" (change)="radioChangeHandler($event)" checked>
-                            <p>Ativo</p>
-    <br>
-                            <input
-                            type="radio" name="statusUsuario" value="{{0}}" (change)="radioChangeHandler($event)">
-                            <p>Inativo</p>
+                        <br>
+                            <input type="radio" name="statusUsuario" value="{{1}}" (change)="radioChangeHandler($event)" checked>
+                            Ativo
+                            <input class="ml-5" type="radio" name="statusUsuario" value="{{0}}" (change)="radioChangeHandler($event)">
+                            Inativo
                 </fieldset>
+            </div> 
 
             
             <br>
@@ -78,16 +46,9 @@
                 </div>
             </div>        
             <br>
-            <div class="form-group">
-                <label for="exampleFormControlInput1" class="label">
-                    <span style="color: #F77759"></span> Foto</label>
-                <input type="file" class="form-control" id="imagem1" placeholder="Escolha sua imagem"><br>
-            </div>
             <div class="botoes">
                 <button type="submit" id="btn-cancelar" routerLink='/backoffice'>Cancelar</button>
                 <button type="submit" id="btn-confirmar" (click)='cadastrar()'>Confirmar</button>
             </div>
 
         </div>
-
-    </div>

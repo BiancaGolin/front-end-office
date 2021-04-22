@@ -9,6 +9,7 @@ import { EditarUsuarioComponent } from './editar-usuario/editar-usuario.componen
 import { HomeComponent } from './home/home.component';
 import { ListarProdutoComponent } from './listar-produto/listar-produto.component';
 import { ListarUsuarioComponent } from './listar-usuario/listar-usuario.component';
+import { LoginClienteComponent } from './login-cliente/login-cliente.component';
 import { LoginUsuarioComponent } from './login-usuario/login-usuario.component';
 import { VisualizarProdutoComponent } from './visualizar-produto/visualizar-produto.component';
 
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: 'listar-usuario', component: ListarUsuarioComponent },
   { path: 'backoffice', component: BackofficeComponent },
   { path: 'login-usuario', component: LoginUsuarioComponent },
+  { path: 'login-cliente', component: LoginClienteComponent },
   { path: 'editar-produto/:id', component: EditarProdutoComponent},
   { path: 'editar-usuario/:id', component: EditarUsuarioComponent},
   { path: 'visualizar-produto/:id', component: VisualizarProdutoComponent},

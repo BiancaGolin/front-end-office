@@ -1,20 +1,5 @@
-<div class="container-large">
-    
-    <header>
-        <div id="container-logo">
-            <a routerLink='/home'><img id="logo" src="../assets/img/LogoMercadogue.png" alt="Logo Mercadogue"></a>
-        </div>
-        <div id="titulo">
-            <h2>Cadastro de Produto</h2>
-        </div>
-    </header>
-    
-    <div id="linha"></div>
-    
-    <br>
-    
-
-
+<body>
+    <div class="form pt-4">
         <div class="form-group">
             <label for="exampleFormControlInput1" class="label">
                 <span style="color: #F77759">*</span>Nome</label>
@@ -24,47 +9,48 @@
         <div class="form-group">
             <label for="exampleFormControlTextarea1" class="label">
                 <span style="color: #F77759">*</span>Descrição</label>
-              <textarea class="form-control" id="descricao" rows="3" [(ngModel)]='produto.nomeExtenso'></textarea>
+            <textarea class="form-control" id="descricao" rows="3" [(ngModel)]='produto.nomeExtenso'></textarea>
         </div>
-        
+
         <div class="column-count">
+
             <div class="form-group">
                 <label for="exampleFormControlInput1" class="label">
                     <span style="color: #F77759">*</span>Estrelas</label>
                 <select class="custom-select" id="estrelas" [(ngModel)]='produto.qtdEstrelas'>
                     <option selected>Selecione</option>
-                    <option value="1" >1</option>
+                    <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
                     <option value="4">4</option>
                     <option value="5">5</option>
                 </select>
             </div>
-        </div>
-            
-            <div class="form-group">
-                <label for="exampleFormControlTextarea1" class="label">
-                    <span style="color: #F77759">*</span>Estoque</label>
-                <input type="text" class="form-control" id="estoque" [(ngModel)]='produto.qtdEstoque'>
-            </div>
-            
-            <div class="form-group">
-                <label for="exampleFormControlInput1" class="label">
-                    <span style="color: #F77759">*</span>Preço</label>
-                <input type="text" class="form-control" id="preco"  pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?$" [(ngModel)]='produto.preco'>
-            </div>
+        
 
-            <fieldset class="form-group">                    
-                <label for="exampleFormControlInput1" class="label">
-                    <span style="color: #F77759">*</span>Status</label>
-                        <input
-                        type="radio" name="statusProduto" value="{{1}}" (change)="radioChangeHandler($event)">
-                        <i>Ativo</i>
-<br>
-                        <input
-                        type="radio" name="statusProduto" value="{{0}}" (change)="radioChangeHandler($event)">
-                        <i>Inativo</i>
-                    <!--                   
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1" class="label">
+                <span style="color: #F77759">*</span>Estoque</label>
+            <input type="text" class="form-control" id="estoque" [(ngModel)]='produto.qtdEstoque'>
+        </div>
+
+        <div class="form-group">
+            <label for="exampleFormControlInput1" class="label">
+                <span style="color: #F77759">*</span>Preço</label>
+            <input type="text" class="form-control" id="preco" pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?$"
+                [(ngModel)]='produto.preco'>
+        </div>
+
+        <fieldset class="form-group">
+            <label for="exampleFormControlInput1" class="label">
+                <span style="color: #F77759">*</span>Status</label>
+                <br>
+            <input type="radio" name="statusProduto" value="{{1}}" (change)="radioChangeHandler($event)">
+            Ativo
+            
+            <input class="ml-5" type="radio" name="statusProduto" value="{{0}}" (change)="radioChangeHandler($event)">
+            Inativo
+            <!--                   
                 <div class="column-count-status">
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="Ativacao" id="Ativo" value="true">
@@ -79,8 +65,10 @@
                         </label>
                     </div>
                 </div>
-            -->                    
-            </fieldset>
+            -->
+        </fieldset>
+
+    </div>
 
         <br>
 
@@ -95,7 +83,7 @@
                     <img id="btn-adicionar-img" src="../assets/img/minus.svg" alt="" (click)="removeToList(i)">
                 </li>
             </ul>
-            
+
         </div>
 
         <div class="botoes">
@@ -103,4 +91,4 @@
             <button type="submit" id="btn-confirmar" (click)='salvar()'>Salvar</button>
         </div>
 
-</div>
+    </div>

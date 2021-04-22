@@ -7,10 +7,6 @@ body{
     font-family: Calibri;
 }
 
-.bg {
-    background-color: #efefef;
-}
-
 /*Header*/
 #container-logo{
     margin-left: 1.5vw;
@@ -54,6 +50,11 @@ body{
 }
 
 /*Labels e campos de preenchimento*/
+
+.form{
+    margin: 0 5vw;
+}
+
 .label{
     color: #5560AA;
     font-family: 'Century Gothic', sans-serif;

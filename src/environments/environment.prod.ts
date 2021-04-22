@@ -9,6 +9,12 @@ export const environment = {
   id : 0,
   senha: '',
   tipoUsuario: 0,
-  statusUsuario: true
+  statusUsuario: true,
+
+
+  nomeCliente: '',
+  emailCliente: '',
+  senhaCliente: '',
+  tokenCliente: ''
 
 };

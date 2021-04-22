@@ -1,38 +1,35 @@
-<div class="container-large">
+<body>
+    <div class="container-large">
 
-    <header>
-        <nav class="navbar navbar-light" style="background-color: #5560AA;">
-            <div id="container-logo">
-                <a routerLink='/home'><img id="logo" src="../assets/img/LogoMercadogue.png" alt="Logo Mercadogue"></a>
-            </div>
-            <div id="titulo">
-                <h2>Mercadogue</h2>
-            </div>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-3" type="search" placeholder="Procure no Mercadogue"
-                    aria-label="Pesquisar">
-                <button type="submit" id="btn-pesquisar">Pesquisar</button>
-            </form>
-            <button *ngIf="!usuarioLogado" type="submit" id="btn-pesquisar" routerLink='/login-usuario'>Login</button>
-        </nav>
-    </header>
-    <br>
-    <div id="linha"></div>
+        <div id="linha"></div>
 
-    <div class="container">
-        <div class="card mt-4" *ngFor="let mercadoria of listaProdutos">
-            <img class="card-img-top" src="{{mercadoria.imagem[0].path}}" alt="Imagem de capa do card">
-            <div class="card-body">
-                <h5 class="card-title">{{mercadoria.nomeProduto}}</h5>
-                <img class="estrela" src="../assets/img/estrela.png" alt="">
-                <p>{{mercadoria.qtdEstrelas}}</p>
-                <h4>R${{mercadoria.preco}}</h4>
-            </div>
-            <div class="card-body">
-                <a [routerLink]="['/comprar-produto', mercadoria.id]" class="card-link">
-                    <button type="submit" id="btn-pesquisar">Comprar</button>
-                </a>
+        <div class="row" id="pagina-atual">
+            <h5>Compre no Mercadogue</h5>
+        </div>
+
+        <div class="container">
+            <div class="card-deck" *ngFor="let mercadoria of listaProdutos">
+                <div class="card">
+                    <img class="card-img-top" src="{{mercadoria.imagem[0].path}}" alt="Imagem de capa do card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{mercadoria.nomeProduto}}</h5>
+                        <img class="estrela" src="../assets/img/estrela.png" alt="">
+                        <p>{{mercadoria.qtdEstrelas}}</p>
+                        <h4>R${{mercadoria.preco}}</h4>
+                    </div>
+                    <div class="card-body align-self-center">
+                        <a [routerLink]="['/comprar-produto', mercadoria.id]" class="card-link">
+                            <button type="submit" id="btn-pesquisar">Comprar</button>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</div>
+
+        <footer class="text-center">
+            <div class="text-center p-3">
+                Mercadogue Pet Shop | CNPJ 01.234.567/8901-23 |
+                São Paulo, SP - Brasil - CEP 01234-567 |
+                Copyright© 2021 Mercadogue Pet Shop - Todos os direitos reservados
+            </div>
+        </footer>

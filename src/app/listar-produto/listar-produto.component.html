@@ -1,25 +1,54 @@
+<body>
 <div class="container-large">
 
-    <header>
-        <div id="container-logo">
-            <a routerLink='/home'><img id="logo" src="../assets/img/LogoMercadogue.png" alt="Logo Mercadogue"></a>
-        </div>
-        <div id="titulo">
-            <h2>Listagem de Produto</h2>
-        </div>
-    </header>
-
-    <div id="linha"></div>
+    <div class="row pt-5" id="pagina-atual">
+        <h5 class="mr-5">Pesquisar</h5>
     
-    <br>
-
     <div class="Linha">
         <div class="pesquisar">
-            <!-- <form class="form-inline my-2 my-lg-0"> -->
                 <input class="form-control mr-sm-2" type="search" placeholder="Digite o nome do produto" aria-label="Search"
-                    style="width: 300px;" [(ngModel)]='nomeProduto' (keyup)='findByNomeProduto()'>
-            <!-- </form> -->
+                    style="width: 500px;" [(ngModel)]='nomeProduto' (keyup)='findByNomeProduto()'>
         </div>
+    </div>
+</div>
+
+    <div class="table-responsive">
+        <table class="table">
+            <thead class="thead" style="background-color: #00d8c9;color: whitesmoke;">
+                <tr>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Estoque</th>
+                    <th scope="col">Preço</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Editar</th>
+                    <th scope="col">Visualizar</th>
+                </tr>
+            </thead>
+            <tbody *ngFor='let mercadoria of listaProduto | slice:0:5; let i=index'>
+                <tr>
+                    <td>{{mercadoria.nomeProduto}}</td>
+                    <td>{{mercadoria.qtdEstoque}}</td>
+                    <td>{{mercadoria.preco | currency:'BRL':'symbol':'0.1-2'}}</td>
+                    <td><a [routerLink]="['/editar-produto', mercadoria.id]"><span *ngIf="mercadoria.status; else elseBlock">Ativo</span>
+                        <ng-template #elseBlock>Inativo</ng-template></a></td>
+
+
+                        <!-- <button type="button" name="ativo" value={{1}} (click)="radioChangeHandler($event)" (click)="salvar(mercadoria.id)">ativo (inativar)</button> -->
+
+
+                    <td class="container-icone">
+                        <a [routerLink]="['/editar-produto', mercadoria.id]">
+                            <img src="../assets/img/EditarCinza.png" class="btn-editar" alt="Ícone para a página de alteração do produto">
+                        </a>
+                    </td>
+                    <td class="container-icone">
+                        <a [routerLink]="['/visualizar-produto', mercadoria.id]">
+                        <img src="../assets/img/VisualizarCinza.png" class="btn-visualizar"alt="Ícone para a página de visualização do produto">
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 
     <div class="table-responsive">
@@ -34,7 +63,44 @@
                     <th scope="col">Visualizar</th>
                 </tr>
             </thead>
-            <tbody *ngFor='let mercadoria of listaProduto'>
+            <tbody *ngFor='let mercadoria of listaProduto | slice:5:10; let i=index'>
+                <tr>
+                    <td>{{mercadoria.nomeProduto}}</td>
+                    <td>{{mercadoria.qtdEstoque}}</td>
+                    <td>{{mercadoria.preco | currency:'BRL':'symbol':'0.1-2'}}</td>
+                    <td><a routerLink='/cadastro-produto'><span *ngIf="mercadoria.status; else elseBlock">Ativo</span>                        
+                        <ng-template #elseBlock>Inativo</ng-template></a></td>
+
+                        
+
+                    <td class="container-icone">
+                        <a [routerLink]="['/editar-produto', mercadoria.id]">
+                            <img src="../assets/img/EditarCinza.png" class="btn-editar" alt="Ícone para a página de alteração do produto">
+                        </a>
+                    </td>
+                    <td class="container-icone">
+                        <a [routerLink]="['/visualizar-produto', mercadoria.id]">
+                        <img src="../assets/img/VisualizarCinza.png" class="btn-visualizar"alt="Ícone para a página de visualização do produto">
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table">
+            <thead class="thead" style="background-color: #00d8c9;color: whitesmoke;">
+                <tr>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Estoque</th>
+                    <th scope="col">Preço</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Editar</th>
+                    <th scope="col">Visualizar</th>
+                </tr>
+            </thead>
+            <tbody *ngFor='let mercadoria of listaProduto | slice:10:20; let i=index'>
                 <tr>
                     <td>{{mercadoria.nomeProduto}}</td>
                     <td>{{mercadoria.qtdEstoque}}</td>
@@ -56,6 +122,8 @@
         </table>
     </div>
 
+    
+
     <div class="paginas">
         <nav aria-label="Page navigation example">
             <ul class="pagination">
@@ -64,8 +132,9 @@
                         <span aria-hidden="true">&laquo;</span>
                     </a>
                 </li>
-                <li class="page-item"><a class="page-link" href="#" style="color: black;">Anterior</a></li>
-                <li class="page-item"><a class="page-link" href="#" style="color: black;">Próximo</a></li>
+                <li class="page-item"><a class="page-link" routerLink='/listar-produto' style="color: black;">1</a></li>
+                <li class="page-item"><a class="page-link" routerLink='/listar-produto' style="color: black;">2</a></li>
+                <li class="page-item"><a class="page-link" routerLink='/listar-produto' style="color: black;">3</a></li>
                 <li class="page-item">
                     <a class="page-link" href="#" aria-label="Next" style="color: black;">
                         <span aria-hidden="true">&raquo;</span>

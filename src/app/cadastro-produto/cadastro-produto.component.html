@@ -1,96 +1,85 @@
-<div class="bg"></div>
-<div class="container-large">
-    <header>
-        <div id="container-logo">
-            <a routerLink='/home'><img id="logo" src="../assets/img/LogoMercadogue.png" alt="Logo Mercadogue"></a>
-        </div>
-        <div id="titulo">
-            <h2>Cadastro de Produto</h2>
-        </div>
-    </header>
-    
-    <div id="linha"></div>
-    
-    <br>
+<body>
+    <div class="form pt-4">
 
+    <div class="form-group">
+        <label for="exampleFormControlInput1" class="label">
+            <span style="color: #F77759">*</span>Nome</label>
+        <input type="text" class="form-control" id="nome" placeholder="Digite o nome do produto"
+            [(ngModel)]='produto.nomeProduto'>
+    </div>
+
+    <div class="form-group">
+        <label for="exampleFormControlTextarea1" class="label">
+            <span style="color: #F77759">*</span>Descrição</label>
+        <textarea class="form-control" id="descricao" rows="3" placeholder="Digite a descrição do produto"
+            [(ngModel)]='produto.nomeExtenso'></textarea>
+    </div>
+
+    <div class="column-count">
 
         <div class="form-group">
             <label for="exampleFormControlInput1" class="label">
-                <span style="color: #F77759">*</span>Nome</label>
-            <input type="text" class="form-control" id="nome" placeholder="Digite o nome do produto" [(ngModel)]='produto.nomeProduto'>
+                <span style="color: #F77759">*</span>Estrelas</label>
+            <select class="custom-select" id="estrelas" [(ngModel)]='produto.qtdEstrelas'>
+                <option selected>Selecione</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
         </div>
+    
 
         <div class="form-group">
             <label for="exampleFormControlTextarea1" class="label">
-                <span style="color: #F77759">*</span>Descrição</label>
-              <textarea class="form-control" id="descricao" rows="3" placeholder="Digite a descrição do produto" [(ngModel)]='produto.nomeExtenso'></textarea>
+                <span style="color: #F77759">*</span>Estoque</label>
+            <input type="text" class="form-control" id="estoque" placeholder="0000" [(ngModel)]='produto.qtdEstoque'>
         </div>
-        
-        <div class="column-count">
-            <div class="form-group">
-                <label for="exampleFormControlInput1" class="label">
-                    <span style="color: #F77759">*</span>Estrelas</label>
-                <select class="custom-select" id="estrelas" [(ngModel)]='produto.qtdEstrelas'>
-                    <option selected>Selecione</option>
-                    <option value="1" >1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                </select>
-            </div>
-        </div>
-            
-            <div class="form-group">
-                <label for="exampleFormControlTextarea1" class="label">
-                    <span style="color: #F77759">*</span>Estoque</label>
-                <input type="text" class="form-control" id="estoque" placeholder="0000" [(ngModel)]='produto.qtdEstoque'>
-            </div>
-            
-            <div class="form-group">
-                <label for="exampleFormControlInput1" class="label">
-                    <span style="color: #F77759">*</span>Preço</label>
-                <input type="text" class="form-control" id="preco"  pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?$" placeholder="0000,00" [(ngModel)]='produto.preco'>
-            </div>
-
-            <fieldset class="form-group">                    
-                <label for="exampleFormControlInput1" class="label">
-                    <span style="color: #F77759">*</span>Status</label>
-                        <input
-                        type="radio" name="statusProduto" value="{{1}}" (change)="radioChangeHandler($event)">
-                        <p>Ativo</p>
-<br>
-                        <input
-                        type="radio" name="statusProduto" value="{{0}}" (change)="radioChangeHandler($event)">
-                        <p>Inativo</p>
-                  
-            </fieldset>
-
-        <br>
 
         <div class="form-group">
             <label for="exampleFormControlInput1" class="label">
-                <span style="color: #F77759">*</span>
-                Imagem
-            </label>
-            <ul>
-                <input type="text" class="form-control" [(ngModel)]="imgPathInput">
-                <img id="btn-adicionar-img" src="../assets/img/add.svg" alt="" (click)="addToList()">
+                <span style="color: #F77759">*</span>Preço</label>
+            <input type="text" class="form-control" id="preco" pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?$" placeholder="0000,00"
+                [(ngModel)]='produto.preco'>
+        </div>
 
-                <li *ngFor="let imagem of produto.imagem; let i = index">
-                    <span *ngIf="prevImgListUrl[i] !== undefined" ><img [src]="prevImgListUrl[i]" width="100px" height="100px"/></span>
-                    <label>{{imagem.path}}</label>
-                    <br/>
-                    <input type="file" name="myfile" (change)="addImage($event)">
-                    <img id="btn-adicionar-img" src="../assets/img/minus.svg" alt="" (click)="removeToList(i)">
-                </li>
-            </ul>
+        <div class="form-group">
+            <label for="exampleFormControlInput1" class="label">
+                <span style="color: #F77759">*</span>Status</label>
+                <br>
+            <input type="radio" name="statusProduto" value="{{1}}" (change)="radioChangeHandler($event)">
+            Ativo
+            <input class="ml-5" type="radio" name="statusProduto" value="{{0}}" (change)="radioChangeHandler($event)">
+            Inativo
+        </div>
+    </div>
     
-        </div>
+    <br>
 
-        <div class="botoes">
-            <button type="submit" id="btn-cancelar" routerLink='/backoffice'>Cancelar</button>
-            <button type="submit" id="btn-confirmar" (click)='cadastrar()'>Confirmar</button>
-        </div>
+    <div class="form-group">
+        <label for="exampleFormControlInput1" class="label">
+            <span style="color: #F77759">*</span>
+            Imagem
+        </label>
+        <ul>
+            <input type="text" class="form-control" [(ngModel)]="imgPathInput">
+            <img id="btn-adicionar-img" src="../assets/img/add.svg" alt="" (click)="addToList()">
 
+            <li *ngFor="let imagem of produto.imagem; let i = index">
+                <span *ngIf="prevImgListUrl[i] !== undefined"><img [src]="prevImgListUrl[i]" width="100px"
+                        height="100px" /></span>
+                <label>{{imagem.path}}</label>
+                <br />
+                <input type="file" name="myfile" (change)="addImage($event)">
+                <img id="btn-adicionar-img" src="../assets/img/minus.svg" alt="" (click)="removeToList(i)">
+            </li>
+        </ul>
+
+    </div>
+
+    <div class="botoes">
+        <button type="submit" id="btn-cancelar" routerLink='/backoffice'>Cancelar</button>
+        <button type="submit" id="btn-confirmar" (click)='cadastrar()'>Confirmar</button>
+    </div>
 </div>

@@ -1,0 +1,110 @@
+<header>
+    <nav class="navbar navbar-light col-sm-12">
+        <!-- Logo -->
+        <div class="col-md-3 col-sm-8">
+            <div class="container-logo">
+                <a routerLink='/home'><img id="logo" src="../assets/img/LogoMercadogue.png"
+                        alt="Logo Mercadogue"></a>
+            </div>
+            <div class="titulo">
+                <a routerLink='/home'>
+                    <h2>Mercadogue</h2>
+                </a>
+            </div>
+        </div>
+
+        <!-- Pesquisa -->
+        <div class="col-md-6 float-left" id="pesquisa">
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-3 col-md-9" id="pesquisa-input" type="search"
+                    placeholder="Procure no Mercadogue" aria-label="Pesquisar">
+                <button type="submit" id="btn-pesquisar">Pesquisar</button>
+            </form>
+        </div>
+
+        <!-- Login -->
+        <div class="col-md-1" id="login" *ngIf="auth.btnLogin()">
+            <a routerLink='/login-cliente'><img id="login" src="../assets/img/Login.png" alt="Login"></a>
+        </div>
+        <div class="col-md-1" id="info-login">
+            <a routerLink='/login-cliente'>
+                <p id="info-login1"><b>Olá! Faça o seu login </b></p>
+                <p id="info-login2">ou cadastre-se</p>
+            </a>
+        </div>
+
+        <!-- Se usuario logado, aparece botão de SAIR -->
+        <div *ngIf='auth.bntSair()'>
+            <a class="nav-link text-uppercase text-light" (click)='sair()'>Sair</a>
+        </div>
+
+        <!-- Se usuario logago, aparece uma mensagem "Olá, {nome do usuario cadastrado no BD}" -->
+        <div *ngIf='auth.bntSair()'>
+            <p class="nav-link text-uppercase text-light">Olá, {{nomeClient}}</p>
+        </div>
+
+        <!-- Cesta EM IMPLEMENTAÇAO-->
+        <div class="col-md-1" id="cesta">
+            <a href="cesta.html"><img id="cesta" src="../assets/img/Cesta.png" alt="Cesta de compras"></a>
+        </div>
+    </nav>
+
+    <!-- Menu -->
+    <nav class="navbar navbar-expand-lg justify-content-center" id="menu" style="background-color: white">
+        <ul class="navbar-nav">
+            <!-- Menu dropdown Cães -->
+            <li class="nav-item dropdown mr-5" id="navbarDropdown1">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Cães
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Alimentos</a>
+                    <a class="dropdown-item" href="#">Acessórios</a>
+                    <a class="dropdown-item" href="#">Roupas</a>
+                    <a class="dropdown-item" href="#">Brinquedos</a>
+                    <a class="dropdown-item" href="#">Higiene</a>
+                    <a class="dropdown-item" href="#">Farmácia</a>
+                </div>
+            </li>
+
+            <!-- Menu dropdown Gatos -->
+            <li class="nav-item dropdown mr-5" id="navbarDropdown2">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Gatos
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Alimentos</a>
+                    <a class="dropdown-item" href="#">Acessórios</a>
+                    <a class="dropdown-item" href="#">Roupas</a>
+                    <a class="dropdown-item" href="#">Brinquedos</a>
+                    <a class="dropdown-item" href="#">Higiene</a>
+                    <a class="dropdown-item" href="#">Farmácia</a>
+                </div>
+            </li>
+
+            <!-- Categorias -->
+            <li class="nav-item mr-5" id="nav-item-categoria">
+                <a class="nav-link" href="#">Alimentos</a>
+            </li>
+            <li class="nav-item mr-5" id="nav-item-categoria">
+                <a class="nav-link" href="#">Acessórios</a>
+            </li>
+            <li class="nav-item mr-5" id="nav-item-categoria">
+                <a class="nav-link" href="#">Roupas</a>
+            </li>
+            <li class="nav-item mr-5" id="nav-item-categoria">
+                <a class="nav-link" href="#">Brinquedos</a>
+            </li>
+            <li class="nav-item mr-5" id="nav-item-categoria">
+                <a class="nav-link" href="#">Higiene</a>
+            </li>
+            <li class="nav-item mr-5" id="nav-item-categoria">
+                <a class="nav-link" href="#">Farmácia</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<div id="linha"></div>

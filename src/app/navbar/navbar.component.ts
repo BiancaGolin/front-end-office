@@ -1,20 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
-import { Produto } from '../model/Produto';
 import { AlertasService } from '../service/alertas.service';
 import { AuthService } from '../service/auth.service';
 import { ProdutoService } from '../service/produto.service';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-navbar',
+  templateUrl: './navbar.component.html',
+  styleUrls: ['./navbar.component.css']
 })
-export class HomeComponent implements OnInit {
+export class NavbarComponent implements OnInit {
 
-  listaProdutos: Produto[]
-  usuarioLogado: boolean
   nomeClient = environment.nomeCliente
 
   constructor(
@@ -24,27 +21,7 @@ export class HomeComponent implements OnInit {
     private alerta: AlertasService
   ) { }
 
-  ngOnInit() {
-    this.usuarioLogado = this.checaUsuarioLogado();
-    this.findAllProdutos()
-  }
-
-  findAllProdutos() {
-    this.produtoService.getAllProduto().subscribe((resp: Produto[]) => {
-      this.listaProdutos = resp
-      console.log(resp)
-    })
-
-  }
-
-  checaUsuarioLogado(){
-    if(environment.nomeUsuario != ''){
-      console.log("usuario ta logado")
-      console.log(environment.nomeUsuario)
-      return true;
-    }
-    console.log("usuario nao ta logado")
-    return false;
+  ngOnInit(): void {
   }
 
   sair() {

@@ -47,7 +47,7 @@ body{
 }
 
 /*Labels e campos de preenchimento*/
-form{
+.form{
     margin: 0 5vw;
 }
 .label{

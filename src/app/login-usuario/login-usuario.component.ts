@@ -40,7 +40,7 @@ export class LoginUsuarioComponent implements OnInit {
       this.router.navigate(['/backoffice'])
     }, erro =>{
       if(erro.status == 500){
-        this.alerta.showAlertDanger('Usuario ou senha incorretos!')
+        this.alerta.showAlertDanger('Usuário ou senha incorretos!')
         
       }
     })

@@ -20,6 +20,8 @@ import { ListarUsuarioComponent } from './listar-usuario/listar-usuario.componen
 import { EditarUsuarioComponent } from './editar-usuario/editar-usuario.component';
 import { LoginUsuarioComponent } from './login-usuario/login-usuario.component';
 import { BackofficeComponent } from './backoffice/backoffice.component';
+import { LoginClienteComponent } from './login-cliente/login-cliente.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { BackofficeComponent } from './backoffice/backoffice.component';
     ListarUsuarioComponent,
     EditarUsuarioComponent,
     LoginUsuarioComponent,
-    BackofficeComponent
+    BackofficeComponent,
+    LoginClienteComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

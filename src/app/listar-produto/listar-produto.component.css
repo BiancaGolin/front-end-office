@@ -28,6 +28,15 @@ body{
     font-size: 2em;    
 }
 
+/* Página atual */
+#pagina-atual h5{
+    color: #5560AA;
+    font-family: Century Gothic;
+    font-weight: bolder;
+    text-align: left;
+    margin-left: 25vw;
+}
+
 /*Menu*/
 #navegacao{
     background-color: white;
@@ -48,13 +57,12 @@ form{
     margin: 0 5vw;
 }
 .Linha{
-        margin-top: 5%;
-        margin-bottom: 5%;
-        display: flex;
-        justify-content: space-around;
+    display: flex;
+    justify-content: space-around;
 }
 .table-responsive{
-    margin-bottom: 3%;
+    padding: 5%;
+    padding-top: 3%;
 }
 
 /*Botões e links*/
@@ -90,6 +98,24 @@ form{
 .pesquisar #btn-pesquisar:hover{
     border-color: #F77759;
 }
+
+.botao #btn-cancelar{    
+    background-color: #F77759;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.3);
+    border-color: transparent; 
+    font-weight: bold;
+    color: white;
+    padding: 8px 15px;
+    margin-right: 0.5vw;
+    outline: none;    
+}
+
+.botao #btn-cancelar:hover{
+    border-color: #F77759;
+}
+
+
 .container-icone{
     width: 10%;
 }
@@ -112,6 +138,7 @@ tbody a:hover{
 .form-control{
     border: none;
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+    text-align: left;
 }
 input:placeholder-shown{
     font-style: italic;
