@@ -17,6 +17,10 @@ export class AuthService {
     return this.http.post<UsuarioLogin>('http://localhost:8080/usuario/logar', usuarioLogin)
   }
 
+  validarCep(cep : string) : Observable<Boolean>{
+    return this.http.get<Boolean>(`http://localhost:8080/usuario/consultacep/${cep}`)
+  }
+
   cadastrar(usuario: Usuario): Observable<Usuario> {
     return this.http.post<Usuario>('http://localhost:8080/usuario/cadastrar', usuario)
   }
@@ -27,7 +31,6 @@ export class AuthService {
 
   getByIdUsuario(id : number) : Observable<Usuario>{
     return this.http.get<Usuario>(`http://localhost:8080/usuario/id/${id}`)
-
   }
 
   getByNomeUsuario(nome: string) : Observable<Usuario[]>{

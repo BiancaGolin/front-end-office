@@ -5,4 +5,5 @@ export class UsuarioLogin {
     public token: string
     public tipoUsuario: number
     public statusUsuario: boolean
+    public cep: string
 }
