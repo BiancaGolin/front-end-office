@@ -17,8 +17,8 @@ export class AuthService {
     return this.http.post<UsuarioLogin>('http://localhost:8080/usuario/logar', usuarioLogin)
   }
 
-  validarCep(cep : string) : Observable<Boolean>{
-    return this.http.get<Boolean>(`http://localhost:8080/usuario/consultacep/${cep}`)
+  validarCep(cep : String) : Observable<boolean>{
+    return this.http.get<boolean>(`http://localhost:8080/usuario/consultacep/${cep}`)
   }
 
   cadastrar(usuario: Usuario): Observable<Usuario> {
