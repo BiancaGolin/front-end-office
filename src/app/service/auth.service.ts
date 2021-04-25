@@ -21,9 +21,15 @@ export class AuthService {
     return this.http.get<boolean>(`http://localhost:8080/usuario/consultacep/${cep}`)
   }
 
+  validaNome(nome: String) : Observable<boolean>{
+    return this.http.get<boolean>(`http://localhost:8080/usuario/validanome/${nome}`)
+  }
+  
   cadastrar(usuario: Usuario): Observable<Usuario> {
     return this.http.post<Usuario>('http://localhost:8080/usuario/cadastrar', usuario)
   }
+
+
 
   getAllUsuarios() : Observable<Usuario[]> {
     return this.http.get<Usuario[]>('http://localhost:8080/usuario')
