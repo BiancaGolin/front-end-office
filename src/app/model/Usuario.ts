@@ -6,4 +6,5 @@ export class Usuario {
     public tipoUsuario: number
     public statusUsuario: boolean
     public cep: string
+    public cpf: string
 }

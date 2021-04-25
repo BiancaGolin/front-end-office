@@ -17,33 +17,37 @@ export class AuthService {
     return this.http.post<UsuarioLogin>('http://localhost:8080/usuario/logar', usuarioLogin)
   }
 
-  validarCep(cep : String) : Observable<boolean>{
+  validarCep(cep: String): Observable<boolean> {
     return this.http.get<boolean>(`http://localhost:8080/usuario/consultacep/${cep}`)
   }
 
-  validaNome(nome: String) : Observable<boolean>{
+  validaCpf(cpf: String): Observable<boolean> {
+    return this.http.get<boolean>(`http://localhost:8080/usuario/consultacpf/${cpf}`)
+  }
+
+  validaNome(nome: String): Observable<boolean> {
     return this.http.get<boolean>(`http://localhost:8080/usuario/validanome/${nome}`)
   }
-  
+
   cadastrar(usuario: Usuario): Observable<Usuario> {
     return this.http.post<Usuario>('http://localhost:8080/usuario/cadastrar', usuario)
   }
 
 
 
-  getAllUsuarios() : Observable<Usuario[]> {
+  getAllUsuarios(): Observable<Usuario[]> {
     return this.http.get<Usuario[]>('http://localhost:8080/usuario')
   }
 
-  getByIdUsuario(id : number) : Observable<Usuario>{
+  getByIdUsuario(id: number): Observable<Usuario> {
     return this.http.get<Usuario>(`http://localhost:8080/usuario/id/${id}`)
   }
 
-  getByNomeUsuario(nome: string) : Observable<Usuario[]>{
+  getByNomeUsuario(nome: string): Observable<Usuario[]> {
     return this.http.get<Usuario[]>(`http://localhost:8080/usuario/nomeUsuario/${nome}`)
   }
 
-  putUsuario(usuario: Usuario) : Observable<Usuario> {
+  putUsuario(usuario: Usuario): Observable<Usuario> {
     return this.http.put<Usuario>('http://localhost:8080/usuario/alterar', usuario)
   }
 }
