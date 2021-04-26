@@ -5,6 +5,7 @@ export class Usuario {
     public senha: string
     public tipoUsuario: number
     public statusUsuario: boolean
+    public endereco: string
     public cep: string
     public cpf: string
 }

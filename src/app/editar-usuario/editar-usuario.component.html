@@ -36,12 +36,18 @@
             <div class="form-group">
                 <label for="exampleFormControlInput1" class="label">
                     <span style="color: #F77759">*</span> CPF</label>
-                <input type="text" class="form-control" id="cpf" placeholder="CPF do funcionário">
+                <input type="text" class="form-control" id="cpf" placeholder="CPF do funcionário" 
+                [(ngModel)]='usuario.cpf' readonly>
             </div>
             <div class="form-group">
                 <label for="exampleFormControlInput1" class="label">
                     <span style="color: #F77759">*</span> Endereço</label>
-                <input type="text" class="form-control" id="Endereço" placeholder="Endereço do funcionário">
+                <input type="text" class="form-control" id="Endereco" [(ngModel)]='usuario.endereco' placeholder="Endereço do funcionário">
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlInput1" class="label">
+                    CEP</label>
+                <input type="text" class="form-control" id="Cep" placeholder="Cep do funcionário" [(ngModel)]='usuario.cep'>
             </div>
             <div class="form-group">
                 <label for="exampleFormControlInput1" class="label">
@@ -79,7 +85,8 @@
                 <div class="form-group col-md-6">
                     <label for="exampleFormControlInput1" class="label">
                         <span style="color: #F77759">*</span> @Usuário
-                        <input type="text" class="form-control" id="Usuario" placeholder="Usuário do funcionário" [(ngModel)]='usuario.email' readonly>
+                        <input type="text" class="form-control" id="Usuario" placeholder="Usuário do funcionário"
+                         [(ngModel)]='usuario.email' readonly>
                     </label>
                 </div>
                 <div class="form-group col-md-6">
