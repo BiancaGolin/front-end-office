@@ -67,9 +67,17 @@ export class CadastrarUsuarioComponent implements OnInit {
             this.alerta.showAlertInfo('Preencha o campo cargo')
           } else {
             this.authService.cadastrar(this.usuario).subscribe((resp: Usuario) => {
+
               this.usuario = resp
+
+              console.log("Teste usuario retorno: " + this.usuario)
+
               this.router.navigate(['/listar-usuario'])
-              if (this.usuario.email == 'email ja cadastrado') {
+             if(this.usuario.nomeUsuario == "CPF já cadastrado"){
+               this.usuario.nomeUsuario = ""
+              this.router.navigate(['/cadastrar-usuario'])
+              this.alerta.showAlertSucess('CPF já cadastrado, favor cadastrar outro CPF.')
+             }else if (this.usuario.email == 'email ja cadastrado') {
                 console.log("email  ja cadastrado step")
                 this.router.navigate(['/cadastrar-usuario'])
                 this.alerta.showAlertSucess('Email já cadastrado')
