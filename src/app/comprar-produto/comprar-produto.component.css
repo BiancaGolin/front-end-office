@@ -28,6 +28,14 @@ body{
     font-size: 2em;    
 }
 
+.descricao-p{
+    color: black;
+    font-family: Calibri;
+    font-size: large;
+    text-align: left;
+    margin-left: 1vw;
+}
+
 /*Menu*/
 #navegacao{
     background-color: white;
@@ -43,6 +51,10 @@ body{
 #linha{
     background-color: #C8C8C8;
     height: 5px;
+}
+
+.form{
+    margin: 0 5vw;
 }
 
 /*Produto*/

@@ -1,28 +1,18 @@
-<div class="container-large">
+<body>
+    <div class="container-large">
 
-    <header>
-        <div id="container-logo">
-            <a routerLink='/home'><img id="logo" src="../assets/img/LogoMercadogue.png" alt="Logo Mercadogue"></a>
+        <div class="row pt-4" id="pagina-atual">
+            <h5 class="mr-5">Pesquisar</h5>
+
+            <div class="Linha">
+                <div class="pesquisar">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Digite o nome do Funcionario"
+                        aria-label="Search" style="width: 500px;" [(ngModel)]='nomeUsuario'
+                        (keyup)='findByNomeUsuario()'>
+                </div>
+            </div>
         </div>
-        <div id="titulo">
-            <h2>Listagem de Funcionario</h2>
-        </div>
-    </header>
 
-    <div id="linha"></div>
-
-    <br>
-
-    <div class="Linha">
-        <div class="pesquisar">
-            <!-- <form class="form-inline my-2 my-lg-0"> -->
-                <input class="form-control mr-sm-2" type="search" placeholder="Digite o nome do Funcionario"
-                    aria-label="Search" style="width: 300px;" [(ngModel)]='nomeUsuario' (keyup)='findByNomeUsuario()'>
-         <!-- </form> -->
-        </div>
-    </div>
-
-    <div class="container-tabela">
         <div class="table-responsive">
             <table class="table">
                 <thead class="thead" style="background-color: #00d8c9;color: whitesmoke;">
@@ -34,15 +24,18 @@
                         <th scope="col">Editar</th>
                     </tr>
                 </thead>
-                <tbody *ngFor='let funcionarios of listaUsuarios'>
+                <tbody
+                    *ngFor='let funcionarios of listaUsuarios | orderBy : key : reverse | paginate: {itemsPerPage: 10, currentPage: paginaAtual}; let i=index'>
                     <tr>
                         <td>{{funcionarios.nomeUsuario}}</td>
                         <td>{{funcionarios.id}}</td>
                         <td><span *ngIf="funcionarios.tipoUsuario == 0; else elseBlock">Administrador</span>
-                            <ng-template #elseBlock>Estoquista</ng-template></td>
-                        <td><a href="../Paginas/CadastroProduto.html"> <span *ngIf="funcionarios.statusUsuario; else elseStatus">Ativo</span>
-                            <ng-template #elseStatus>Inativo</ng-template>
-                        </a></td>
+                            <ng-template #elseBlock>Estoquista</ng-template>
+                        </td>
+                        <td><a href="../Paginas/CadastroProduto.html"> <span
+                                    *ngIf="funcionarios.statusUsuario; else elseStatus">Ativo</span>
+                                <ng-template #elseStatus>Inativo</ng-template>
+                            </a></td>
 
                         <td class="container-icone">
                             <a *ngIf="usuarioLogadoAdmin" [routerLink]="['/editar-usuario', funcionarios.id]">
@@ -50,35 +43,18 @@
                                     alt="Ícone para a página de alteração do produto">
                             </a>
                         </td>
-
                     </tr>
                 </tbody>
             </table>
         </div>
-    </div>
 
-    <div class="paginas">
-        <nav aria-label="Page navigation example">
-            <ul class="pagination">
-                <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Previous" style="color: black;">
-                        <span aria-hidden="true">&laquo;</span>
-                    </a>
-                </li>
-                <li class="page-item"><a class="page-link" href="#" style="color: black;">Anterior</a></li>
-                <li class="page-item"><a class="page-link" href="#" style="color: black;">Próximo</a></li>
-                <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Next" style="color: black;">
-                        <span aria-hidden="true">&raquo;</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </div>
+        <div class="paginacao">
+            <pagination-controls (pageChange)="paginaAtual = $event" previousLabel="Anterior" nextLabel="Próximo">
+            </pagination-controls>
+        </div>
 
-    <div class="botao">
-        <button type="submit" id="btn-cancelar" routerLink='/backoffice'>Cancelar</button>
-        <button type="button" id="btn-confirmar" routerLink='/cadastrar-usuario'>Cadastrar Novo</button>
-    </div>
 
-</div>
+        <div class="botao">
+            <button type="submit" id="btn-cancelar" routerLink='/backoffice'>Cancelar</button>
+            <button type="button" id="btn-confirmar" routerLink='/cadastrar-usuario'>Cadastrar Novo</button>
+        </div>

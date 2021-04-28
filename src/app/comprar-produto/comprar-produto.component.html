@@ -1,49 +1,18 @@
-<div class="container-large">
+<body>
+    <div class="container-large form">
 
-    <header>
-        <div id="container-logo">
-            <a routerLink='/home'><img id="logo" src="../assets/img/LogoMercadogue.png" alt="Logo Mercadogue"></a>
-        </div>
-        <div id="titulo">
-            <h2>Visualização de Produto</h2>
-        </div>
-    </header>
+        <div class="row pt-5">
+            <div id="container-voltar">
+                <a routerLink='/home'>
+                <img class="icone" src="../assets/img/Voltar.png" alt="Voltar para a listagem de produtos"></a>
+            </div>
     
-    <!--
-    <nav class="navbar navbar-light" style="background-color: rgb(85, 96, 170)">
-        <a class="navbar-brand" href="#" style="color: white; font-family: fantasy;">
-            <img src="../Imagens/LogoPITeste.png" width="35" height="35" class="d-inline-block align-top" alt="">
-            Visualização de Produto
-        </a>
-    </nav>
-    -->
-            
-    <ul class="nav justify-content-center" id="navegacao">
-        <li class="nav-item">
-            <a class="nav-link" routerLink='/listar-produto'>Listagem</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" routerLink='/cadastro-produto'>Cadastro</a>
-        </li>
-    </ul>
-    
-    <div id="linha"></div>
-    
-    <br>
-    <br>
-
-        <div id="container-voltar">
-            <a routerLink='/home'>
-            <img class="icone" src="../assets/img/Voltar.png" alt="Voltar para a listagem de produtos"></a>
+            <div class="descricao">
+                <h5>{{produto.nomeProduto}}</h5>
+            </div>
         </div>
 
-        <div class="descricao">
-            <h5>{{produto.nomeProduto}}</h5>
-        </div>
-    
-    <br>
-
-    <div class="fotosEinformacoes">
+    <div class="fotosEinformacoes mt-5">
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel"
             style="height: 300px;width: 300px;">
             <ol class="carousel-indicators">
@@ -59,7 +28,6 @@
                         <img class="d-flex justify-content-center w-100 h-100" src="{{imagens.path}}">
                     </div>                    
                 </ng-template>
-
                 <ng-template #elseBlock>
                     <h1>{{imagens.path}}</h1>
                     <div class="carousel-item">
@@ -82,22 +50,20 @@
         <div class="infos">
             <div class="estrelas">
                 <img class="icone" id="estrela" src="../assets/img/estrela.png" alt="Quantidade de estrelas">
-                <p>{{produto.qtdEstrelas}}</p>
+                <p class="descricao-p">{{produto.qtdEstrelas}}</p>
             </div>
             <ul>
-                <li>{{produto.nomeExtenso}}</li>
+                <li class="descricao-p">{{produto.nomeExtenso}}</li>
             </ul>
         </div>
         
-        <div class="container-infos2">
+        <div class="container-infos2 descricao-p">
             <h4>R${{produto.preco}}</h4>
             <div *ngIf="produto.qtdEstoque > 0; else semEstoque">
-                <p>*Em estoque*</p>
+                <p>Em estoque</p>
             </div>
             <ng-template #semEstoque>
-                <p>
-                    *Sem estoque*
-                </p>
+                <p>Sem estoque</p>
             </ng-template>
             
             <br>
@@ -107,7 +73,7 @@
                 </div>
                 <div>
                     <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-                        <option selected *ngFor='let mercadoria of listaProdutos'>Selecione</option>
+                        <option selected *ngFor='let mercadoria of listaProdutos; let i=index'>Selecione</option>
                         <option>{{produto.qtdEstoque}}</option>                        
                     </select>
                 </div>
@@ -119,5 +85,3 @@
             </div>
         </div>
     </div>
-
-</div>

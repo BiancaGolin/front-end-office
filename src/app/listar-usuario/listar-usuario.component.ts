@@ -12,6 +12,10 @@ import { AuthService } from '../service/auth.service';
 })
 export class ListarUsuarioComponent implements OnInit {
 
+  key = 'id'
+  reverse = true;
+  public paginaAtual = 1;
+
   usuario: Usuario = new Usuario()
   listaUsuarios: Usuario[]
   idUsuario: number

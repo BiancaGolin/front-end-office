@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
+import { Cliente } from '../model/Cliente';
+import { ClienteLogin } from '../model/ClienteLogin';
 import { AlertasService } from '../service/alertas.service';
 import { AuthService } from '../service/auth.service';
-import { ProdutoService } from '../service/produto.service';
 
 @Component({
   selector: 'app-navbar',
@@ -12,17 +13,36 @@ import { ProdutoService } from '../service/produto.service';
 })
 export class NavbarComponent implements OnInit {
 
-  nomeClient = environment.nomeCliente
+  cliente: Cliente = new Cliente()
+  idCliente: number
+  nomeCliente: string
+  clienteLogin: ClienteLogin = new ClienteLogin()
+
+
+  nome = environment.nomeCliente
+
 
   constructor(
-    private produtoService: ProdutoService,
     private router: Router,
     public auth: AuthService,
     private alerta: AlertasService
   ) { }
 
-  ngOnInit(): void {
+  ngOnInit(){
+    window.scroll(0, 0)
+    this.idCliente = environment.idCliente
+    this.nomeCliente = environment.nomeCliente
+    this.findByIdCliente(this.idCliente)
+    console.log("id cliente = ", this.idCliente)
+    console.log("nome cliente = ", this.nomeCliente)
   }
+
+  findByIdCliente(id: number) {
+    this.auth.getByIdCliente(id).subscribe((resp: Cliente) => {
+      this.cliente = resp
+    })
+  }
+
 
   sair() {
     this.alerta.showAlertInfo('A sessão está sendo encerrada')
@@ -31,4 +51,6 @@ export class NavbarComponent implements OnInit {
     environment.emailCliente = ''
     environment.id = 0
   }
+
+
 }

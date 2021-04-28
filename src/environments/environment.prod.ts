@@ -1,4 +1,5 @@
 import { UsuarioLogin } from "src/app/model/UsuarioLogin";
+import { Usuario } from "src/app/model/Usuario";
 
 export const environment = {
 
@@ -11,7 +12,7 @@ export const environment = {
   tipoUsuario: 0,
   statusUsuario: true,
 
-
+  idCliente: 0,
   nomeCliente: '',
   emailCliente: '',
   senhaCliente: '',

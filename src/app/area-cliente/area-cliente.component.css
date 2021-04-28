@@ -1,0 +1,82 @@
+@import url(//db.onlinewebfonts.com/c/fe2027c27b6a24505f548c6fd2e1076d?family=Berlin+Sans+FB);
+@import url(//db.onlinewebfonts.com/c/a78cfad3beb089a6ce86d4e280fa270b?family=Calibri);
+@import url(//db.onlinewebfonts.com/c/0d78b12d6be09203d1fbeb76871a369a?family=Century+Gothic);
+
+
+.vertical-menu {
+    width: 200px; /* Set a width if you like */
+    height: 600px;
+  }
+  
+  .vertical-menu a {
+    background-color: white; /* Grey background color */
+    color: #F77759; /* Black text color */
+    font-family: Century Gothic;
+    display: block; /* Make the links appear below each other */
+    padding: 20px; /* Add some padding */
+    text-decoration: none; /* Remove underline from links */
+    text-align: left;
+    margin-left: 1vw;
+  }
+  
+  .vertical-menu a:hover {
+    color: #C8C8C8;
+  }
+
+  /* Página atual */
+#pagina-atual h5{
+    color: #5560AA;
+    font-family: Century Gothic;
+    font-weight: bolder;
+    text-align: left;
+    margin-left: 1vw;
+}
+/* .row{
+    margin: 30px;
+}
+ */
+
+
+.hr-color {
+    background-color: turquoise;
+}
+
+.img-50 {
+    width: 50px;
+}
+
+.btn-primary-editar {
+    background-color: #F2A007;
+    color: white;
+}
+
+.img-lista {
+    fill: orange;
+}
+
+.btn-primary-delete {
+    background-color: #E37119;
+    color: white;
+}
+
+.btn-primary-alterar {
+    background-color: #009EB3;
+    color: white;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: #fff;
+    background-color: #2D7345;
+}
+
+.h3-cad {
+    margin: 0px;
+}
+
+.form-group {
+    margin-bottom: 0rem;
+}
+
+.row {
+    margin-right: 0px;
+}

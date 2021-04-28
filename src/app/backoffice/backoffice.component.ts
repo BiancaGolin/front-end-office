@@ -12,6 +12,7 @@ import { AlertasService } from '../service/alertas.service';
 export class BackofficeComponent implements OnInit {
 
   usuarioLogado: boolean
+  nome = environment.nomeUsuario
 
   constructor(
     private router: Router,

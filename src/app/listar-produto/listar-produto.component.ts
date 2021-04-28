@@ -15,6 +15,8 @@ export class ListarProdutoComponent implements OnInit {
 
   selectedStatus: number;
   status: any = [0, 1];
+
+  public paginaAtual = 1;
   
   produto: Produto = new Produto()
   listaProduto: Produto[]

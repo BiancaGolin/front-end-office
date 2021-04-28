@@ -1,28 +1,45 @@
-<body>
 <header>
-      <button type="submit" id="btn-pesquisar" (click)='sair()'>Sair</button>    
-</header>
-<nav class="navbar navbar-expand-lg navbar-light bg-light"> 
-    <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
-            Produto
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" routerLink='/cadastro-produto'>Cadastro</a>
-            <a class="dropdown-item" routerLink='/listar-produto'>Listar</a>
-          </div>
-        </li>
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
-              Usuário
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" routerLink='/cadastrar-usuario'>Cadastro</a>
-              <a class="dropdown-item" routerLink='/listar-usuario'>Listar</a>
-            </div>
+  <nav class="navbar navbar-light">
+
+      <!-- Se usuario logado, aparece uma mensagem "Olá, {nome do usuario cadastrado no BD}" -->
+      <div class="col-md-1" *ngIf='auth.btnFuncSair()'>
+        <p id="info-login1">Olá,<b> {{nome}}</b></p>
+      </div>
+
+      <!-- Se usuario logado, aparece botão de SAIR -->
+      <div class="col-md-1 ponteiro" id="login" *ngIf='auth.btnFuncSair()'>
+          <a class="nav-link text-uppercase text-light" (click)='sair()'><img id="sair" src="../assets/img/logout.png" alt="Logout"></a>
+      </div>
+  </nav>
+
+  <!-- Menu -->
+  <nav class="navbar navbar-expand-lg justify-content-center" id="menu" style="background-color: white">
+      <ul class="navbar-nav">
+          <!-- Menu dropdown Produtos -->
+          <li class="nav-item dropdown mr-5" id="navbarDropdown1">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+                  aria-expanded="false">
+                  Produtos
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" routerLink='/cadastro-produto'>Cadastar</a>
+                  <a class="dropdown-item" routerLink='/listar-produto'>Listar</a>
+              </div>
+          </li>
+
+          <!-- Menu dropdown Usuários -->
+          <li class="nav-item dropdown mr-5" id="navbarDropdown2">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+                  aria-expanded="false">
+                  Usuários
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" routerLink='/cadastrar-usuario'>Cadastrar</a>
+                  <a class="dropdown-item" routerLink='/listar-usuario'>Listar</a>
+              </div>
           </li>
       </ul>
-    </div>
   </nav>
+</header>
+
+<div id="linha"></div>

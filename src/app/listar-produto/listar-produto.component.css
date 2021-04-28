@@ -1,6 +1,6 @@
 @import url(//db.onlinewebfonts.com/c/fe2027c27b6a24505f548c6fd2e1076d?family=Berlin+Sans+FB);
 @import url(//db.onlinewebfonts.com/c/a78cfad3beb089a6ce86d4e280fa270b?family=Calibri);
-@import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap');
+@import url(//db.onlinewebfonts.com/c/0d78b12d6be09203d1fbeb76871a369a?family=Century+Gothic);
 
 body{
     background-color: #EFEFEF;
@@ -32,9 +32,7 @@ body{
 #pagina-atual h5{
     color: #5560AA;
     font-family: Century Gothic;
-    font-weight: bolder;
-    text-align: left;
-    margin-left: 25vw;
+    margin-left: 30vw;
 }
 
 /*Menu*/
@@ -62,7 +60,8 @@ form{
 }
 .table-responsive{
     padding: 5%;
-    padding-top: 3%;
+    padding-top: 2%;
+    padding-bottom: 0.25%;
 }
 
 /*Botões e links*/
@@ -147,6 +146,11 @@ input:placeholder-shown{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.paginacao{
+    display: flex;
+    justify-content: space-around;
 }
 
 /*Tabela*/

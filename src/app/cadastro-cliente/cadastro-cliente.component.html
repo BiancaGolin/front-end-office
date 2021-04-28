@@ -1,0 +1,156 @@
+<body>
+
+    <!-- Página atual -->
+    <div class="row" id="pagina-atual">
+        <a routerLink='/login-cliente'>
+            <img class="icone" src="../assets/img/Voltar.png" alt="Voltar"></a>
+        <h5>Cadastre-se no Mercadogue</h5>
+    </div>
+        <!-- Dados pessoais -->
+        <div class="row">
+            <div class="col-md-6 form-group">
+                <label for="exampleFormControlInput1" class="label">
+                    <span style="color: #F77759">*</span> Nome</label>
+                <input type="text" class="form-control" id="nome" placeholder="Insira nome e sobrenome" [(ngModel)]='cliente.nomeCliente'>
+            </div>
+            <div class="col-md-3 form-group">
+                <label for="exampleFormControlInput1" class="label">
+                    <span style="color: #F77759">*</span> CPF</label>
+                <input type="text" class="form-control" id="cpf" placeholder="000.000.000-00" [(ngModel)]='cliente.cpf'>
+            </div>
+<!--             <div class="col-md-3 form-group">
+                <label for="exampleFormControlInput1" class="label">
+                    <span style="color: #F77759">*</span> Nascimento</label>
+                <input type="date" class="form-control" id="Nascimento" placeholder="Nascimento - DD/MM/YYYY">
+            </div> -->
+        </div>
+
+        <!-- Endereços -->
+        <div class="row">
+            <div class="col-md-6 form-group">
+                <label for="exampleFormControlInput1" class="label">
+                    <span style="color: #F77759">*</span> Endereço de Faturamento</label>
+                <input type="text" class="form-control" id="Endereço"
+                    placeholder="Insira logradouro, número, complemento e bairro" [(ngModel)]='cliente.endereco'>
+            </div>
+            <div class="col-md-2 form-group">
+                <label for="exampleFormControlInput1" class="label">
+                    <span style="color: #F77759">*</span> Cidade</label>
+                <input type="text" class="form-control" id="Cidade" placeholder="Insira a cidade">
+            </div>
+            <div class="col-md-1 form-group">
+                <label for="exampleFormControlInput1" class="label">
+                    <span style="color: #F77759">*</span> UF</label>
+                <select class="custom-select" id="Estados">
+                    <option value="">Selecione</option>
+                    <option value="AC">Acre</option>
+                    <option value="AL">Alagoas</option>
+                    <option value="AP">Amapá</option>
+                    <option value="AM">Amazonas</option>
+                    <option value="BA">Bahia</option>
+                    <option value="CE">Ceará</option>
+                    <option value="DF">Distrito Federal</option>
+                    <option value="ES">Espirito Santo</option>
+                    <option value="GO">Goiás</option>
+                    <option value="MA">Maranhão</option>
+                    <option value="MS">Mato Grosso do Sul</option>
+                    <option value="MT">Mato Grosso</option>
+                    <option value="MG">Minas Gerais</option>
+                    <option value="PA">Pará</option>
+                    <option value="PB">Paraíba</option>
+                    <option value="PR">Paraná</option>
+                    <option value="PE">Pernambuco</option>
+                    <option value="PI">Piauí</option>
+                    <option value="RJ">Rio de Janeiro</option>
+                    <option value="RN">Rio Grande do Norte</option>
+                    <option value="RS">Rio Grande do Sul</option>
+                    <option value="RO">Rondônia</option>
+                    <option value="RR">Roraima</option>
+                    <option value="SC">Santa Catarina</option>
+                    <option value="SP">São Paulo</option>
+                    <option value="SE">Sergipe</option>
+                    <option value="TO">Tocantins</option>
+                </select>
+            </div>
+            <div class="col-md-3 form-group">
+                <label for="exampleFormControlInput1" class="label">
+                    <span style="color: #F77759">*</span> CEP</label>
+                <input type="text" class="form-control" id="CEP" placeholder="00000-000" [(ngModel)]='cliente.cep'>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 form-group">
+                <label for="exampleFormControlInput1" class="label">
+                    <span style="color: #F77759">*</span> Endereço de Entrega</label>
+                <input type="text" class="form-control" id="Endereço"
+                    placeholder="Insira logradouro, número, complemento e bairro">
+            </div>
+            <div class="col-md-2 form-group">
+                <label for="exampleFormControlInput1" class="label">
+                    <span style="color: #F77759">*</span> Cidade</label>
+                <input type="text" class="form-control" id="Cidade" placeholder="Insira a cidade">
+            </div>
+            <div class="col-md-1 form-group">
+                <label for="exampleFormControlInput1" class="label">
+                    <span style="color: #F77759">*</span> UF</label>
+                <select class="custom-select" id="Estados">
+                    <option value="">Selecione</option>
+                    <option value="AC">Acre</option>
+                    <option value="AL">Alagoas</option>
+                    <option value="AP">Amapá</option>
+                    <option value="AM">Amazonas</option>
+                    <option value="BA">Bahia</option>
+                    <option value="CE">Ceará</option>
+                    <option value="DF">Distrito Federal</option>
+                    <option value="ES">Espirito Santo</option>
+                    <option value="GO">Goiás</option>
+                    <option value="MA">Maranhão</option>
+                    <option value="MS">Mato Grosso do Sul</option>
+                    <option value="MT">Mato Grosso</option>
+                    <option value="MG">Minas Gerais</option>
+                    <option value="PA">Pará</option>
+                    <option value="PB">Paraíba</option>
+                    <option value="PR">Paraná</option>
+                    <option value="PE">Pernambuco</option>
+                    <option value="PI">Piauí</option>
+                    <option value="RJ">Rio de Janeiro</option>
+                    <option value="RN">Rio Grande do Norte</option>
+                    <option value="RS">Rio Grande do Sul</option>
+                    <option value="RO">Rondônia</option>
+                    <option value="RR">Roraima</option>
+                    <option value="SC">Santa Catarina</option>
+                    <option value="SP">São Paulo</option>
+                    <option value="SE">Sergipe</option>
+                    <option value="TO">Tocantins</option>
+                </select>
+            </div>
+            <div class="col-md-3 form-group">
+                <label for="exampleFormControlInput1" class="label">
+                    <span style="color: #F77759">*</span> CEP</label>
+                <input type="text" class="form-control" id="CEP" placeholder="00000-000" [(ngModel)]='cliente.cep'>
+            </div>
+        </div>
+        <!-- Dados de login -->
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label for="exampleFormControlInput1" class="label">
+                    <span style="color: #F77759">*</span> @Usuário</label>
+                <input type="text" class="form-control" id="Usuario"
+                    placeholder="Insira um endereço de e-mail único e válido" [(ngModel)]='cliente.emailCliente'>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="exampleFormControlInput1" class="label">
+                    <span style="color: #F77759">*</span> Senha</label>
+                <input type="password" class="form-control" id="Senha"
+                    placeholder="Insira uma senha de, no mínimo, três caracteres" [(ngModel)]='cliente.senhaCliente'>
+            </div>
+        </div>
+
+        <!-- Botões -->
+        <div class="botoes">
+            <button type="submit" id="btn-cancelar" routerLink='/login-cliente'>Cancelar</button>
+            <button type="submit" id="btn-confirmar" (click)='cadastrarCliente()'>Confirmar</button>
+            <p>Já possui cadastro? <a routerLink='/login-cliente'><u>Faça o <b>login</b>.</u></a></p>
+        </div>
+
+</body>

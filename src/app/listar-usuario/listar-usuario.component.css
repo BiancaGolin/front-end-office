@@ -29,10 +29,17 @@ body{
     font-size: 2em;    
 }
 
+/* Página atual */
+#pagina-atual h5{
+    color: #5560AA;
+    font-family: Century Gothic;
+    margin-left: 30vw;
+}
+
 /*Menu*/
 #navegacao{
     background-color: white;
-    font-family: Century Gothic;
+    font-family: 'Didact Gothic', sans-serif;
     font-weight: bolder;
 }
 .nav-link{
@@ -45,22 +52,24 @@ body{
     background-color: #C8C8C8;
     height: 5px;
 }
-
+form{
+    margin: 0 5vw;
+}
 .Linha{
-        margin-top: 5%;
-        margin-bottom: 5%;
-        display: flex;
-        justify-content: space-around;
+    display: flex;
+    justify-content: space-around;
 }
 .table-responsive{
-    margin-bottom: 3%;
+    padding: 5%;
+    padding-top: 2%;
+    padding-bottom: 0.25%;
 }
 
 /*Botões e links*/
 .botao{
     margin-left: 80%;
     padding: 2vw;
-    font-family: Century Gothic;
+    font-family: 'Didact Gothic', sans-serif;
 }
 .botao #btn-confirmar{
     background-color: #5560AA;
@@ -89,6 +98,24 @@ body{
 .pesquisar #btn-pesquisar:hover{
     border-color: #F77759;
 }
+
+.botao #btn-cancelar{    
+    background-color: #F77759;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.3);
+    border-color: transparent; 
+    font-weight: bold;
+    color: white;
+    padding: 8px 15px;
+    margin-right: 0.5vw;
+    outline: none;    
+}
+
+.botao #btn-cancelar:hover{
+    border-color: #F77759;
+}
+
+
 .container-icone{
     width: 10%;
 }
@@ -111,6 +138,7 @@ tbody a:hover{
 .form-control{
     border: none;
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+    text-align: left;
 }
 input:placeholder-shown{
     font-style: italic;
@@ -121,10 +149,12 @@ input:placeholder-shown{
     align-items: center;
 }
 
-/*Tabela*/
-.container-tabela{
-    margin: 0 6vw;
+.paginacao{
+    display: flex;
+    justify-content: space-around;
 }
+
+/*Tabela*/
 tbody tr:nth-child(2n+1){
     background-color: white;
 }
@@ -132,7 +162,7 @@ tbody tr:nth-child(2n){
     background-color: #DEDEDE;
 }
 thead{
-    font-family: Century Gothic;
+    font-family: 'Didact Gothic', sans-serif;
     font-weight: bolder;
 }
 
@@ -145,7 +175,7 @@ thead{
     .botao{
         margin-left: 77%;
         padding: 2vw;
-        font-family: Century Gothic;
+        font-family: 'Didact Gothic', sans-serif;
     } 
 }
 @media (max-width: 1000px){
@@ -156,7 +186,7 @@ thead{
     .botao{
         margin-left: 65%;
         padding: 2vw;
-        font-family: Century Gothic;
+        font-family: 'Didact Gothic', sans-serif;
     } 
 }
 @media (max-width: 800px){
@@ -167,7 +197,7 @@ thead{
     .botao{
         margin-left: 60%;
         padding: 2vw;
-        font-family: Century Gothic;
+        font-family: 'Didact Gothic', sans-serif;
     } 
 }
 @media (max-width: 600px){
@@ -178,6 +208,6 @@ thead{
     .botao{
         margin-left: 60%;
         padding: 2vw;
-        font-family: Century Gothic;
+        font-family: 'Didact Gothic', sans-serif;
     }   
 }

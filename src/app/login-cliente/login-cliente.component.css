@@ -1,34 +1,48 @@
+@import url(//db.onlinewebfonts.com/c/fe2027c27b6a24505f548c6fd2e1076d?family=Berlin+Sans+FB);
+@import url(//db.onlinewebfonts.com/c/a78cfad3beb089a6ce86d4e280fa270b?family=Calibri);
+@import url(//db.onlinewebfonts.com/c/0d78b12d6be09203d1fbeb76871a369a?family=Century+Gothic);
+
+
 :root {
   --input-padding-x: 1.5rem;
   --input-padding-y: .75rem;
 }
 
-body{
-  background-color: darkgray;
-  font-family: Calibri;
+body {
+  background: #5560AA;
+  background: linear-gradient(to left, #5560AA, #F77759);
 }
 
 /*Header*/
-#container-logo{
+.navbar{
+  background-color: #5560AA;
+}
+.container-logo{
   margin-left: 0.5vw;
   position: absolute;
   z-index: 1;
 }
-#container-logo #logo{
+.container-logo #logo{
   width: 5vw;
 }
-#titulo{
+.titulo{
   margin-left: 6vw;
   background-color: #5560AA;
   font-family: Berlin Sans FB;
   color: #EFEFEF;
   padding: 1.5vw;    
 }
-#titulo h2{
+.titulo h2{
   font-size: 2em;    
 }
+.titulo a{
+  text-decoration: none;
+  color: #EFEFEF;
+}
+.titulo a:visited, .titulo a:hover{
+  color: #EFEFEF;
+}
 #btn-pesquisar{ 
-  padding: 2vw;
   font-family: Century Gothic;
   background-color: #F77759;
   border-radius: 5px;
@@ -37,7 +51,6 @@ body{
   font-weight: bold;
   color: white;
   padding: 8px 15px;
-  margin-right: 0.5vw;
   outline: none;    
 }
 #btn-pesquisar:hover{
@@ -50,22 +63,23 @@ input:placeholder-shown{
   border: none;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
 }
-header form{
-  margin-right: -40vw;
+#login, #cesta{
+  width: 60%;
 }
-#login{
-  width: 3.5%;
-  position: absolute;
-  z-index: 1;
-  margin-left: -6vw;
-  margin-top: -2vw;
+#info-login{
+  margin-left: -60px;
+  margin-right: 50px;
 }
-
-/*Menu*/
-#titulo h2{
-  font-size: 2em;    
+#info-login1{
+  color: white;
+  margin-bottom: 0;
+  margin-top: 12px;
+  width: 150%;    
 }
-#navegacao{
+#info-login2{
+  color: #EFEFEF;
+}
+#menu{
   background-color: white;
   font-family: Century Gothic;
   font-weight: bolder;
@@ -84,81 +98,6 @@ header form{
 }
 
 /* Login */
-.container{
-  margin-top: 5vw;
-}
-.card-body button{
-  background-color: #00D9CA;
-  border: none;
-  font-family: Century Gothic;
-  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.3);
-  font-weight: bold;
-}
-.card-body button:hover{
-  background-color: #F77759;
-}
-
-/*Customizações responsivas*/
-@media (max-width: 1200px){
-  #container-logo #logo{
-      width: 5vw;
-  }
-}
-@media (max-width: 1000px){
-  #container-logo #logo{
-      width: 6vw;
-  }
-  #titulo{
-      margin-left: 0vw;
-      background-color: #5560AA;
-      font-family: Berlin Sans FB;
-      color: #EFEFEF;
-      padding: 2vw 2vw 2vw 10vw;    
-  }
-  .card{
-      width: 25vw;
-  }
-}
-@media (max-width: 900px){
-  #container-logo #logo{
-      width: 7vw;
-  }    
-  .card{
-      width: 30vw;
-  }
-}
-@media (max-width: 650px){
-  #container-logo #logo{
-      width: 8vw;
-  }
-  .form-control{
-      width: 60%;
-      margin-right: 2vw;
-      border: none;
-      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
-  }
-}
-@media (max-width: 612px){
-  #container-logo #logo{
-      margin-top: -10vw;
-      width: 8vw;
-  }    
-  .card{
-      width: 50vw;
-  }
-}
-@media (max-width: 600px){
-  #container-logo #logo{
-      margin-top: -15vw;
-      width: 8vw;
-  }
-}
-
-/*body {
-  background: #007bff;
-  background: linear-gradient(to right, #0062E6, #33AEFF);
-}*/
-
 .card-signin {
   border: 0;
   border-radius: 1rem;
@@ -167,14 +106,16 @@ header form{
 }
 
 .card-signin .card-title {
-  margin-bottom: 2rem;
+  font-family: Century Gothic;
   color: #5560AA;
-  font-family: Berlin Sans FB;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
 }
 
 .card-signin .card-img-left {
   width: 45%;
-  background: scroll center url('/assets/img/Cachorro.jpg');
+  background: scroll center url(/assets/img/Cachorro.jpg);
   background-size: cover;
 }
 
@@ -193,6 +134,13 @@ header form{
   font-weight: bold;
   padding: 1rem;
   transition: all 0.2s;
+  background-color: #00D9CA;
+  border-color: transparent;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+}
+
+.form-signin .btn:hover {
+  background-color: #F77759;
 }
 
 .form-label-group {
@@ -254,4 +202,271 @@ header form{
   padding-bottom: calc(var(--input-padding-y) / 3);
   font-size: 12px;
   color: #777;
-} 
+}
+
+p{
+  text-align: center;
+}
+p a:hover{
+  color: #5560AA;
+}
+p a:visited{
+  color: black;
+}
+
+/* Rodapé */
+footer{    
+  background-color: #DEDEDE;
+  color: #444444;
+  font-size: small;
+}
+
+/* Customizações responsivas - Header */
+@media (max-width: 1545px){
+  #info-login2{
+      color: #EFEFEF;        
+      width: 150%;    
+  }
+  #btn-pesquisar2{
+      visibility: hidden;
+      clear: both;
+      display: none;        
+  }
+}
+@media (max-width: 1495px){
+  #info-login1{
+      color: white;        
+      width: 190%;    
+  }
+}
+@media (max-width: 1297px){
+  #info-login1{
+      color: white;        
+      width: 150%;
+      margin-left: 10px;
+      margin-top: -1px;
+  }
+  #info-login2{
+      visibility: hidden;
+      clear: both;
+      display: none;
+  }
+}
+@media (max-width: 1105px){
+  #nav-item-categoria, .dropdown{
+      margin-left: -2vw;
+  }
+  .container-logo #logo{
+      margin-top: 5px;
+  }
+  #info-login{
+      visibility: hidden;
+      clear: both;
+      display: none;
+  }
+  #btn-pesquisar{ 
+      font-family: Century Gothic;
+      background-color: #F77759;
+      border-radius: 5px;
+      box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.3);
+      border-color: transparent; 
+      font-weight: bold;
+      color: white;
+      padding: 6px;
+      outline: none;
+      margin-left: 5px;
+  }
+  #pesquisa{
+      position: absolute;
+      z-index: 1;
+      margin-left: 30vw;
+  }
+  #login{
+      width: 80%;
+      margin-left: 20vw;
+  }
+  #cesta{
+      width: 80%;
+  }
+}
+@media (max-width: 992px){
+  .nav-link{
+      margin-right: 0;
+      padding: -50vw;
+  }
+  #nav-item-categoria{
+      visibility: hidden;
+      clear: both;
+      display: none;
+  }
+  .dropdown-toggle::after {
+      content: none;
+  }
+  .dropdown .dropdown-menu{
+      display: none;
+  }
+  #navbarDropdown2{
+      margin-top: -38px;
+      margin-left: 10vw;
+  }
+  #btn-pesquisar{ 
+      font-family: Century Gothic;
+      background-color: #F77759;
+      border-radius: 5px;
+      box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.3);
+      border-color: transparent; 
+      font-weight: bold;
+      color: white;
+      padding: 6px;
+      outline: none;
+      margin-left: 1px;
+  }
+  #login{
+      width: 90%;
+      margin-left: 20vw;
+  }
+  #cesta{
+      width: 90%;
+  }
+}
+@media (max-width: 927px){
+  #btn-pesquisar{ 
+      font-family: Century Gothic;
+      background-color: #F77759;
+      border-radius: 5px;
+      box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.3);
+      border-color: transparent; 
+      font-weight: bold;
+      color: white;
+      padding: 6px;
+      outline: none;
+      margin-left: -1vw;
+      font-size: smaller;
+  }
+  #pesquisa{
+      margin-left: 32vw;
+  }
+  #login{
+      width: 100%;
+  }
+  #cesta{
+      width: 100%;
+  }
+}
+@media (max-width: 767px){
+  .container-logo #logo{
+      margin-left: -10px;
+      width: 30%;
+  }
+  #login{
+      width: 27%;
+      margin-top: -38px;
+      margin-left: 38vw;
+  }
+  #cesta{
+      width: 27%;
+      margin-top: -38px;
+      margin-left: 42vw;
+  }
+  #btn-pesquisar{ 
+      font-family: Century Gothic;
+      background-color: #F77759;
+      border-radius: 5px;
+      box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.3);
+      border-color: transparent; 
+      font-weight: bold;
+      color: white;
+      padding: 6px;
+      outline: none;
+      margin-left: 5px;
+  }
+  #pesquisa{
+      position: absolute;
+      z-index: 1;
+      margin-top: 140px;
+      margin-left: -1vw;
+  }
+  #pesquisa-input{
+      width: 70%;
+  }
+  #linha{
+      height: 100px;
+      border-bottom: 5px solid white;
+      background-color: #C8C8C8;
+  }
+  #etq-qtd, #menu{
+      visibility: hidden;
+      clear: both;
+      display: none;        
+  }
+}   
+@media (max-width: 587px){
+  .container-logo #logo{
+      margin-left: -18px;
+      width: 30%;
+  }
+  #login{
+      width: 33%;
+      margin-top: -34px;
+      margin-left: 34.5vw;
+  }
+  #cesta{
+      width: 33%;
+      margin-top: -34px;
+      margin-left: 40vw;
+  }
+}
+@media (max-width: 500px){
+  .container-logo #logo{
+      margin-left: -18px;
+      width: 30%;
+  }
+  #login{
+      width: 35%;
+      margin-top: -34px;
+      margin-left: 33vw;
+  }
+  #cesta{
+      width: 35%;
+      margin-top: -34px;
+      margin-left: 39vw;
+  }
+}
+@media (max-width: 414px){ 
+  #btn-pesquisar{ 
+      font-family: Century Gothic;
+      background-color: #F77759;
+      border-radius: 5px;
+      box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.3);
+      border-color: transparent; 
+      font-weight: bold;
+      color: white;
+      padding: 6px;
+      outline: none;
+      margin-left: 5px;
+  }
+  #pesquisa{
+      position: absolute;
+      z-index: 1;
+      margin-top: 140px;
+      margin-left: -1vw;
+  }
+  #pesquisa-input{
+      width: 70%;
+  }
+  #login{
+      width: 35%;
+      margin-top: -35px;
+      margin-left: 35vw;
+  }
+  #cesta{
+      width: 35%;
+      margin-top: -35px;
+      margin-left: 40vw;
+  }
+  .container-logo #logo{
+      width: 10vw;
+      margin-left: -20px;
+      margin-top: 2px;
+  }
+}

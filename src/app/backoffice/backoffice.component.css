@@ -1,38 +1,98 @@
 @import url(//db.onlinewebfonts.com/c/fe2027c27b6a24505f548c6fd2e1076d?family=Berlin+Sans+FB);
 @import url(//db.onlinewebfonts.com/c/a78cfad3beb089a6ce86d4e280fa270b?family=Calibri);
-@import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap');
+@import url(//db.onlinewebfonts.com/c/0d78b12d6be09203d1fbeb76871a369a?family=Century+Gothic);
 
 body{
     background-color: #EFEFEF;
     font-family: Calibri;
 }
 
+.ponteiro {
+    cursor: pointer;
+}
+
+
 /*Header*/
-#container-logo{
-    margin-left: 1.5vw;
+.navbar{
+    background-color: #5560AA;
+}
+.container-logo{
+    margin-left: 0.5vw;
     position: absolute;
     z-index: 1;
 }
-#container-logo #logo{
+.container-logo #logo{
     width: 5vw;
-    margin-top: 0.7vw;
 }
-#titulo{
-    text-align: center;
+.titulo{
+    margin-left: 6vw;
     background-color: #5560AA;
     font-family: Berlin Sans FB;
     color: #EFEFEF;
-    padding: 2vw;    
+    padding: 1.5vw;    
 }
-#titulo h2{
+.titulo h2{
     font-size: 2em;    
 }
 
+.titulo a{
+    text-decoration: none;
+    color: #EFEFEF;
+}
+
+.titulo a:visited, .titulo a:hover{
+    color: #EFEFEF;
+}
+
+#btn-pesquisar{
+    font-family: Century Gothic;
+    background-color: #F77759;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.3);
+    border-color: transparent; 
+    font-weight: bold;
+    color: white;
+    padding: 8px 15px;
+    outline: none;
+}
+#btn-pesquisar:hover{
+    border-color: #F77759;
+}
+input:placeholder-shown{
+    font-style: italic;
+}
+.form-control, .card{
+    border: none;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+}
+
+#login, #cesta, #sair{
+    width: 60%;
+}
+
+#info-login{
+    margin-left: -60px;
+    margin-right: 50px;
+}
+
+#info-login1{
+    color: white;
+    margin-bottom: 0;
+    margin-top: 12px;
+    width: 150%;    
+}
+
+#info-login2{
+    color: #EFEFEF;
+}
+
 /*Menu*/
-#navegacao{
+
+#menu{
     background-color: white;
-    font-family: 'Didact Gothic', sans-serif;
+    font-family: Century Gothic;
     font-weight: bolder;
+    margin-bottom: 2rem;
 }
 .nav-link{
     color: #F77759;
@@ -41,145 +101,411 @@ body{
     color: #C8C8C8;
 }
 #linha{
+    margin-top: -32px;
     background-color: #C8C8C8;
     height: 5px;
 }
-form{
-    margin: 0 5vw;
-}
-.Linha{
-        margin-top: 5%;
-        margin-bottom: 5%;
-        display: flex;
-        justify-content: space-around;
-}
-.table-responsive{
-    margin-bottom: 3%;
-}
 
-/*Botões e links*/
-.botao{
-    margin-left: 80%;
-    padding: 2vw;
-    font-family: 'Didact Gothic', sans-serif;
-}
-.botao #btn-confirmar{
-    background-color: #5560AA;
-    border-radius: 5px;
-    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.3);
-    border-color: transparent;
-    font-weight: bold;
-    color: white;
-    padding: 8px 15px;
-    outline: none;
-}
-.botao #btn-confirmar:hover{
-    border-color: #5560AA;
-}
-.pesquisar #btn-pesquisar{
+/* Página atual */
+#pagina-atual h5{
+    color: #5560AA;
     font-family: Century Gothic;
-    background-color: #F77759;
-    border-radius: 5px;
-    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1);
-    border-color: transparent;
-    font-weight: bold;
-    color: white;
-    padding: 4.5px 13px;
-    outline: none;
+    font-weight: bolder;
+    text-align: left;
+    margin-left: 1vw;
 }
-.pesquisar #btn-pesquisar:hover{
-    border-color: #F77759;
-}
-.container-icone{
-    width: 10%;
-}
-.btn-visualizar{
-    width: 50%;
-}
-.btn-editar{
-    width: 30%;
-}
-tbody a{
-    text-decoration: underline;
-    color: black;
-}
-tbody a:visited{
-    color: black;
-}
-tbody a:hover{
-    color: #F77759;
-}
-.form-control{
-    border: none;
-    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
-}
-input:placeholder-shown{
-    font-style: italic;
-}
-.paginas{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.row{
+    margin: 30px;
 }
 
-/*Tabela*/
-tbody tr:nth-child(2n+1){
-    background-color: white;
+/*Produtos*/
+.painel{
+    margin-top: 10px;
+    padding: 10px;
+    text-align: center;
+    margin-left: -1vw;
 }
-tbody tr:nth-child(2n){
-    background-color: #DEDEDE;
+.painel li{
+    display: inline-block;
+    vertical-align: top;
+    margin: 10px;
+    padding-bottom: 10px;
 }
-thead{
-    font-family: 'Didact Gothic', sans-serif;
+
+/* .card{
+    width: 15vw;
+} */
+
+.container{
+    width: 90%;
+    max-width: 1240px;
+    margin: 0 auto;
+
+    display: grid;
+    
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: auto;
+    grid-gap: 20px;
+}
+
+.card h5{
+    text-align: left;
+    margin-bottom: 15px;
+}
+.card p{
+    text-align: left;
+    float: left;
+}
+.card h4{
+    font-family: Century Gothic;
     font-weight: bolder;
+    text-align: right;
+}
+
+.estrela {
+    width: 15px;
+    height: 15px;
+    margin-left: 5px;
+}
+
+/* Rodapé */
+footer{    
+    background-color: #DEDEDE;
+    color: #444444;
+    font-size: small;
 }
 
 /*Customizações responsivas*/
 @media (max-width: 1200px){
     #container-logo #logo{
         width: 5vw;
-        margin-top: 0.9vw;
     }
-    .botao{
-        margin-left: 77%;
-        padding: 2vw;
-        font-family: 'Didact Gothic', sans-serif;
-    } 
 }
 @media (max-width: 1000px){
     #container-logo #logo{
         width: 6vw;
-        margin-top: 0.8vw;
     }
-    .botao{
-        margin-left: 65%;
-        padding: 2vw;
-        font-family: 'Didact Gothic', sans-serif;
-    } 
+    #titulo{
+        margin-left: 0vw;
+        background-color: #5560AA;
+        font-family: Berlin Sans FB;
+        color: #EFEFEF;
+        padding: 2vw 2vw 2vw 10vw;    
+    }
+    .card{
+        width: 25vw;
+    }
 }
-@media (max-width: 800px){
+@media (max-width: 900px){
     #container-logo #logo{
         width: 7vw;
-        margin-top: 0.8vw;
+    }    
+    .card{
+        width: 30vw;
     }
-    .botao{
-        margin-left: 60%;
-        padding: 2vw;
-        font-family: 'Didact Gothic', sans-serif;
-    } 
+}
+@media (max-width: 650px){
+    #container-logo #logo{
+        width: 8vw;
+    }
+    .form-control{
+        width: 60%;
+        margin-right: 2vw;
+        border: none;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+    }
+}
+@media (max-width: 612px){
+    #container-logo #logo{
+        margin-top: -10vw;
+        width: 8vw;
+    }    
+    .card{
+        width: 50vw;
+    }
 }
 @media (max-width: 600px){
     #container-logo #logo{
+        margin-top: -15vw;
         width: 8vw;
-        margin-top: 1.5vw;
     }
-    .botao{
-        margin-left: 60%;
-        padding: 2vw;
-        font-family: 'Didact Gothic', sans-serif;
-    }   
 }
 
-.hr-color {
-    background-color: #5560AA;
+/* Customizações responsivas - Header */
+@media (max-width: 1545px){
+    #info-login2{
+        color: #EFEFEF;        
+        width: 150%;    
+    }
+    #btn-pesquisar2{
+        visibility: hidden;
+        clear: both;
+        display: none;        
+    }
+}
+@media (max-width: 1495px){
+    #info-login1{
+        color: white;        
+        width: 190%;    
+    }
+}
+@media (max-width: 1297px){
+    #info-login1{
+        color: white;        
+        width: 150%;
+        margin-left: 10px;
+        margin-top: -1px;
+    }
+    #info-login2{
+        visibility: hidden;
+        clear: both;
+        display: none;
+    }
+}
+@media (max-width: 1105px){
+    #nav-item-categoria, .dropdown{
+        margin-left: -2vw;
+    }
+    .container-logo #logo{
+        margin-top: 5px;
+    }
+    #info-login{
+        visibility: hidden;
+        clear: both;
+        display: none;
+    }
+    #btn-pesquisar{ 
+        font-family: Century Gothic;
+        background-color: #F77759;
+        border-radius: 5px;
+        box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.3);
+        border-color: transparent; 
+        font-weight: bold;
+        color: white;
+        padding: 6px;
+        outline: none;
+        margin-left: 5px;
+    }
+    #pesquisa{
+        position: absolute;
+        z-index: 1;
+        margin-left: 30vw;
+    }
+    #login{
+        width: 80%;
+        margin-left: 20vw;
+    }
+    #cesta{
+        width: 80%;
+    }
+    #sair{
+        width: 80%;
+    }
+}
+@media (max-width: 992px){
+    .nav-link{
+        margin-right: 0;
+        padding: -50vw;
+    }
+    #nav-item-categoria{
+        visibility: hidden;
+        clear: both;
+        display: none;
+    }
+    .dropdown-toggle::after {
+        content: none;
+    }
+    .dropdown .dropdown-menu{
+        display: none;
+    }
+    #navbarDropdown2{
+        margin-top: -38px;
+        margin-left: 10vw;
+    }
+    #btn-pesquisar{ 
+        font-family: Century Gothic;
+        background-color: #F77759;
+        border-radius: 5px;
+        box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.3);
+        border-color: transparent; 
+        font-weight: bold;
+        color: white;
+        padding: 6px;
+        outline: none;
+        margin-left: 1px;
+    }
+    #login{
+        width: 90%;
+        margin-left: 20vw;
+    }
+    #cesta{
+        width: 90%;
+    }
+    #sair{
+        width: 90%;
+    }
+}
+@media (max-width: 927px){
+    #btn-pesquisar{ 
+        font-family: Century Gothic;
+        background-color: #F77759;
+        border-radius: 5px;
+        box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.3);
+        border-color: transparent; 
+        font-weight: bold;
+        color: white;
+        padding: 6px;
+        outline: none;
+        margin-left: -1vw;
+        font-size: smaller;
+    }
+    #pesquisa{
+        margin-left: 32vw;
+    }
+    #login{
+        width: 100%;
+    }
+    #cesta{
+        width: 100%;
+    }
+    #sair{
+        width: 100%;
+    }
+}
+@media (max-width: 767px){
+    .container-logo #logo{
+        margin-left: -10px;
+        width: 30%;
+    }
+    #login{
+        width: 27%;
+        margin-top: -38px;
+        margin-left: 38vw;
+    }
+    #cesta{
+        width: 27%;
+        margin-top: -38px;
+        margin-left: 42vw;
+    }
+    #sair{
+        width: 27%;
+        margin-top: -38px;
+        margin-left: 42vw;
+    }
+    #btn-pesquisar{ 
+        font-family: Century Gothic;
+        background-color: #F77759;
+        border-radius: 5px;
+        box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.3);
+        border-color: transparent; 
+        font-weight: bold;
+        color: white;
+        padding: 6px;
+        outline: none;
+        margin-left: 5px;
+    }
+    #pesquisa{
+        position: absolute;
+        z-index: 1;
+        margin-top: 140px;
+        margin-left: -1vw;
+    }
+    #pesquisa-input{
+        width: 70%;
+    }
+    #linha{
+        height: 100px;
+        border-bottom: 5px solid white;
+        background-color: #C8C8C8;
+    }
+    #etq-qtd, #menu{
+        visibility: hidden;
+        clear: both;
+        display: none;        
+    }
+}   
+@media (max-width: 587px){
+    .container-logo #logo{
+        margin-left: -18px;
+        width: 30%;
+    }
+    #login{
+        width: 33%;
+        margin-top: -34px;
+        margin-left: 34.5vw;
+    }
+    #cesta{
+        width: 33%;
+        margin-top: -34px;
+        margin-left: 40vw;
+    }
+    #sair{
+        width: 33%;
+        margin-top: -34px;
+        margin-left: 40vw;
+    }
+}
+@media (max-width: 500px){
+    .container-logo #logo{
+        margin-left: -18px;
+        width: 30%;
+    }
+    #login{
+        width: 35%;
+        margin-top: -34px;
+        margin-left: 33vw;
+    }
+    #cesta{
+        width: 35%;
+        margin-top: -34px;
+        margin-left: 39vw;
+    }
+    #sair{
+        width: 35%;
+        margin-top: -34px;
+        margin-left: 39vw;
+    }
+}
+@media (max-width: 414px){ 
+    #btn-pesquisar{ 
+        font-family: Century Gothic;
+        background-color: #F77759;
+        border-radius: 5px;
+        box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.3);
+        border-color: transparent; 
+        font-weight: bold;
+        color: white;
+        padding: 6px;
+        outline: none;
+        margin-left: 5px;
+    }
+    #pesquisa{
+        position: absolute;
+        z-index: 1;
+        margin-top: 140px;
+        margin-left: -1vw;
+    }
+    #pesquisa-input{
+        width: 70%;
+    }
+    #login{
+        width: 35%;
+        margin-top: -35px;
+        margin-left: 35vw;
+    }
+    #cesta{
+        width: 35%;
+        margin-top: -35px;
+        margin-left: 40vw;
+    }
+    #sair{
+        width: 35%;
+        margin-top: -35px;
+        margin-left: 40vw;
+    }
+    .container-logo #logo{
+        width: 10vw;
+        margin-left: -20px;
+        margin-top: 2px;
+    }
 }

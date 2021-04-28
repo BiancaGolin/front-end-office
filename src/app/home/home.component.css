@@ -163,13 +163,6 @@ input:placeholder-shown{
     margin-left: 5px;
 }
 
-/* Rodapé */
-footer{    
-    background-color: #DEDEDE;
-    color: #444444;
-    font-size: small;
-}
-
 /*Customizações responsivas*/
 @media (max-width: 1200px){
     #container-logo #logo{

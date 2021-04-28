@@ -10,6 +10,7 @@
                         </div>
                         <div class="card-body">
                             <h2 class="card-title text-center">Login</h2>
+                            <div class="form-signin">
                                 <div class="form-label-group">
                                     <input type="text" id="inputUserame" class="form-control" placeholder="Usuário" [(ngModel)]='clienteLogin.emailCliente'
                                         required autofocus>
@@ -26,6 +27,9 @@
 
                                 <button class="btn btn-lg btn-primary btn-block text-uppercase"
                                     type="submit" (click)='entrar()'>Entrar</button>
+                                    <br>
+                                    <p>Não possui cadastro? <a routerLink='/cadastro-cliente'><u>Cadastre-se agora!</u></a></p>
+                                </div>
                         </div>
                     </div>
                 </div>

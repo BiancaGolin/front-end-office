@@ -7,43 +7,36 @@ body{
     font-family: Calibri;
 }
 
-.ponteiro {
-    cursor: pointer;
-}
-
 /*Header*/
 .navbar{
     background-color: #5560AA;
-}
-.container-logo{
+  }
+  .container-logo{
     margin-left: 0.5vw;
     position: absolute;
     z-index: 1;
-}
-.container-logo #logo{
+  }
+  .container-logo #logo{
     width: 5vw;
-}
-.titulo{
+  }
+  .titulo{
     margin-left: 6vw;
     background-color: #5560AA;
     font-family: Berlin Sans FB;
     color: #EFEFEF;
     padding: 1.5vw;    
-}
-.titulo h2{
+  }
+  .titulo h2{
     font-size: 2em;    
-}
-
-.titulo a{
+  }
+  .titulo a{
     text-decoration: none;
     color: #EFEFEF;
-}
-
-.titulo a:visited, .titulo a:hover{
+  }
+  .titulo a:visited, .titulo a:hover{
     color: #EFEFEF;
-}
-
-#btn-pesquisar{
+  }
+  #btn-pesquisar{ 
     font-family: Century Gothic;
     background-color: #F77759;
     border-radius: 5px;
@@ -52,58 +45,51 @@ body{
     font-weight: bold;
     color: white;
     padding: 8px 15px;
-    outline: none;
-}
-#btn-pesquisar:hover{
+    outline: none;    
+  }
+  #btn-pesquisar:hover{
     border-color: #F77759;
-}
-input:placeholder-shown{
+  }
+  input:placeholder-shown{
     font-style: italic;
-}
-.form-control, .card{
+  }
+  .form-control, .card{
     border: none;
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
-}
-
-#login, #cesta{
+  }
+  #login, #cesta{
     width: 60%;
-}
-
-#info-login{
+  }
+  #info-login{
     margin-left: -60px;
     margin-right: 50px;
-}
-
-#info-login1{
+  }
+  #info-login1{
     color: white;
     margin-bottom: 0;
     margin-top: 12px;
     width: 150%;    
-}
-
-#info-login2{
+  }
+  #info-login2{
     color: #EFEFEF;
-}
-
-/*Menu*/
-
-#menu{
+  }
+  #menu{
     background-color: white;
     font-family: Century Gothic;
     font-weight: bolder;
     margin-bottom: 2rem;
-}
-.nav-link{
+  }
+  .nav-link{
     color: #F77759;
-}   
-.nav-link:hover {
+  }   
+  .nav-link:hover {
     color: #C8C8C8;
-}
-#linha{
+  }
+  #linha{
     margin-top: -32px;
     background-color: #C8C8C8;
     height: 5px;
-}
+  }
 
 /* Página atual */
 #pagina-atual h5{
@@ -116,55 +102,78 @@ input:placeholder-shown{
 .row{
     margin: 30px;
 }
-
-/*Produtos*/
-.painel{
-    margin-top: 10px;
-    padding: 10px;
-    text-align: center;
-    margin-left: -1vw;
-}
-.painel li{
-    display: inline-block;
-    vertical-align: top;
-    margin: 10px;
-    padding-bottom: 10px;
+.icone{
+    width: 30px;
 }
 
-/* .card{
-    width: 15vw;
-} */
-
-.container{
-    width: 90%;
-    max-width: 1240px;
-    margin: 0 auto;
-
-    display: grid;
-    
-    grid-template-columns: auto auto auto auto;
-    grid-template-rows: auto;
-    grid-gap: 20px;
+/*Labels e campos de preenchimento*/
+form{
+    margin: 0 5vw;
 }
-
-.card h5{
-    text-align: left;
-    margin-bottom: 15px;
-}
-.card p{
-    text-align: left;
-    float: left;
-}
-.card h4{
+.label{
+    color: #5560AA;
     font-family: Century Gothic;
-    font-weight: bolder;
-    text-align: right;
+    font-weight: bold;
+}
+/*
+.column-count{
+    column-count: 4;
+}
+.column-count-status{
+    column-count: 2;
+}
+*/
+.form-control, .custom-select{
+    border: none;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+}
+input:placeholder-shown, textarea:placeholder-shown{
+    font-style: italic;
 }
 
-.estrela {
-    width: 15px;
-    height: 15px;
-    margin-left: 5px;
+/*Botões*/
+.botoes{
+    text-align: right;
+    padding: 2vw;
+    font-family: Century Gothic;
+}
+.botoes #btn-cancelar{    
+    background-color: #F77759;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.3);
+    border-color: transparent; 
+    font-weight: bold;
+    color: white;
+    padding: 8px 15px;
+    margin-right: 0.5vw;
+    outline: none;    
+}
+.botoes #btn-confirmar{
+    background-color: #00D9CA;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.3);
+    border-color: transparent;
+    font-weight: bold;
+    color: white;
+    padding: 8px 15px;
+    outline: none;
+}
+.botoes #btn-cancelar:hover{
+    border-color: #F77759;
+}
+.botoes #btn-confirmar:hover{
+    border-color: #00D9CA;
+}
+p{
+    text-align: right;
+    font-family: Calibri;
+    margin-top: 10px;
+}
+p a:hover{
+    color: #5560AA;
+}
+p a:visited{
+    color: black;
 }
 
 /* Rodapé */
@@ -178,55 +187,45 @@ footer{
 @media (max-width: 1200px){
     #container-logo #logo{
         width: 5vw;
+        margin-top: 0.9vw;
+    }
+    .botoes{
+        margin-left: 70%;
+        padding: 2vw;
+        font-family: Century Gothic;
     }
 }
 @media (max-width: 1000px){
     #container-logo #logo{
         width: 6vw;
+        margin-top: 0.8vw;
     }
-    #titulo{
-        margin-left: 0vw;
-        background-color: #5560AA;
-        font-family: Berlin Sans FB;
-        color: #EFEFEF;
-        padding: 2vw 2vw 2vw 10vw;    
-    }
-    .card{
-        width: 25vw;
+    .botoes{
+        margin-left: 60%;
+        padding: 2vw;
+        font-family: Century Gothic;
     }
 }
-@media (max-width: 900px){
+@media (max-width: 800px){
     #container-logo #logo{
         width: 7vw;
-    }    
-    .card{
-        width: 30vw;
+        margin-top: 0.8vw;
     }
-}
-@media (max-width: 650px){
-    #container-logo #logo{
-        width: 8vw;
-    }
-    .form-control{
-        width: 60%;
-        margin-right: 2vw;
-        border: none;
-        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
-    }
-}
-@media (max-width: 612px){
-    #container-logo #logo{
-        margin-top: -10vw;
-        width: 8vw;
-    }    
-    .card{
-        width: 50vw;
+    .botoes{
+        margin-left: 50%;
+        padding: 2vw;
+        font-family: Century Gothic;
     }
 }
 @media (max-width: 600px){
     #container-logo #logo{
-        margin-top: -15vw;
         width: 8vw;
+        margin-top: 1.5vw;
+    }
+    .botoes{
+        margin-left: 40%;
+        padding: 2vw;
+        font-family: Century Gothic;
     }
 }
 

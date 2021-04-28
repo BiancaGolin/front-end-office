@@ -16,6 +16,7 @@ export class HomeComponent implements OnInit {
   listaProdutos: Produto[]
   usuarioLogado: boolean
   nomeClient = environment.nomeCliente
+  nomeProduto: string
 
   constructor(
     private produtoService: ProdutoService,
@@ -35,6 +36,12 @@ export class HomeComponent implements OnInit {
       console.log(resp)
     })
 
+  }
+
+  findByNomeProduto(){
+    this.produtoService.getByNomeProduto(this.nomeProduto).subscribe((resp : Produto[])=>{
+      this.listaProdutos = resp
+    })
   }
 
   checaUsuarioLogado(){

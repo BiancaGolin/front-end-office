@@ -30,10 +30,13 @@ export class LoginClienteComponent implements OnInit {
       environment.tokenCliente = this.clienteLogin.tokenCliente
       environment.nomeCliente = this.clienteLogin.nomeCliente
       environment.emailCliente = this.clienteLogin.emailCliente
+      environment.idCliente = this.clienteLogin.idCliente
       console.log(environment.tokenCliente)
-      console.log(environment.emailCliente)     
-     
-      this.router.navigate(['/home'])
+      console.log(environment.emailCliente)    
+      console.log(environment.nomeCliente)   
+      console.log(environment.idCliente)
+
+      this.router.navigate(['/area-cliente'])
 
 
     }, erro =>{

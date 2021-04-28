@@ -7,6 +7,7 @@ import { HashLocationStrategy, LocationStrategy} from '@angular/common';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { NgxPaginationModule } from 'ngx-pagination';
 import { CadastroProdutoComponent } from './cadastro-produto/cadastro-produto.component';
 import { ListarProdutoComponent } from './listar-produto/listar-produto.component';
 import { VisualizarProdutoComponent } from './visualizar-produto/visualizar-produto.component';
@@ -22,6 +23,10 @@ import { LoginUsuarioComponent } from './login-usuario/login-usuario.component';
 import { BackofficeComponent } from './backoffice/backoffice.component';
 import { LoginClienteComponent } from './login-cliente/login-cliente.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { FooterComponent } from './footer/footer.component';
+import { CadastroClienteComponent } from './cadastro-cliente/cadastro-cliente.component';
+import { AreaClienteComponent } from './area-cliente/area-cliente.component';
+import { EditarClienteComponent } from './editar-cliente/editar-cliente.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +44,11 @@ import { NavbarComponent } from './navbar/navbar.component';
     LoginUsuarioComponent,
     BackofficeComponent,
     LoginClienteComponent,
-    NavbarComponent
+    NavbarComponent,
+    FooterComponent,
+    CadastroClienteComponent,
+    AreaClienteComponent,
+    EditarClienteComponent
   ],
   imports: [
     BrowserModule,
@@ -48,6 +57,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     HttpClientModule,
     FormsModule,
     OrderModule,
+    NgxPaginationModule,
     ModalModule.forRoot()
   ],
   providers: [],
