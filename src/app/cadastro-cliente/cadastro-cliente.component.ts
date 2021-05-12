@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Cliente } from '../model/Cliente';
+import { Endereco } from '../model/Endereco';
 import { AlertasService } from '../service/alertas.service';
 import { AuthService } from '../service/auth.service';
 
@@ -21,6 +22,47 @@ export class CadastroClienteComponent implements OnInit {
 
   ngOnInit() {
     window.scroll(0, 0)
+  }
+
+  consultaCepEntrega() {
+    this.authService.consultaCepEnderecoCOmpleto(this.cliente.cepEntrega).subscribe((cepEntregaPreenchido: Endereco) => {
+      this.authService.validarCep(this.cliente.cepEntrega).subscribe((cepEntregaValido: Boolean) => {
+
+        if (cepEntregaValido == false) {
+          this.alerta.showAlertInfo("Por favor preencha o cep entrega valido")
+        }
+        else {
+          this.cliente.enderecoEntrega = cepEntregaPreenchido.logradouro + cepEntregaPreenchido.complemento
+          this.cliente.cidade = cepEntregaPreenchido.localidade
+          this.cliente.uf = cepEntregaPreenchido.localidade
+          this.cliente.cepEntrega = cepEntregaPreenchido.cep
+        }
+
+      })
+
+
+    })
+  }
+
+  consultaCepFaturamento() {
+    this.authService.consultaCepEnderecoCOmpleto(this.cliente.cepFaturamento).subscribe((cepFaturamentoPreenchido: Endereco) => {
+      this.authService.validarCep(this.cliente.cepFaturamento).subscribe((cepFaturamentoValido: Boolean) => {
+
+        if (cepFaturamentoValido == false) {
+          this.alerta.showAlertInfo("Por favor preencha o cep faturamento valido")
+        }
+        else {
+          this.cliente.enderecoFaturamento = cepFaturamentoPreenchido.logradouro + cepFaturamentoPreenchido.complemento
+          this.cliente.cidadeFaturamento = cepFaturamentoPreenchido.localidade
+          this.cliente.uf = cepFaturamentoPreenchido.localidade
+          this.cliente.cepEntrega = cepFaturamentoPreenchido.cep
+        }
+
+      })
+
+
+    })
+
   }
 
   cadastrarCliente() {

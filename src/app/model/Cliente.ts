@@ -4,6 +4,11 @@ export class Cliente {
     public emailCliente: string
     public senhaCliente: string
     public endereco: string
+    public enderecoEntrega: string
+    public enderecoFaturamento: string
+    public cidade: string
+    public cidadeFaturamento: string
+    public uf: string
     public cep: string
     public cepEntrega: string
     public cepFaturamento: string

@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.prod';
 import { Cliente } from '../model/Cliente';
 import { ClienteLogin } from '../model/ClienteLogin';
+import { Endereco } from '../model/Endereco';
 import { Usuario } from '../model/Usuario';
 import { UsuarioLogin } from '../model/UsuarioLogin';
 
@@ -60,6 +61,11 @@ export class AuthService {
   validarCep(cep: String): Observable<boolean> {
     return this.http.get<boolean>(`http://localhost:8080/cliente/consultacep/${cep}`)
   }
+
+consultaCepEnderecoCOmpleto(cep: String): Observable<Endereco>{
+  return this.http.get<Endereco>(`http://localhost:8080/cliente/consultaCepCompleto/${cep}`)
+
+}
 
   validaCpf(cpf: String): Observable<boolean> {
     return this.http.get<boolean>(`http://localhost:8080/cliente/consultacpf/${cpf}`)
