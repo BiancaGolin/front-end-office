@@ -5,5 +5,7 @@ export class Cliente {
     public senhaCliente: string
     public endereco: string
     public cep: string
+    public cepEntrega: string
+    public cepFaturamento: string
     public cpf: string
 }
