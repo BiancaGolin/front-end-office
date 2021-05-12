@@ -36,6 +36,7 @@ export class CadastroClienteComponent implements OnInit {
           this.cliente.cidade = cepEntregaPreenchido.localidade
           this.cliente.uf = cepEntregaPreenchido.localidade
           this.cliente.cepEntrega = cepEntregaPreenchido.cep
+          this.cliente.uf = cepEntregaPreenchido.uf
         }
 
       })
@@ -54,7 +55,7 @@ export class CadastroClienteComponent implements OnInit {
         else {
           this.cliente.enderecoFaturamento = cepFaturamentoPreenchido.logradouro + cepFaturamentoPreenchido.complemento
           this.cliente.cidadeFaturamento = cepFaturamentoPreenchido.localidade
-          this.cliente.uf = cepFaturamentoPreenchido.localidade
+          this.cliente.ufFaturamento = cepFaturamentoPreenchido.uf
           this.cliente.cepEntrega = cepFaturamentoPreenchido.cep
         }
 

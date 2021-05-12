@@ -9,6 +9,7 @@ export class Cliente {
     public cidade: string
     public cidadeFaturamento: string
     public uf: string
+    public ufFaturamento: string
     public cep: string
     public cepEntrega: string
     public cepFaturamento: string
