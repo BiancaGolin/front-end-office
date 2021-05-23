@@ -15,6 +15,7 @@ import { ListarUsuarioComponent } from './listar-usuario/listar-usuario.componen
 import { LoginClienteComponent } from './login-cliente/login-cliente.component';
 import { LoginUsuarioComponent } from './login-usuario/login-usuario.component';
 import { VisualizarProdutoComponent } from './visualizar-produto/visualizar-produto.component';
+import { CarrinhoComponent } from './carrinho/carrinho.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -34,7 +35,8 @@ const routes: Routes = [
   { path: 'editar-usuario/:id', component: EditarUsuarioComponent},
   { path: 'editar-cliente', component: EditarClienteComponent},
   { path: 'visualizar-produto/:id', component: VisualizarProdutoComponent},
-  { path: 'comprar-produto/:id', component: ComprarProdutoComponent }
+  { path: 'comprar-produto/:id', component: ComprarProdutoComponent },
+  { path: 'carrinho', component: CarrinhoComponent }
 ];
 
 @NgModule({  

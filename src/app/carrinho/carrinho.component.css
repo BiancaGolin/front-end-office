@@ -1,0 +1,726 @@
+@import url(//db.onlinewebfonts.com/c/fe2027c27b6a24505f548c6fd2e1076d?family=Berlin+Sans+FB);
+@import url(//db.onlinewebfonts.com/c/a78cfad3beb089a6ce86d4e280fa270b?family=Calibri);
+@import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap');
+
+
+/* Tela */
+body{
+    background-color: #EFEFEF;
+    font-family: Calibri;
+}
+/* Página atual */
+#pagina-atual h5{
+    color: #5560AA;
+    font-family: Century Gothic;
+    font-weight: bolder;
+    text-align: left;
+    margin-left: 1vw;
+}
+.icone{
+    width: 30px;
+}
+
+/* Card-compras */
+.row{
+    margin: 30px;
+}
+.card{
+    height: 150px;
+}
+.card img{
+    margin-top: 5px;
+    width: 100%;
+    object-fit: cover;
+}
+.card p{
+    font-family: Century Gothic;
+    font-weight: bolder;
+    color: #5560AA;
+}
+.card #total h5{
+    font-family: Century Gothic;
+    font-weight: bolder;
+    color: #444444;
+}
+.card #produto h5, .card #produto2 h5{
+    color: #444444;
+}
+.card #quantidade, .card #quantidade2{
+    display: flex;
+}
+
+.btn-qtn{
+    font-family: Century Gothic;
+    background-color: white;
+    font-weight: bolder;
+    color: #5560AA;
+}
+
+#btn-excluir{
+    font-family: Century Gothic;
+    background-color: white;
+    border-radius: 5px;
+    font-weight: bolder;
+    color: #DEDEDE;
+    padding: 6px 10px;
+    border: 1px solid lightgray;
+    margin-right: 3px;
+}
+
+#btn-excluir:hover{
+    color: #444444;
+}
+#seg-linha-card, #seg-linha-card2, #seg-linha-card3{
+    margin-top: -25px;
+}
+#card-compra{
+    margin-bottom: 10px;
+}
+
+/* Card-total */
+#container-total{ 
+    border: 1px solid #C8C8C8;
+    border-radius: 10px;
+    height: 580px;
+    background-color: #DEDEDE;
+}
+#container-total #etiqueta{
+    font-family: Century Gothic;
+    font-weight: bolder;
+    float: left;
+    color: #444444;
+}
+#etq-conteudo{
+    font-family: Century Gothic;
+    font-weight: bolder;    
+    color: #444444;
+    text-align: right;
+}
+#etq-conteudo1{
+    font-family: Century Gothic;
+    font-weight: bolder;    
+    color: gray;
+    text-align: right;
+}
+#btn-confirmar{
+    font-family: Century Gothic;
+    background-color: #5560AA;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.3);
+    border-color: transparent; 
+    font-weight: bold;
+    color: white;
+    padding: 8px 11.4vw;
+    outline: none;    
+}
+#btn-confirmar:hover{
+    border-color: #5560AA;
+}
+#container-total p{
+    text-align: center;
+    color: #444444;
+}
+#adicionar p:hover{
+    color: #F77759;
+}
+#adicionar p{
+    margin-top: -20px;
+}
+#instrucaoCep p{
+    text-align: left;
+}
+.row #calculoFrete{
+    margin: 0 30px;
+}
+#escolhaFrete{
+    margin-left: 15px;
+}
+
+/* Rodapé */
+footer{    
+    background-color: #DEDEDE;
+    color: #444444;
+    font-size: small;
+}
+
+/* Customizações responsivas */
+@media (max-width: 1545px){
+    #info-login2{
+        color: #EFEFEF;        
+        width: 150%;    
+    }
+    #btn-confirmar{
+        font-family: Century Gothic;
+        background-color: #5560AA;
+        border-radius: 5px;
+        box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.3);
+        border-color: transparent; 
+        font-weight: bold;
+        color: white;
+        padding: 8px 11vw;
+        outline: none;    
+    }
+    #btn-pesquisar2{
+        visibility: hidden;
+        clear: both;
+        display: none;        
+    }
+}
+@media (max-width: 1495px){
+    #info-login1{
+        color: white;        
+        width: 190%;    
+    }
+}
+@media (max-width: 1411px){
+    #btn-confirmar{
+        font-family: Century Gothic;
+        background-color: #5560AA;
+        border-radius: 5px;
+        box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.3);
+        border-color: transparent; 
+        font-weight: bold;
+        color: white;
+        padding: 8px 10.5vw;
+        outline: none;    
+    }
+}
+@media (max-width: 1351px){
+    .card img{
+        margin-top: 25px;
+        width: 110%;
+        object-fit: cover;
+    }
+}
+@media (max-width: 1297px){
+    #info-login1{
+        color: white;        
+        width: 150%;
+        margin-left: 10px;
+        margin-top: -1px;
+    }
+    #btn-confirmar{
+        font-family: Century Gothic;
+        background-color: #5560AA;
+        border-radius: 5px;
+        box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.3);
+        border-color: transparent; 
+        font-weight: bold;
+        color: white;
+        padding: 8px 9.5vw;
+        outline: none;    
+    }
+    #info-login2{
+        visibility: hidden;
+        clear: both;
+        display: none;
+    }
+    #container-qtd .form-group, #container-qtd .form-group2{
+        margin-top: -38px;
+        margin-left: 35px;
+    }
+    .custom-select{
+        width: 50px;
+    }
+}
+@media (max-width: 1105px){
+    #nav-item-categoria, .dropdown{
+        margin-left: -2vw;
+    }
+    .container-logo #logo{
+        margin-top: 5px;
+    }
+    #btn-confirmar{
+        font-family: Century Gothic;
+        background-color: #5560AA;
+        border-radius: 5px;
+        box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.3);
+        border-color: transparent; 
+        font-weight: bold;
+        color: white;
+        padding: 8px 8.5vw;
+        outline: none;    
+    }
+    #info-login{
+        visibility: hidden;
+        clear: both;
+        display: none;
+    }
+    #btn-pesquisar{ 
+        font-family: Century Gothic;
+        background-color: #F77759;
+        border-radius: 5px;
+        box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.3);
+        border-color: transparent; 
+        font-weight: bold;
+        color: white;
+        padding: 6px;
+        outline: none;
+        margin-left: 5px;
+    }
+    #pesquisa{
+        position: absolute;
+        z-index: 1;
+        margin-left: 30vw;
+    }
+    #login{
+        width: 80%;
+        margin-left: 20vw;
+    }
+    #cesta{
+        width: 80%;
+    }
+    #container-qtd{
+        margin-left: -5vw;
+    }
+    #total{
+        margin-left: -2vw;
+    }
+    .card img{
+        width: 150%;
+    }
+    #seg-linha-card2, #seg-linha-card3{
+        margin-left: 3vw
+    }
+}
+@media (max-width: 992px){
+    .nav-link{
+        margin-right: 0;
+        padding: -50vw;
+    }
+    #nav-item-categoria{
+        visibility: hidden;
+        clear: both;
+        display: none;
+    }
+    .dropdown-toggle::after {
+        content: none;
+    }
+    .dropdown .dropdown-menu{
+        display: none;
+    }
+    #navbarDropdown2{
+        margin-top: -38px;
+        margin-left: 10vw;
+    }
+    #btn-pesquisar{ 
+        font-family: Century Gothic;
+        background-color: #F77759;
+        border-radius: 5px;
+        box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.3);
+        border-color: transparent; 
+        font-weight: bold;
+        color: white;
+        padding: 6px;
+        outline: none;
+        margin-left: 1px;
+    }
+    #login{
+        width: 90%;
+        margin-left: 20vw;
+    }
+    #cesta{
+        width: 90%;
+    }
+    #produto h5, #produto2 h5{
+        font-size: 2vw;
+    }
+    #total{
+        margin-left: 0;
+    }
+    #btn-confirmar{
+        font-family: Century Gothic;
+        background-color: #5560AA;
+        border-radius: 5px;
+        box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.3);
+        border-color: transparent; 
+        font-weight: bold;
+        color: white;
+        padding: 8px 7.5vw;
+        outline: none;    
+    }
+}
+@media (max-width: 927px){
+    #btn-pesquisar{ 
+        font-family: Century Gothic;
+        background-color: #F77759;
+        border-radius: 5px;
+        box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.3);
+        border-color: transparent; 
+        font-weight: bold;
+        color: white;
+        padding: 6px;
+        outline: none;
+        margin-left: -1vw;
+        font-size: smaller;
+    }
+    #pesquisa{
+        margin-left: 32vw;
+    }
+    #login{
+        width: 100%;
+    }
+    #cesta{
+        width: 100%;
+    }
+    #total{
+        margin-left: 2vw;
+    }
+    .card img{
+        width: 160%;
+    }
+    #seg-linha-card2, #seg-linha-card3{
+        margin-left: 3vw
+    }
+    #produto h5, #produto2 h5{
+        font-size: 1.8vw;
+    }
+    #container1-total h5{
+        font-size: 1.8vw;
+    }
+    #btn-confirmar{
+        font-family: Century Gothic;
+        background-color: #5560AA;
+        border-radius: 5px;
+        box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.3);
+        border-color: transparent; 
+        font-weight: bold;
+        color: white;
+        padding: 8px 6.8vw;
+        outline: none;
+    }
+}
+@media (max-width: 767px){
+    .container-logo #logo{
+        margin-left: -10px;
+        width: 30%;
+    }
+    #login{
+        width: 27%;
+        margin-top: -38px;
+        margin-left: 38vw;
+    }
+    #cesta{
+        width: 27%;
+        margin-top: -38px;
+        margin-left: 42vw;
+    }
+    .card img{
+        margin-top: 10px;
+        width: 20%;
+        object-fit: cover;
+    }
+    #produto{
+        margin-top: -15vw;
+        margin-left: 13vw;
+    }
+    #produto2{
+        margin-top: -12vw;
+        margin-left: 13vw;        
+    }
+    #produto h5, #produto2 h5{
+        font-size: 2.5vw;
+    }
+    #etq-qtd, #menu{
+        visibility: hidden;
+        clear: both;
+        display: none;        
+    }
+    #etq-total{
+        visibility: hidden;
+        clear: both;
+        display: none;         
+    }
+    #quantidade{
+        margin-left: 18vw;
+        margin-top: -20px;
+    }
+    #quantidade2{
+        margin-left: 18vw;
+        margin-top: -5px;
+    }
+    #container-qtd .form-group{
+        margin-left: 0.5vw; 
+        margin-top: -20px;
+    }
+    #container-qtd .form-group2{
+        margin-left: 0.5vw; 
+        margin-top: -5px;
+    }
+    #seg-linha-card3{
+        margin-left: 62vw;
+        margin-top: -60px;
+    } 
+    #seg-linha-card2{
+        margin-left: 62vw;
+        margin-top: -80px;
+    } 
+    #btn-pesquisar{ 
+        font-family: Century Gothic;
+        background-color: #F77759;
+        border-radius: 5px;
+        box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.3);
+        border-color: transparent; 
+        font-weight: bold;
+        color: white;
+        padding: 6px;
+        outline: none;
+        margin-left: 5px;
+    }
+    #pesquisa{
+        position: absolute;
+        z-index: 1;
+        margin-top: 140px;
+        margin-left: -1vw;
+    }
+    #pesquisa-input{
+        width: 80%;
+    }
+    #linha{
+        height: 100px;
+        border-bottom: 5px solid white;
+        background-color: #C8C8C8;
+    }
+    #container-total{ 
+        border: 1px solid #C8C8C8;
+        border-radius: 10px;
+        height: 300px;
+        background-color: #DEDEDE;
+    }
+    #container-total #etiqueta{
+        font-family: Century Gothic;
+        font-weight: bolder;
+        float: left;
+        color: #444444;
+        margin-bottom: -3vw;
+    }
+    #etq-conteudo{
+        font-family: Century Gothic;
+        font-weight: bolder;    
+        color: #444444;
+        text-align: right;
+        margin-bottom: -4vw;
+    }
+    #etq-conteudo1{
+        font-family: Century Gothic;
+        font-weight: bolder;    
+        color: gray;
+        text-align: right;
+        margin-bottom: -4vw;
+    }
+    #btn-confirmar{
+        font-family: Century Gothic;
+        background-color: #5560AA;
+        border-radius: 5px;
+        box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.3);
+        border-color: transparent; 
+        font-weight: bold;
+        color: white;
+        padding: 8px 34.5vw;
+        outline: none;
+    }
+    #container1-total input{
+        width: 50%;
+        margin-left: 38.5vw;
+    }
+    #container1-total h5{
+        font-size: initial;
+    }
+}
+@media (max-width: 714px){
+    #seg-linha-card{
+        margin-top: -10px;
+    }
+    #produto{
+        margin-top: -100px;
+    }
+    #seg-linha-card2, #seg-linha-card3{
+        margin-left: 55vw;
+    }
+    #btn-confirmar{
+        font-family: Century Gothic;
+        background-color: #5560AA;
+        border-radius: 5px;
+        box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.3);
+        border-color: transparent; 
+        font-weight: bold;
+        color: white;
+        padding: 8px 33.5vw;
+        outline: none;
+    }
+}
+@media (max-width: 643px){
+    #container1-total input{
+        width: 50%;
+        margin-left: 36.5vw;
+    }
+    #btn-confirmar{
+        font-family: Century Gothic;
+        background-color: #5560AA;
+        border-radius: 5px;
+        box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.3);
+        border-color: transparent; 
+        font-weight: bold;
+        color: white;
+        padding: 8px 32vw;
+        outline: none;
+    }
+}    
+@media (max-width: 587px){
+    .container-logo #logo{
+        margin-left: -18px;
+        width: 30%;
+    }
+    #login{
+        width: 33%;
+        margin-top: -34px;
+        margin-left: 34.5vw;
+    }
+    #cesta{
+        width: 33%;
+        margin-top: -34px;
+        margin-left: 40vw;
+    }
+    .card img{
+        width: 25%;
+        margin-left: -5vw;
+    }
+    #seg-linha-card{
+        margin-top: -15px;
+    }
+    #produto{
+        margin-top: -110px;
+    }
+    #produto2{
+        margin-top: -90px;
+    }
+    #seg-linha-card2, #seg-linha-card3{
+        margin-left: 50vw;
+    }
+    #container1-total input{
+        width: 50%;
+        margin-left: 35.5vw;
+    }
+    #btn-confirmar{
+        font-family: Century Gothic;
+        background-color: #5560AA;
+        border-radius: 5px;
+        box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.3);
+        border-color: transparent; 
+        font-weight: bold;
+        color: white;
+        padding: 8px 30vw;
+        outline: none;
+    }
+}
+@media (max-width: 500px){
+    .container-logo #logo{
+        margin-left: -18px;
+        width: 30%;
+    }
+    #login{
+        width: 35%;
+        margin-top: -34px;
+        margin-left: 33vw;
+    }
+    #cesta{
+        width: 35%;
+        margin-top: -34px;
+        margin-left: 39vw;
+    }
+    .card img{
+        width: 35%;
+        margin-left: -5vw;
+    }
+    #seg-linha-card{
+        margin-top: -15px;
+    }
+    #produto{
+        margin-top: -120px;
+    }
+    #seg-linha-card2, #seg-linha-card3{
+        margin-left: 45vw;
+    }
+    #container1-total input{
+        width: 50%;
+        margin-left: 33vw;
+    }
+    #btn-confirmar{
+        font-family: Century Gothic;
+        background-color: #5560AA;
+        border-radius: 5px;
+        box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.3);
+        border-color: transparent; 
+        font-weight: bold;
+        color: white;
+        padding: 8px 26.8vw;
+        outline: none;
+    }
+}
+@media (max-width: 414px){ 
+    #btn-pesquisar{ 
+        font-family: Century Gothic;
+        background-color: #F77759;
+        border-radius: 5px;
+        box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.3);
+        border-color: transparent; 
+        font-weight: bold;
+        color: white;
+        padding: 6px;
+        outline: none;
+        margin-left: 5px;
+    }
+    #pesquisa{
+        position: absolute;
+        z-index: 1;
+        margin-top: 140px;
+        margin-left: -1vw;
+    }
+    #pesquisa-input{
+        width: 70%;
+    }
+    #login{
+        width: 35%;
+        margin-top: -35px;
+        margin-left: 35vw;
+    }
+    #cesta{
+        width: 35%;
+        margin-top: -35px;
+        margin-left: 40vw;
+    }
+    .container-logo #logo{
+        width: 10vw;
+        margin-left: -20px;
+        margin-top: 2px;
+    }
+    .card img{
+        margin-top: 13px;
+        margin-left: -9vw;
+        width: 45%;
+        object-fit: cover;
+    }
+    #container1-total input{
+        width: 50%;
+        margin-left: 33vw;
+        margin-top: -3vw;
+    }
+    #btn-confirmar{
+        font-family: Century Gothic;
+        background-color: #5560AA;
+        border-radius: 5px;
+        box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.3);
+        border-color: transparent; 
+        font-weight: bold;
+        color: white;
+        padding: 8px 25vw;
+        outline: none;
+    }
+    #produto h5, #produto2 h5{
+        margin-top: -2vw;
+        font-size: 3vw;
+    }
+    #seg-linha-card2 h5, #seg-linha-card3 h5{
+        font-size: 4vw;
+    }
+}

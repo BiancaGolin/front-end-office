@@ -41,11 +41,11 @@
         <div *ngIf='auth.bntSair()'>
             Olá, {{nome}}
         </div>
-
+        
         <!-- Cesta EM IMPLEMENTAÇAO-->
-<!--         <div class="col-md-1" id="cesta">
-            <a href="cesta.html"><img id="cesta" src="../assets/img/Cesta.png" alt="Cesta de compras"></a>
-        </div> -->
+        <div class="col-md-1" id="cesta">
+            <a routerLink='/carrinho'><img id="cesta" src="../assets/img/Cesta.png" alt="Cesta de compras"></a>
+        </div>
 
         <!-- Se usuario logado, aparece botão de SAIR -->
         <div class="col-md-1" id="login" *ngIf='auth.bntSair()'>

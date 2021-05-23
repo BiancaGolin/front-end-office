@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Produto } from '../model/Produto';
 import { AlertasService } from '../service/alertas.service';
 import { ProdutoService } from '../service/produto.service';
+import { Globals } from '../globals';
 
 @Component({
   selector: 'app-comprar-produto',
@@ -10,6 +11,7 @@ import { ProdutoService } from '../service/produto.service';
   styleUrls: ['./comprar-produto.component.css']
 })
 export class ComprarProdutoComponent implements OnInit {
+  globals: Globals;
   selectedStatus: number;
   status: any = [0, 1];
 
@@ -21,8 +23,11 @@ export class ComprarProdutoComponent implements OnInit {
     private produtoService: ProdutoService,
     private router: Router,
     private route: ActivatedRoute,
-    private alert: AlertasService
-  ) { }
+    private alert: AlertasService,
+    globals: Globals
+  ) {
+    this.globals = globals;
+  }
 
   ngOnInit() {
     window.scroll(0,0)
@@ -46,5 +51,37 @@ export class ComprarProdutoComponent implements OnInit {
     }
     
     console.log("event target", event.target.value)
+  }
+
+  addCarrinho(){
+    // console.log(this.globals.cesta);
+
+    if(!this.carrinhoJaPossui()){
+      this.globals.cesta.push(this.produto);
+      this.globals.qnt.push(1);
+    }else{
+      this.incrementaQtd();
+    }
+    this.router.navigate(['/carrinho'])
+  }
+
+  incrementaQtd(){
+    for(let i=0; i<this.globals.cesta.length; i++){
+      if(this.globals.cesta[i].id == this.produto.id){
+        this.globals.qnt[i] ++;
+      }
+    }
+  }
+
+  carrinhoJaPossui(){
+    // console.log('verificando ...')
+    for(let i=0; i<this.globals.cesta.length; i++){
+      if(this.globals.cesta[i].id == this.produto.id){
+        // console.log(this.globals.cesta[i]);
+        return true;
+      }
+    }
+    // console.log('n possui')
+    return false;
   }
 }

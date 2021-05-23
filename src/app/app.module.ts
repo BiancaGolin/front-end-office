@@ -27,6 +27,8 @@ import { FooterComponent } from './footer/footer.component';
 import { CadastroClienteComponent } from './cadastro-cliente/cadastro-cliente.component';
 import { AreaClienteComponent } from './area-cliente/area-cliente.component';
 import { EditarClienteComponent } from './editar-cliente/editar-cliente.component';
+import { CarrinhoComponent } from './carrinho/carrinho.component';
+import { Globals } from './globals';
 
 @NgModule({
   declarations: [
@@ -48,7 +50,8 @@ import { EditarClienteComponent } from './editar-cliente/editar-cliente.componen
     FooterComponent,
     CadastroClienteComponent,
     AreaClienteComponent,
-    EditarClienteComponent
+    EditarClienteComponent,
+    CarrinhoComponent
   ],
   imports: [
     BrowserModule,
@@ -60,7 +63,7 @@ import { EditarClienteComponent } from './editar-cliente/editar-cliente.componen
     NgxPaginationModule,
     ModalModule.forRoot()
   ],
-  providers: [],
+  providers: [Globals],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

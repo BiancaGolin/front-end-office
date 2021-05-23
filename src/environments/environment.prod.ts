@@ -16,6 +16,10 @@ export const environment = {
   nomeCliente: '',
   emailCliente: '',
   senhaCliente: '',
-  tokenCliente: ''
+  tokenCliente: '',
+
+    //CARRINHO
+    listaProdutos: []
+  
 
 };
