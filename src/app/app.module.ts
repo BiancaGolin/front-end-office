@@ -29,6 +29,8 @@ import { AreaClienteComponent } from './area-cliente/area-cliente.component';
 import { EditarClienteComponent } from './editar-cliente/editar-cliente.component';
 import { CarrinhoComponent } from './carrinho/carrinho.component';
 import { Globals } from './globals';
+import { CheckoutComponent } from './checkout/checkout.component';
+import { PaymentComponent } from './payment/payment.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +53,9 @@ import { Globals } from './globals';
     CadastroClienteComponent,
     AreaClienteComponent,
     EditarClienteComponent,
-    CarrinhoComponent
+    CarrinhoComponent,
+    CheckoutComponent,
+    PaymentComponent
   ],
   imports: [
     BrowserModule,

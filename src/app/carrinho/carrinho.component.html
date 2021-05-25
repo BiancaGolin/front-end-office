@@ -1,181 +1,180 @@
-<body>
-    <div class="container-medium">
+<div class="container-medium">
 
-        <!-- Página atual -->
-        <div class="row" id="pagina-atual">
-            <a href="home.html">
-                <img class="icone" src="../assets/img/Voltar.png" alt="Voltar"></a>
-            <h5>Minha cesta de compras</h5>
-        </div>
-        
-        <!-- Cards de compra e de total -->
-        <div class="row">
-            <!-- Cards de compra -->                
-            <div class="col-md-8" id="card-compra-desk">
-                <!-- Card 1 -->
-                <div class="card" id="card-compra" *ngFor="let produto of this.globals.cesta; let i = index">
-                    <div class="row mt-1">
-                        <div class="col-md-2">
-                            <a href="../Paginas/TelaLogin.html"><img src="{{produto.imagem[0].path}}" alt="Imagem do produto"></a>
-                        </div>
-                        <div class="col-md-5" id="produto">
-                            <div class="row">
-                                <h5>{{produto.nomeProduto}}</h5>
-                            </div>
-                        </div>
-                        <div class="col-md-3" id="container-qtd">
-                            <div class="row" id="etq-qtd">
-                                <p>Quantidade</p>
-                            </div>
-                            <div class="row" id="seg-linha-card">
-                                <div id="quantidade">
-
-                                    <div class="col-xs-3 col-xs-offset-3">
-                                        <div class="input-group number-spinner">
-                                            <span class="input-group-btn">
-                                                <button class="btn btn-default" (click)='decrementaQtd(i)'>
-                                                    <span class="btn-qtn">-</span>
-                                                </button>
-                                            </span>
-                                            <input type="text" disabled class="form-control text-center" value="{{this.globals.qnt[i]}}">
-                                            <span class="input-group-btn">
-                                                <button class="btn btn-default" (click)='incrementaQtd(i)'>
-                                                    <span class="btn-qtn">+</span>
-                                                </button>
-                                            </span>
-                                        </div>
-                                    </div>
-
-                                    <div class="card-link">
-                                        <button type="submit" id="btn-excluir" (click)="removeProduct(i)">X</button>
-                                    </div>
-
-                                </div>
-                                <!-- <div class="form-group">
-                                    <select class="custom-select">
-                                        <option selected>1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5</option>
-                                    </select>
-                                </div> -->
-                            </div>
-                        </div>
-                        <div class="col-md-2" id="total">
-                            <div class="row" id="etq-total">
-                                <p>Total</p>
-                            </div>
-                            <div class="row" id="seg-linha-card2">
-                                <h5>R${{totalIndividual[i] | number : '1.2'}}</h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>                
-                      
-            <!-- Card de total -->
-            <div class="col-md-4 p-0" id="container-total">
-                <!-- Total -->
-                <div class="row" id="container1-total">
-                    <div class="col-md-6" id="totalTitulo">
-                        <h5 id="etiqueta">Total</h5>
-                    </div>
-                    <div class="col-md-6">
-                        <h5 id="etq-conteudo">R${{total | number : '1.2'}}</h5>
-                    </div>
-                </div>
-                
-                <!-- Subtotal -->
-                <div class="row" id="container1-total">
-                    <div class="col-md-6">
-                        <h5 id="etiqueta">Subtotal</h5>
-                    </div>
-                    <div class="col-md-6">
-                        <h5 id="etq-conteudo1">R${{subtotal | number : '1.2'}}</h5>
-                    </div>
-                </div>
-                
-                <!-- Frete -->
-                <div class="row" id="container1-total">
-                    <div class="col-md-6">
-                        <h5 id="etiqueta">Frete</h5>
-                    </div>
-                    <div class="col-md-6">
-                        <h5 id="etq-conteudo1">R${{frete | number : '1.2'}}</h5>
-                    </div>
-                    
-                    <!-- Opções de frete 
-                    <button onclick="mostrarFrete()" class="col-md-1">OK</button>
-                    <div id="myDIV" style="display: none">
-                      This is my DIV element.
-                    </div>
-                    -->
-                </div>
-                
-                <!-- Insira CEP -->
-                <div class="row" id="calculoFrete">
-                    <div class="col-md-6" id="instrucaoCep">
-                        <p><b>Insira o CEP para cálculo de frete:</b></p>
-                    </div>
-                    <div class="col-md-6">
-                        <input class="form-control mr-sm-3 col-xs-3 col-md-12" 
-                               type="search" placeholder="Insira o CEP"
-                               aria-label="Pesquisar">
-                    </div> 
-                </div>
-                
-                <!-- Escolha frete -->
-                <div id="escolhaFrete">
-                <div class="row" id="calculoFrete">
-                    <p><b>Escolha o tipo de entrega:</b></p>
-                </div>
-                <!-- Correios -->
-                <div class="row" id="calculoFrete">
-                    <div class="col-md-10 form-check">
-                        <input class="form-check-input" (change)="freteChangeHandler($event)" type="radio" name="frete" id="Ativo" value="0" checked>
-                        <label class="form-check-label" for="Ativo">
-                            Correios - 10 dias úteis
-                        </label>
-                    </div>
-                    <div class="col-md-2">
-                        <p>R$0,00</p>
-                    </div>
-                </div>
-                <!-- Transportadora -->
-                <div class="row" id="calculoFrete">
-                    <div class="col-md-10 form-check">
-                        <input class="form-check-input" (change)="freteChangeHandler($event)" type="radio" name="frete" value="1">
-                        <label class="form-check-label" for="Ativo">
-                            Transportadora - 5 dias úteis
-                        </label>
-                    </div>
-                    <div class="col-md-2">
-                        <p>R$7,90</p>
-                    </div>
-                </div>
-                <!-- Express -->
-                <div class="row" id="calculoFrete">
-                    <div class="col-md-10 form-check">
-                        <input class="form-check-input" (change)="freteChangeHandler($event)" type="radio" name="frete" value="2">
-                        <label class="form-check-label" for="Ativo">
-                            Entrega <i>express</i> - 2 dias úteis
-                        </label>
-                    </div>
-                    <div class="col-md-2">
-                        <p>R$15,50</p>
-                    </div>
-                </div>
-                </div>
-                
-                <!-- Compra -->
-                <div class="row" id="container1-total">
-                    <a href="../Paginas/cestaPagamento.html" class="card-link">
-                        <button type="submit" id="btn-confirmar">Confirmar</button>
-                    </a>
-                </div>
-                <a href="../Paginas/home.html" id="adicionar"><p><u>Adicionar mais produtos</u></p></a>
-            </div>
-        </div>
-
+    <!-- Página atual -->
+    <div class="row" id="pagina-atual">
+        <a href="home.html">
+            <img class="icone" src="../assets/img/Voltar.png" alt="Voltar"></a>
+        <h5>Minha cesta de compras</h5>
     </div>
+    
+    <!-- Cards de compra e de total -->
+    <div class="row">
+        <!-- Cards de compra -->                
+        <div class="col-md-8" id="card-compra-desk">
+            <!-- Card 1 -->
+            <div class="card" id="card-compra" *ngFor="let produto of this.globals.cesta; let i = index">
+                <div class="row mt-1">
+                    <div class="col-md-2">
+                        <a><img src="{{produto.imagem[0].path}}" alt="Imagem do produto"></a>
+                    </div>
+                    <div class="col-md-5" id="produto">
+                        <div class="row">
+                            <h5>{{produto.nomeProduto}}</h5>
+                        </div>
+                    </div>
+                    <div class="col-md-3" id="container-qtd">
+                        <div class="row" id="etq-qtd">
+                            <p>Quantidade</p>
+                        </div>
+                        <div class="row" id="seg-linha-card">
+                            <div id="quantidade">
+
+                                <div class="col-xs-3 col-xs-offset-3">
+                                    <div class="input-group number-spinner">
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-default" (click)='decrementaQtd(i)'>
+                                                <span class="btn-qtn">-</span>
+                                            </button>
+                                        </span>
+                                        <input type="text" disabled class="form-control text-center" value="{{this.globals.qnt[i]}}">
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-default" (click)='incrementaQtd(i)'>
+                                                <span class="btn-qtn">+</span>
+                                            </button>
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div class="card-link">
+                                    <button type="submit" id="btn-excluir" (click)="removeProduct(i)">X</button>
+                                </div>
+
+                            </div>
+                            <!-- <div class="form-group">
+                                <select class="custom-select">
+                                    <option selected>1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="col-md-2" id="total">
+                        <div class="row" id="etq-total">
+                            <p>Total</p>
+                        </div>
+                        <div class="row" id="seg-linha-card2">
+                            <h5>R${{totalIndividual[i] | number : '1.2'}}</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>                
+                    
+        <!-- Card de total -->
+        <div class="col-md-4 p-0" id="container-total">
+            <!-- Total -->
+            <div class="row" id="container1-total">
+                <div class="col-md-6" id="totalTitulo">
+                    <h5 id="etiqueta">Total</h5>
+                </div>
+                <div class="col-md-6">
+                    <h5 id="etq-conteudo">R${{total | number : '1.2'}}</h5>
+                </div>
+            </div>
+            
+            <!-- Subtotal -->
+            <div class="row" id="container1-total">
+                <div class="col-md-6">
+                    <h5 id="etiqueta">Subtotal</h5>
+                </div>
+                <div class="col-md-6">
+                    <h5 id="etq-conteudo1">R${{subtotal | number : '1.2'}}</h5>
+                </div>
+            </div>
+            
+            <!-- Frete -->
+            <div class="row" id="container1-total">
+                <div class="col-md-6">
+                    <h5 id="etiqueta">Frete</h5>
+                </div>
+                <div class="col-md-6">
+                    <h5 id="etq-conteudo1">R${{frete | number : '1.2'}}</h5>
+                </div>
+                
+                <!-- Opções de frete 
+                <button onclick="mostrarFrete()" class="col-md-1">OK</button>
+                <div id="myDIV" style="display: none">
+                    This is my DIV element.
+                </div>
+                -->
+            </div>
+            
+            <!-- Insira CEP -->
+            <div class="row" id="calculoFrete">
+                <div class="col-md-6" id="instrucaoCep">
+                    <p><b>Insira o CEP para cálculo de frete:</b></p>
+                </div>
+                <div class="col-md-6">
+                    <input class="form-control mr-sm-3 col-xs-3 col-md-12" 
+                            type="search" placeholder="Insira o CEP"
+                            aria-label="Pesquisar">
+                </div> 
+            </div>
+            
+            <!-- Escolha frete -->
+            <div id="escolhaFrete">
+            <div class="row" id="calculoFrete">
+                <p><b>Escolha o tipo de entrega:</b></p>
+            </div>
+            <!-- Correios -->
+            <div class="row" id="calculoFrete">
+                <div class="col-md-10 form-check">
+                    <input class="form-check-input" (change)="freteChangeHandler($event)" type="radio" name="frete" id="Ativo" value="0" checked>
+                    <label class="form-check-label">
+                        Correios - 10 dias úteis
+                    </label>
+                </div>
+                <div class="col-md-2">
+                    <p>R$0,00</p>
+                </div>
+            </div>
+            <!-- Transportadora -->
+            <div class="row" id="calculoFrete">
+                <div class="col-md-10 form-check">
+                    <input class="form-check-input" (change)="freteChangeHandler($event)" type="radio" name="frete" value="1">
+                    <label class="form-check-label">
+                        Transportadora - 5 dias úteis
+                    </label>
+                </div>
+                <div class="col-md-2">
+                    <p>R$7,90</p>
+                </div>
+            </div>
+            <!-- Express -->
+            <div class="row" id="calculoFrete">
+                <div class="col-md-10 form-check">
+                    <input class="form-check-input" (change)="freteChangeHandler($event)" type="radio" name="frete" value="2">
+                    <label class="form-check-label">
+                        Entrega <i>express</i> - 2 dias úteis
+                    </label>
+                </div>
+                <div class="col-md-2">
+                    <p>R$15,50</p>
+                </div>
+            </div>
+            </div>
+            
+            <!-- Compra -->
+            <div class="row" id="container1-total">
+                <a class="card-link">
+                    <button type="submit" id="btn-confirmar" (click)="goTopay()">Confirmar</button>
+                </a>
+            </div>
+            <a href="../Paginas/home.html" id="adicionar"><p><u>Adicionar mais produtos</u></p></a>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,156 @@
+<!-- Página atual -->
+<div class="row" id="pagina-atual">
+    <a href="../Paginas/cesta.html">
+        <img class="icone" src="../assets/img/Voltar.png" alt="Voltar"></a>
+    <h5>Pagamento e entrega</h5>
+</div>
+            
+<!-- Cards de endereço e de pagamento -->
+<!-- Endereço -->
+<div class="row">                                
+    <div class="col-md-12" id="card-compra-desk">                    
+        <div class="card" id="card-compra">
+            <div class="tituloSecao">
+                <h4>Dados de entrega</h4>
+            </div>
+            <br>
+            
+            <div class="row mt-1">
+                <!-- Escolher endereço -->
+                <div class="col-md-10" id="formaPagamento">
+                    <fieldset class="form-group">                    
+                        <label for="exampleFormControlInput1" class="label">
+                            <b>Escolha o endereço de entrega:</b></label>                        
+                        <div class="column-count-status">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" value="0" name="endereco" (change)="getAdrrsString($event)" checked>
+                                <label class="form-check-label" for="Ativo">
+                                    {{enderecos[0]}}
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" value="1" name="endereco" (change)="getAdrrsString($event)">
+                                <label class="form-check-label" for="Inativo">
+                                    {{enderecos[1]}}
+                                </label>
+                            </div>
+                        </div>                    
+                    </fieldset>
+                </div>
+                                            
+                <!-- Novo endereço -->
+                <div class="col-md-2" id="novoEndereco">
+                    <p>Não encontrou seu endereço de entrega? <a href="../Paginas/CadastroCliente.html"><u>Adicione um novo.</u></a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Pagamento -->
+<div class="row">                                
+    <div class="col-md-12" id="card-compra-desk">                    
+        <div class="card" id="card-compra2">                        
+            <div class="tituloSecao">
+                <h4>Forma de pagamento</h4>
+            </div>
+            <br>                        
+            
+            <div class="row mt-1">
+                <!-- Cartão ou boleto -->
+                <div class="col-md-3" id="formaPagamento">
+                    <fieldset class="form-group">                    
+                        <label for="exampleFormControlInput1" class="label">
+                            <b>Escolha a forma de pagamento:</b></label>                        
+                        <div class="column-count-status">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="payMeth" (change)="changePayMethod($event)" value="0" checked>
+                                <label class="form-check-label" for="Ativo">
+                                    Cartão de crédito
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="payMeth" (change)="changePayMethod($event)" value="1">
+                                <label class="form-check-label" for="Inativo">
+                                    Boleto bancário
+                                </label>
+                            </div>
+                        </div>                    
+                    </fieldset>
+                </div>
+                
+                <!-- Dados do cartão -->
+                <div class="col-md-5" id="dadosCartao" *ngIf="globals.payMeth == 0;else boleto_content">
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1" class="label">
+                            <b>Insira os dados do cartão:</b></label>                                    
+                    </div>
+                    
+                    <!-- Número do cartão -->
+                    <div class="row" id="rowCartao1">                                
+                        <div class="col-md-5">
+                            <label for="exampleFormControlInput1" class="label">
+                            Número do cartão:</label>   
+                        </div>
+                        <div class="col-md-7">
+                            <input type="text" class="form-control" id="numeroCartao" placeholder="0000 0000 0000 0000">
+                        </div>
+                    </div>
+                    
+                    <!-- Código de verificação -->
+                    <div class="row" id="rowCartao">                                
+                        <div class="col-md-5">
+                            <label for="exampleFormControlInput1" class="label">
+                            Código de verificação:</label>  
+                        </div>
+                        <div class="col-md-7">
+                            <input type="text" class="form-control" id="cvvCartao" placeholder="000">
+                        </div>
+                    </div>
+                    
+                    <!-- Data de vencimento -->
+                    <div class="row" id="rowCartao">                                
+                        <div class="col-md-5">
+                            <label for="exampleFormControlInput1" class="label">
+                            Data de vencimento:</label>   
+                        </div>
+                        <div class="col-md-7">
+                            <input type="text" class="form-control" id="vencimentoCartao" placeholder="00/00">
+                        </div>
+                    </div>
+                    
+                    <!-- Qtd. de parcelas -->
+                    <div class="row" id="rowCartao">                                
+                        <div class="col-md-5">
+                            <label for="exampleFormControlInput1" class="label">
+                            Qtd. de parcelas:</label>    
+                        </div>
+                        <div class="col-md-7">
+                            <select class="custom-select" id="parcelasCartao" (change)="getQtdVezes($event)">
+                                <option selected>Selecione</option>
+                                <option value="1">1x sem juros</option>
+                                <option value="2">2x sem juros</option>
+                                <option value="3">3x sem juros</option>
+                                <option value="4">4x sem juros</option>
+                                <option value="5">5x sem juros</option>
+                                <option value="6">6x sem juros</option>
+                            </select>  
+                        </div>
+                    </div>                              
+                </div>
+
+                <ng-template #boleto_content>
+                    <div class="form-group" > Ao Finalizar sua compra enviaremos o Boleto ao Email Registrado</div>
+                </ng-template>
+
+                <!-- Prosseguir com a compra -->
+                <div class="col-md-4" id="container1-total">
+                    <a class="card-link">
+                        <button type="submit" id="btn-confirmar" (click)="goToCheckout()">Prosseguir para o resumo do pedido</button>
+                    </a>
+                    <a (click)="backToCarrinho()"><p><u>Voltar para a cesta de compras</u></p></a> 
+                </div>  
+            </div>                     
+        </div>
+    </div>
+</div>

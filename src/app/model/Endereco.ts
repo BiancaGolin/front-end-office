@@ -4,4 +4,5 @@ export class Endereco {
     public complemento: string
     public localidade: string
     public uf: string
+    public bairro: string
 }

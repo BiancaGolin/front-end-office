@@ -15,7 +15,7 @@ import { Globals } from '../globals';
   styleUrls: ['./carrinho.component.css']
 })
 export class CarrinhoComponent implements OnInit {
-  value = 1;
+  // value = 1;
   globals: Globals;
   total = 0.0;
   subtotal = 0.0;
@@ -118,6 +118,11 @@ export class CarrinhoComponent implements OnInit {
     this.globals.qnt.splice(index,1)
     this.totalIndividual.splice(index,1)
     this.calculaResumo()
+  }
+
+  goTopay(){
+    this.globals.selFrete = this.selectedFreteRadio
+    this.router.navigate(['/payment'])
   }
 
 }

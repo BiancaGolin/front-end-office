@@ -16,6 +16,8 @@ import { LoginClienteComponent } from './login-cliente/login-cliente.component';
 import { LoginUsuarioComponent } from './login-usuario/login-usuario.component';
 import { VisualizarProdutoComponent } from './visualizar-produto/visualizar-produto.component';
 import { CarrinhoComponent } from './carrinho/carrinho.component';
+import { CheckoutComponent } from './checkout/checkout.component';
+import { PaymentComponent } from './payment/payment.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -36,7 +38,9 @@ const routes: Routes = [
   { path: 'editar-cliente', component: EditarClienteComponent},
   { path: 'visualizar-produto/:id', component: VisualizarProdutoComponent},
   { path: 'comprar-produto/:id', component: ComprarProdutoComponent },
-  { path: 'carrinho', component: CarrinhoComponent }
+  { path: 'carrinho', component: CarrinhoComponent },
+  { path: 'checkout', component: CheckoutComponent },
+  { path: 'payment', component: PaymentComponent }
 ];
 
 @NgModule({  
