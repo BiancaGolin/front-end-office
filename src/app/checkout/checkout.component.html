@@ -68,7 +68,7 @@
     
     <!-- Concluir compra -->
     <div id="container1-total">
-        <button type="button" id="btn-confirmar">Concluir compra</button>
+        <button type="button" id="btn-confirmar" (click)="finalizarCompra()">Concluir compra</button>
         <a (click)="backToPayment()"><p><u>Voltar para a forma de pagamento e entrega</u></p></a> 
     </div>
     
@@ -79,7 +79,7 @@
             <span class="close">&times;</span>
             <h4>Sucesso!</h4>
             <br>
-            <p>Pedido <b>054923814</b> efetuado e aguardando pagamento.</p>
+            <p>Pedido <b>{{pagePedNum}}</b> efetuado e aguardando pagamento.</p>
             <p>Acompanhe a sua compra na página "Meus pedidos".</p>
         </div>
     </div>

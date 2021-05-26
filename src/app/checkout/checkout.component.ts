@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Globals } from '../globals';
+import { Compra } from '../model/Compra';
+import { Produto } from '../model/Produto';
+import { AlertasService } from '../service/alertas.service';
+import { CompraService } from '../service/compra.service';
 
 @Component({
   selector: 'app-checkout',
@@ -16,10 +20,13 @@ export class CheckoutComponent implements OnInit {
   totalIndividual: number[];
   selectedFrete: number;
   payMethName: string;
+  pagePedNum: number;
   
   constructor(
     private router: Router,
     private route: ActivatedRoute,
+    private compraService: CompraService,
+    private alerta: AlertasService,
     globals: Globals
   ) {
     this.globals = globals;
@@ -90,5 +97,44 @@ export class CheckoutComponent implements OnInit {
    backToPayment(){
     this.router.navigate(['/payment'])
    }
+
+  listaDeProdutos(){
+    let listaProd :Produto[] = []
+    let tmpProd :Produto = new Produto()
+    for(let i = 0; i< this.globals.cesta.length; i++){
+      for(let j = 0; j < this.globals.qnt[i]; j++){
+        tmpProd.id = this.globals.cesta[i].id
+        listaProd.push(tmpProd)
+      }
+    }
+    return listaProd;
+  }
+
+  limpaGlobals(){
+    this.globals.cesta = [];
+    this.globals.qnt = [];
+  }
+
+  finalizarCompra(){
+    let compra :Compra = new Compra();
+    compra.produtosVinculados = this.globals.cesta
+
+    compra.enderecoEntrega = this.globals.selAddrName
+    compra.nParcelas = this.globals.qtdVezes
+    compra.formaPagamento = this.globals.payMeth
+    compra.valorTotal = this.total
+    compra.frete = this.frete
+    compra.numeroPedido = Math.floor(100000000 + Math.random() * 900000000);
+    compra.statusPedido = "Aguardando Confirmação de Pagamento"
+    console.log("User = " + JSON.stringify(compra));
+    this.pagePedNum = compra.numeroPedido;
+    this.compraService.postCompra(compra).subscribe((resp: Compra) =>{
+      console.log(resp)
+
+      this.alerta.showAlertSucess('Sucesso! Pedido '+compra.numeroPedido+' foi efetuado e esta aguardando pagamento.')
+      this.limpaGlobals();
+      this.router.navigate(['/home'])
+    })
+  }
 
 }
