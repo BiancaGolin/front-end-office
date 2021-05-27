@@ -1,0 +1,176 @@
+/* Tela */
+body{
+    background-color: #EFEFEF;
+    font-family: Calibri;
+}
+
+.paginacao{
+    display: flex;
+    justify-content: space-around;
+}
+
+
+/*Header*/
+.navbar{
+    background-color: #5560AA;
+}
+.container-logo{
+    margin-left: 0.5vw;
+    position: absolute;
+    z-index: 1;
+}
+.container-logo #logo{
+    width: 5vw;
+}
+.titulo{
+    margin-left: 6vw;
+    background-color: #5560AA;
+    font-family: Berlin Sans FB;
+    color: #EFEFEF;
+    padding: 1.5vw;    
+}
+.titulo h2{
+    font-size: 2em;    
+}
+.titulo a{
+    text-decoration: none;
+    color: #EFEFEF;
+}
+.titulo a:visited, .titulo a:hover{
+    color: #EFEFEF;
+}
+#btn-pesquisar{ 
+    font-family: Century Gothic;
+    background-color: #F77759;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.3);
+    border-color: transparent; 
+    font-weight: bold;
+    color: white;
+    padding: 8px 15px;
+    outline: none;    
+}
+#btn-pesquisar:hover{
+    border-color: #F77759;
+}
+input:placeholder-shown{
+    font-style: italic;
+}
+.form-control, .card{
+    border: none;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+}
+#login, #cesta{
+    width: 60%;
+}
+#info-login{
+    margin-left: -60px;
+    margin-right: 50px;
+}
+#info-login1{
+    color: white;
+    margin-bottom: 0;
+    margin-top: 12px;
+    width: 150%;    
+}
+#info-login2{
+    color: #EFEFEF;
+}
+#menu{
+    background-color: white;
+    font-family: Century Gothic;
+    font-weight: bolder;
+    margin-bottom: 2rem;
+}
+.nav-link{
+    color: #F77759;
+}   
+.nav-link:hover {
+    color: #C8C8C8;
+}
+#linha{
+    margin-top: -32px;
+    background-color: #C8C8C8;
+    height: 5px;
+}
+.container-produto{
+    margin: 0 6vw;
+}
+.descricao h5{
+    color: #5560AA;
+    font-family: Century Gothic;
+    font-weight: bolder;
+    text-align: left;
+    margin-left: 1vw;
+}
+.icone{
+    width: 30px;
+}
+.icone#estrela{
+    margin: 5px 10px 0 18px;
+    margin-top: -5px;
+    float: left;
+}
+.nomeProduto{
+    margin-top: 2rem;
+    display: flex;
+}
+.infos{
+    margin: 0 30px 0 15px;
+}
+.parte1{
+    display: inline-flex;
+}
+.numero{
+    margin-right: 5rem;
+}
+.Total, .Total1{
+    margin-right: 20rem;
+}
+.Total1{
+    margin-left: 25px;
+}
+.parte2{
+    display: inline-flex;
+}
+
+/* Rodapé */
+footer{   
+    position: absolute;
+    width: 100%;
+    bottom: 0; 
+    background-color: #DEDEDE;
+    color: #444444;
+    font-size: small;
+}
+
+/* Cards de pedido */
+.Pedido{
+    border: solid 1px;
+    border-radius: 10px;
+    background-color: white;
+    margin-bottom: 5rem;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1);
+    border-color: transparent; 
+    padding: 8px 15px;
+}
+.dados h4{
+    font-family: Calibri;
+    font-weight: bold;
+}
+
+/* Detalhes do pedido */
+#btn-detalhes{ 
+    font-family: Century Gothic;
+    background-color: white;
+    border-radius: 5px;
+    border-color: #F77759; 
+    font-weight: bold;
+    color: #F77759;
+    padding: 8px 15px;
+    outline: none;
+    cursor: pointer;
+}
+#btn-detalhes:hover{
+    background-color: #EFEFEF;
+}

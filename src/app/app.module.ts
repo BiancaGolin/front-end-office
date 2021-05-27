@@ -31,6 +31,8 @@ import { CarrinhoComponent } from './carrinho/carrinho.component';
 import { Globals } from './globals';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { PaymentComponent } from './payment/payment.component';
+import { MeusPedidosComponent } from './meus-pedidos/meus-pedidos.component';
+import { ListarPedidosComponent } from './listar-pedidos/listar-pedidos.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +57,9 @@ import { PaymentComponent } from './payment/payment.component';
     EditarClienteComponent,
     CarrinhoComponent,
     CheckoutComponent,
-    PaymentComponent
+    PaymentComponent,
+    MeusPedidosComponent,
+    ListarPedidosComponent
   ],
   imports: [
     BrowserModule,

@@ -18,6 +18,8 @@ import { VisualizarProdutoComponent } from './visualizar-produto/visualizar-prod
 import { CarrinhoComponent } from './carrinho/carrinho.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { PaymentComponent } from './payment/payment.component';
+import { MeusPedidosComponent } from './meus-pedidos/meus-pedidos.component';
+import { ListarPedidosComponent } from './listar-pedidos/listar-pedidos.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -40,6 +42,8 @@ const routes: Routes = [
   { path: 'comprar-produto/:id', component: ComprarProdutoComponent },
   { path: 'carrinho', component: CarrinhoComponent },
   { path: 'checkout', component: CheckoutComponent },
+  { path: 'meus-pedidos', component: MeusPedidosComponent },
+  { path: 'listar-pedidos', component: ListarPedidosComponent },
   { path: 'payment', component: PaymentComponent }
 ];
 

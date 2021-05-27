@@ -9,6 +9,8 @@ export class Compra {
     public frete: number
     public numeroPedido: number
     public nParcelas: number
+    public idUsuario: number
+    public dataCompra: Date
     public produtosVinculados: Produto[]
     
 }

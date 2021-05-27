@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { environment } from 'src/environments/environment.prod';
 import { Globals } from '../globals';
 import { Compra } from '../model/Compra';
 import { Produto } from '../model/Produto';
@@ -124,6 +125,7 @@ export class CheckoutComponent implements OnInit {
     compra.formaPagamento = this.globals.payMeth
     compra.valorTotal = this.total
     compra.frete = this.frete
+    compra.idUsuario = environment.idCliente
     compra.numeroPedido = Math.floor(100000000 + Math.random() * 900000000);
     compra.statusPedido = "Aguardando Confirmação de Pagamento"
     console.log("User = " + JSON.stringify(compra));

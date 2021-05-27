@@ -1,0 +1,197 @@
+body{
+    background-color: #EFEFEF;
+    font-family: Calibri;
+}
+
+/*Header*/
+.navbar{
+    background-color: #5560AA;
+}
+.container-logo{
+    margin-left: 0.5vw;
+    position: absolute;
+    z-index: 1;
+}
+.container-logo #logo{
+    width: 5vw;
+}
+.titulo{
+    margin-left: 6vw;
+    background-color: #5560AA;
+    font-family: Berlin Sans FB;
+    color: #EFEFEF;
+    padding: 1.5vw;    
+}
+.titulo h2{
+    font-size: 2em;    
+}
+.titulo a{
+    text-decoration: none;
+    color: #EFEFEF;
+}
+.titulo a:visited, .titulo a:hover{
+    color: #EFEFEF;
+}
+#btn-pesquisar{ 
+    font-family: Century Gothic;
+    background-color: #F77759;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.3);
+    border-color: transparent; 
+    font-weight: bold;
+    color: white;
+    padding: 8px 15px;
+    outline: none;    
+}
+#btn-pesquisar:hover{
+    border-color: #F77759;
+}
+input:placeholder-shown{
+    font-style: italic;
+}
+.form-control, .card{
+    border: none;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+}
+#login, #cesta{
+    width: 60%;
+}
+#info-login{
+    margin-left: -60px;
+    margin-right: 50px;
+}
+#info-login1{
+    color: white;
+    margin-bottom: 0;
+    margin-top: 12px;
+    width: 150%;    
+}
+#info-login2{
+    color: #EFEFEF;
+}
+#menu{
+    background-color: white;
+    font-family: Century Gothic;
+    font-weight: bolder;
+    margin-bottom: 2rem;
+}
+.nav-link{
+    color: #F77759;
+}   
+.nav-link:hover {
+    color: #C8C8C8;
+}
+#linha{
+    margin-top: -32px;
+    background-color: #C8C8C8;
+    height: 5px;
+}
+
+/* Tabela */
+.container-produto{
+    margin: 0 6vw;
+}
+.descricao h5{
+    color: #5560AA;
+    font-family: Century Gothic;
+    font-weight: bolder;
+    text-align: left;
+    margin-left: 1vw;
+}
+.icone{
+    width: 30px;
+}
+.nomeProduto{
+    margin-top: 2rem;
+    display: flex;
+}
+.container-tabela{
+    margin-top: 2rem;
+}
+.pesquisa{
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+}
+.statusPedido, .numeroPedido a{
+    color: black;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.statusPedido:hover, .numeroPedido a:hover{
+    color: #F77759;
+}
+td{
+    background-color: white;
+}
+
+/* Modal de alteração de status do pedido */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+.modal-content{
+    text-align: center;
+    font-family: Calibri;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+}
+.modal-content h4{
+    font-family: Calibri;
+    font-weight: bold;
+    color: #5560AA;
+}
+.close{
+    color: #aaaaaa;
+    text-align: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close:hover, .close:focus{
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+.custom-select{
+    border: none;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+}
+input:placeholder-shown, textarea:placeholder-shown{
+    font-style: italic;
+}
+#btn-confirmar{
+    font-family: Century Gothic;
+    background-color: #00D9CA;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.3);
+    border-color: transparent; 
+    font-weight: bold;
+    color: white;
+    padding: 8px 1vw;
+    outline: none;
+}
+#btn-confirmar:hover{
+    border-color: #00D9CA;
+}
+
+/* Rodapé */
+footer{   
+    position: absolute;
+    width: 100%;
+    bottom: 0; 
+    background-color: #DEDEDE;
+    color: #444444;
+    font-size: small;
+}

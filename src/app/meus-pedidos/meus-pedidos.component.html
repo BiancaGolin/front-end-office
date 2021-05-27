@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="nomeProduto">
+        <div id="container-voltar">
+            <a href="../Paginas/home.html">
+                <img class="icone" src="../assets/img/Voltar.png" alt="Voltar"></a>
+        </div>
+        <div class="descricao">
+            <h5>Meus Pedidos</h5>
+        </div>
+    </div>
+
+    <br><br>
+    <div class="Pedido" *ngFor="let compra of listaPedidosUsuario;">
+        <div class="info">
+            <div class="dados" style="text-align: center;">
+                <h4>Dados do pedido</h4>
+            </div>
+            <br>
+            <div class="parte1">
+                <div class="numero">
+                    <p><b>Número do pedido:</b> {{compra.numeroPedido}}</p>
+                </div>
+                <div class="Total1">
+                    <p><b>Total do pedido:</b> R${{compra.valorTotal | number : '1.2'}}</p>
+                </div>
+                <a class="botao" href="DetalhesPedido.html">
+                    <button type="button" id="btn-detalhes">Ver detalhes do pedido</button>
+                </a>
+            </div>
+        </div>
+        <div class="parte2">
+            <div class="numero">
+                <p><b>Data de realização:</b> {{compra.dataCompra | date: 'dd/MM/yyyy'}}</p>
+            </div>
+            <div class="Total">
+                <p><b>Status:</b> {{compra.statusPedido}}</p>
+            </div>
+        </div>
+
+    </div>
+</div>

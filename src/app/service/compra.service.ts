@@ -13,6 +13,11 @@ export class CompraService {
     private http: HttpClient) { }
     
     postCompra(compra: Compra) : Observable<Compra> {
-        return this.http.post<Compra>('http://localhost:8080/compra', compra)
-      }
+      return this.http.post<Compra>('http://localhost:8080/compra', compra)
+    }
+
+    getAllCompra() : Observable<Compra[]> {
+      return this.http.get<Compra[]>('http://localhost:8080/compra')
+    }
+    
 }

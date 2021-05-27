@@ -28,7 +28,7 @@ export class PaymentComponent implements OnInit {
   ngOnInit(): void {
 
     //console.log('MUDAR PARA USUARIO LOGADO')
-    this.findByIdCliente(2)
+    this.findByIdCliente(environment.idCliente)
     console.log(this.cliente.nomeCliente);
     this.globals.qtdVezes = 1;
     // this.cliente.enderecoEntrega
