@@ -1,79 +1,110 @@
 
-        <div class="container">
-            <div class="nomeProduto">
-                <div id="container-voltar">
-                    <img class="icone" src="../assets/img/Voltar.png" alt="Voltar">
-                </div>
-                <div class="descricao">
-                    <h5>Pedidos</h5>
-                </div>
-            </div>
-
-            <div class="pesquisa">
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Digite o número do pedido" aria-label="Search"
-                        style="width: 300px;">
-                    <button type="button" id="btn-pesquisar">Pesquisar</button>
-                </form>
-            </div>
-
-            <div class="container-tabela">
-                <div class="table-responsive">
-                    <table class="table">
-                        <thead class="thead" style="background-color: #00d8c9;color: whitesmoke;">
-                            <tr>
-                                <th scope="col">Data do Pedido</th>
-                                <th scope="col">Número</th>
-                                <th scope="col">Total</th>
-                                <th scope="col">Status</th>
-                            </tr>
-                        </thead>
-                        <tbody *ngFor='let pedidos of listaPedidos | paginate: {itemsPerPage: 10, currentPage: paginaAtual}; let i=index'>
-                            
-                            <tr>
-                                <td>{{pedidos.dataCompra | date: 'dd/MM/yyyy'}}</td>
-                                <td class="numeroPedido"><a href="../Paginas/ResumoPedido.html">{{pedidos.numeroPedido}}</a></td>
-                                <td>R${{pedidos.valorTotal | number : '1.2'}}</td>
-                                <td class="statusPedido" id="btn-status"><a>{{pedidos.statusPedido}}</a></td>       
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            
-            <!-- Modal de alteração de status do pedido -->
-            <div id="btn-status-modal" class="modal">
-                <!-- Modal content -->
-                <div class="modal-content">
-                    <span class="close">&times;</span>
-                    <h4>Status do pedido</h4>
-                    <br>
-                    <p>Selecione o novo status do pedido <b>11456321</b>:</p> 
-                    <div class="row">
-                        <div class="col-md-2"></div>
-                        <div class="col-md-5">
-                            <select class="custom-select">
-                                <option selected>Selecione</option>
-                                <option value="aguardPag">Aguardando pagamento</option>
-                                <option value="pagRejeitado">Pagamento rejeitado</option>
-                                <option value="pagSucesso">Pagamento com sucesso</option>
-                                <option value="aguardRetirada">Aguardando retirada</option>
-                                <option value="emTransito">Em trânsito</option>
-                                <option value="entregue">Entregue</option>
-                            </select>
-                        </div>
-                        <div class="col-md-3">
-                            <button type="button" id="btn-confirmar">Salvar</button>
-                        </div>
-                        <div class="col-md-2"></div>
-                    </div>
-                </div>
-            </div>
-   
+<div class="container">
+    <div class="nomeProduto">
+        <div id="container-voltar">
+            <img class="icone" src="../assets/img/Voltar.png" alt="Voltar">
         </div>
-
-        <div class="paginacao">
-            <pagination-controls (pageChange)="paginaAtual = $event" previousLabel="Anterior" nextLabel="Próximo">
-            </pagination-controls>
+        <div class="descricao">
+            <h5>Pedidos</h5>
         </div>
-        
+    </div>
+
+    <div class="pesquisa">
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Digite o número do pedido" aria-label="Search"
+                style="width: 300px;">
+            <button type="button" id="btn-pesquisar">Pesquisar</button>
+        </form>
+    </div>
+
+    <div class="container-tabela">
+        <div class="table-responsive">
+            <table class="table">
+                <thead class="thead" style="background-color: #00d8c9;color: whitesmoke;">
+                    <tr>
+                        <th scope="col">Data do Pedido</th>
+                        <th scope="col">Número</th>
+                        <th scope="col">Total</th>
+                        <th scope="col">Status</th>
+                    </tr>
+                </thead>
+                <tbody *ngFor='let pedidos of listaPedidos | paginate: {itemsPerPage: 10, currentPage: paginaAtual}; let i=index'>
+                    
+                    <tr>
+                        <td>{{pedidos.dataCompra | date: 'dd/MM/yyyy'}}</td>
+                        <td class="numeroPedido"><a href="../Paginas/ResumoPedido.html">{{pedidos.numeroPedido}}</a></td>
+                        <td>R${{pedidos.valorTotal | number : '1.2'}}</td>
+                        <td class="statusPedido numeroPedido">
+                            <a (click)="openModal(template, pedidos)">{{pedidos.statusPedido}}</a>
+                            <!-- <a>{{pedidos.statusPedido}}</a> -->
+                        </td>       
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <!-- Modal de alteração de status do pedido -->
+    <div id="btn-status-modal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h4>Status do pedido</h4>
+            <br>
+            <p>Selecione o novo status do pedido <b>11456321</b>:</p> 
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-5">
+                    <select class="custom-select">
+                        <option selected>Selecione</option>
+                        <option value="aguardPag">Aguardando pagamento</option>
+                        <option value="pagRejeitado">Pagamento rejeitado</option>
+                        <option value="pagSucesso">Pagamento com sucesso</option>
+                        <option value="aguardRetirada">Aguardando retirada</option>
+                        <option value="emTransito">Em trânsito</option>
+                        <option value="entregue">Entregue</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <button type="button" id="btn-confirmar">Salvar</button>
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="paginacao">
+    <pagination-controls (pageChange)="paginaAtual = $event" previousLabel="Anterior" nextLabel="Próximo">
+    </pagination-controls>
+</div>
+
+<!-- <button type="button" class="btn btn-primary" (click)="openModal(template)">Create template modal</button> -->
+
+<ng-template #template>
+    <div class="modal-content">
+        <span class="close" (click)="modalRef.hide()">&times;</span>
+        <h4>Status do pedido</h4>
+        <br>
+        <p>Selecione o novo status do pedido <b>{{modalPedidoNum}}</b>:</p> 
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-5">
+                <select class="custom-select" (change)="changedStatus($event)">
+                    <option value="Selecione" selected>Selecione</option>
+                    <option value="Aguardando pagamento">Aguardando pagamento</option>
+                    <option value="Pagamento rejeitado">Pagamento rejeitado</option>
+                    <option value="Pagamento com sucesso">Pagamento com sucesso</option>
+                    <option value="Aguardando retirada">Aguardando retirada</option>
+                    <option value="Em trânsito">Em trânsito</option>
+                    <option value="Entregue">Entregue</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <button type="button" id="btn-confirmar" (click)="saveNewStatus()">Salvar</button>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+    </div>
+  </ng-template>
