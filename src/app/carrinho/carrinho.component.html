@@ -15,7 +15,7 @@
             <div class="card" id="card-compra" *ngFor="let produto of this.globals.cesta; let i = index">
                 <div class="row mt-1">
                     <div class="col-md-2">
-                        <a><img src="{{produto.imagem[0].path}}" alt="Imagem do produto"></a>
+                        <a><img class="img-prev-prod" src="{{produto.imagem[0].path}}" alt="Imagem do produto"></a>
                     </div>
                     <div class="col-md-5" id="produto">
                         <div class="row">
@@ -113,7 +113,7 @@
             </div>
             
             <!-- Insira CEP -->
-            <div class="row" id="calculoFrete">
+            <!-- <div class="row" id="calculoFrete">
                 <div class="col-md-6" id="instrucaoCep">
                     <p><b>Insira o CEP para cálculo de frete:</b></p>
                 </div>
@@ -122,7 +122,7 @@
                             type="search" placeholder="Insira o CEP"
                             aria-label="Pesquisar">
                 </div> 
-            </div>
+            </div> -->
             
             <!-- Escolha frete -->
             <div id="escolhaFrete">

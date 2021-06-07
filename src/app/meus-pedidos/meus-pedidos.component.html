@@ -23,7 +23,7 @@
                 <div class="Total1">
                     <p><b>Total do pedido:</b> R${{compra.valorTotal | number : '1.2'}}</p>
                 </div>
-                <a class="botao" href="DetalhesPedido.html">
+                <a class="botao" [routerLink]="['/order-review',compra.id]">
                     <button type="button" id="btn-detalhes">Ver detalhes do pedido</button>
                 </a>
             </div>

@@ -33,6 +33,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
 import { PaymentComponent } from './payment/payment.component';
 import { MeusPedidosComponent } from './meus-pedidos/meus-pedidos.component';
 import { ListarPedidosComponent } from './listar-pedidos/listar-pedidos.component';
+import { OrderReviewComponent } from './order-review/order-review.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import { ListarPedidosComponent } from './listar-pedidos/listar-pedidos.componen
     CheckoutComponent,
     PaymentComponent,
     MeusPedidosComponent,
-    ListarPedidosComponent
+    ListarPedidosComponent,
+    OrderReviewComponent
   ],
   imports: [
     BrowserModule,

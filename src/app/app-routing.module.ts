@@ -20,6 +20,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
 import { PaymentComponent } from './payment/payment.component';
 import { MeusPedidosComponent } from './meus-pedidos/meus-pedidos.component';
 import { ListarPedidosComponent } from './listar-pedidos/listar-pedidos.component';
+import { OrderReviewComponent } from './order-review/order-review.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -44,7 +45,8 @@ const routes: Routes = [
   { path: 'checkout', component: CheckoutComponent },
   { path: 'meus-pedidos', component: MeusPedidosComponent },
   { path: 'listar-pedidos', component: ListarPedidosComponent },
-  { path: 'payment', component: PaymentComponent }
+  { path: 'payment', component: PaymentComponent },
+  { path: 'order-review/:id', component: OrderReviewComponent}
 ];
 
 @NgModule({  

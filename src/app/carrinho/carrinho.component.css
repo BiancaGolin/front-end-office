@@ -136,6 +136,11 @@ body{
     margin-left: 15px;
 }
 
+.img-prev-prod{
+    max-height: 70%;
+    /* max-width: 70%; */
+}
+
 /* Rodapé */
 footer{    
     background-color: #DEDEDE;

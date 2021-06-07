@@ -26,6 +26,7 @@ export class MeusPedidosComponent implements OnInit {
       this.listaPedidos = resp
       console.log(resp)
       this.getPedidoUsuario()
+      this.listaPedidosUsuario.sort((x, y) => +new Date(y.dataCompra) - +new Date(x.dataCompra));
     })
   }
 

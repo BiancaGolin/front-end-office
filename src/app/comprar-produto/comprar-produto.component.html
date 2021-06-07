@@ -49,7 +49,7 @@
        
         <div class="infos">
             <div class="estrelas">
-                <img class="icone" id="estrela" src="../assets/img/estrela.png" alt="Quantidade de estrelas">
+                <img class="icone" id="estrela" src="../assets/img/Estrela.png" alt="Quantidade de estrelas">
                 <p class="descricao-p">{{produto.qtdEstrelas}}</p>
             </div>
             <ul>
@@ -69,14 +69,16 @@
             <br>
             <div id="quantidade">
                 <div>
-                    <label for="inputEstado">Quantidade</label>
+                    <label for="inputEstado">{{produto.qtdEstoque}} em Estoque</label>
+                    <!-- {{produto.qtdEstoque}} -->
+
                 </div>
-                <div>
+                <!-- <div>
                     <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
                         <option selected *ngFor='let mercadoria of listaProdutos; let i=index'>Selecione</option>
                         <option>{{produto.qtdEstoque}}</option>                        
                     </select>
-                </div>
+                </div> -->
             </div>
             <br>
             <br>

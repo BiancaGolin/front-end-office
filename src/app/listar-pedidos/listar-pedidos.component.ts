@@ -34,6 +34,7 @@ export class ListarPedidosComponent implements OnInit {
       console.log('close',this.modalService.config.initialState);
     });
     this.getAllCompra()
+
     
   }
 
@@ -41,6 +42,7 @@ export class ListarPedidosComponent implements OnInit {
   getAllCompra() {
     this.compraService.getAllCompra().subscribe((resp: Compra[]) => {
       this.listaPedidos = resp
+      this.listaPedidos.sort((x, y) => +new Date(y.dataCompra) - +new Date(x.dataCompra));
       console.log(resp)
     })
   }
@@ -66,7 +68,6 @@ export class ListarPedidosComponent implements OnInit {
         // this.router.navigate(['/listar-pedidos'])
         // this.changebleCompra = new Compra();
       })
-      console.log("lul");
       this.modalRef.hide()
       // this.changebleCompra = new Compra();
     }else{

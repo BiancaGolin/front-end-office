@@ -2,9 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { Globals } from '../globals';
+import { Cliente } from '../model/Cliente';
 import { Compra } from '../model/Compra';
 import { Produto } from '../model/Produto';
 import { AlertasService } from '../service/alertas.service';
+import { AuthService } from '../service/auth.service';
 import { CompraService } from '../service/compra.service';
 
 @Component({
@@ -22,12 +24,14 @@ export class CheckoutComponent implements OnInit {
   selectedFrete: number;
   payMethName: string;
   pagePedNum: number;
+  cliente: Cliente;
   
   constructor(
     private router: Router,
     private route: ActivatedRoute,
     private compraService: CompraService,
     private alerta: AlertasService,
+    private authService: AuthService,
     globals: Globals
   ) {
     this.globals = globals;
@@ -35,6 +39,7 @@ export class CheckoutComponent implements OnInit {
   }
 
   ngOnInit(){
+    // this.findByIdCliente(environment.idCliente)
     this.totalIndividual = [];
     this.freteSelector();
     this.calculaResumo();
@@ -117,26 +122,38 @@ export class CheckoutComponent implements OnInit {
   }
 
   finalizarCompra(){
-    let compra :Compra = new Compra();
-    compra.produtosVinculados = this.globals.cesta
+    if(environment.idCliente != 0){
+      let compra :Compra = new Compra();
+      compra.produtosVinculados = this.globals.cesta
+      // compra.produtosVinculados = this.listaDeProdutos()
 
-    compra.enderecoEntrega = this.globals.selAddrName
-    compra.nParcelas = this.globals.qtdVezes
-    compra.formaPagamento = this.globals.payMeth
-    compra.valorTotal = this.total
-    compra.frete = this.frete
-    compra.idUsuario = environment.idCliente
-    compra.numeroPedido = Math.floor(100000000 + Math.random() * 900000000);
-    compra.statusPedido = "Aguardando Confirmação de Pagamento"
-    console.log("User = " + JSON.stringify(compra));
-    this.pagePedNum = compra.numeroPedido;
-    this.compraService.postCompra(compra).subscribe((resp: Compra) =>{
-      console.log(resp)
+      compra.enderecoEntrega = this.globals.selAddrName
+      compra.nParcelas = this.globals.qtdVezes
+      compra.formaPagamento = this.globals.payMeth
+      compra.valorTotal = this.total
+      compra.frete = this.frete
+      compra.idUsuario = environment.idCliente
+      compra.numeroPedido = Math.floor(100000000 + Math.random() * 900000000);
+      compra.statusPedido = "Aguardando Confirmação de Pagamento"
+      console.log("User = " + JSON.stringify(compra));
+      this.pagePedNum = compra.numeroPedido;
+      this.compraService.postCompra(compra).subscribe((resp: Compra) =>{
+        console.log(resp)
 
-      this.alerta.showAlertSucess('Sucesso! Pedido '+compra.numeroPedido+' foi efetuado e esta aguardando pagamento.')
-      this.limpaGlobals();
-      this.router.navigate(['/home'])
-    })
+        this.alerta.showAlertSucess('Sucesso! Pedido '+compra.numeroPedido+' foi efetuado e esta aguardando pagamento.')
+        this.limpaGlobals();
+        this.router.navigate(['/home'])
+      })
+    }else{
+      this.router.navigate(['/login-cliente'])
+    }
   }
+
+  // findByIdCliente(id: number) {
+  //   this.authService.getByIdCliente(id).subscribe((resp: Cliente) => {
+  //     this.cliente = resp
+  //     console.log(this.cliente);
+  //   })
+  // }
 
 }

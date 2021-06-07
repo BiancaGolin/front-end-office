@@ -121,8 +121,12 @@ export class CarrinhoComponent implements OnInit {
   }
 
   goTopay(){
-    this.globals.selFrete = this.selectedFreteRadio
-    this.router.navigate(['/payment'])
+    if(environment.idCliente != 0){
+      this.globals.selFrete = this.selectedFreteRadio
+      this.router.navigate(['/payment'])
+    }else{
+      this.router.navigate(['/login-cliente'])
+    }
   }
 
 }

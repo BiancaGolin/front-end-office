@@ -15,6 +15,10 @@ export class CompraService {
       return this.http.post<Compra>('http://localhost:8080/compra', compra)
     }
 
+    getByIdCompra(id : number) : Observable<Compra>{
+      return this.http.get<Compra>(`http://localhost:8080/compra/id/${id}`)
+    }
+
     getAllCompra() : Observable<Compra[]> {
       return this.http.get<Compra[]>('http://localhost:8080/compra')
     }
