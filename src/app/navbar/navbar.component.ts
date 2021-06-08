@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
+import { Globals } from '../globals';
 import { Cliente } from '../model/Cliente';
 import { ClienteLogin } from '../model/ClienteLogin';
 import { AlertasService } from '../service/alertas.service';
@@ -15,26 +16,26 @@ export class NavbarComponent implements OnInit {
 
   cliente: Cliente = new Cliente()
   idCliente: number
-  nomeCliente: string
   clienteLogin: ClienteLogin = new ClienteLogin()
-
-
-  nome = environment.nomeCliente
+  globals: Globals;
 
 
   constructor(
     private router: Router,
     public auth: AuthService,
-    private alerta: AlertasService
-  ) { }
+    private alerta: AlertasService,
+    globals: Globals
+  ) {
+    this.globals = globals;
+  }
 
   ngOnInit(){
     window.scroll(0, 0)
     this.idCliente = environment.idCliente
-    this.nomeCliente = environment.nomeCliente
-    this.findByIdCliente(this.idCliente)
-    console.log("id cliente = ", this.idCliente)
-    console.log("nome cliente = ", this.nomeCliente)
+    if(this.idCliente != 0){
+      this.findByIdCliente(this.idCliente)
+      console.log("id cliente = ", this.idCliente)
+    }
   }
 
   findByIdCliente(id: number) {

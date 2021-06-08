@@ -23,14 +23,14 @@
                 <div class="infoProduto" style="margin-right: 2rem;">
                     <p class="card-text">{{produto.nomeProduto}}</p>
                     <p class="card-text">R$ {{produto.preco | number : '1.2'}}</p>
-                    <p class="card-text">1 unidade(s)</p>
+                    <!-- <p class="card-text">1 unidade(s)</p> -->
                     <!-- <p class="card-text">{{globals.qnt[i]}} unidade(s)</p> -->
                 </div>
-                <div class="precoProduto">
+                <!-- <div class="precoProduto">
                     <p><b>Total do item</b></p>
-                    <!-- <p>R${{totalIndividual[i] | number : '1.2'}}</p> -->
+                    <p>R${{totalIndividual[i] | number : '1.2'}}</p>
                     <p>R$ {{compra.produtosVinculados[i].preco | number : '1.2'}}</p>
-                </div>
+                </div> -->
             </div>
         </div>
         
@@ -55,7 +55,7 @@
             </div>
             <div class="card-body" style="display: inline-flex;">
                 <div class="Quantidade" style="margin-right: 2rem;">
-                    <p class="card-text"><b>Quantidade de itens:</b> {{qtdTotal}}</p>
+                    <!-- <p class="card-text"><b>Quantidade de itens:</b> {{qtdTotal}}</p> -->
                     <p class="card-text"><b>Subtotal:</b> R${{subtotal | number : '1.2'}}</p>
                     <p class="card-text"><b>Frete:</b> R${{frete | number : '1.2'}} <i></i></p>
                 </div>

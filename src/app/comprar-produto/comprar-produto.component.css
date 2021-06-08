@@ -2,11 +2,6 @@
 @import url(//db.onlinewebfonts.com/c/a78cfad3beb089a6ce86d4e280fa270b?family=Calibri);
 @import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap');
 
-body{
-    background-color: #EFEFEF;
-    font-family: Calibri;
-}
-
 /*Header*/
 #container-logo{
     margin-left: 1.5vw;

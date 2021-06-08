@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Cliente } from './model/Cliente';
 import { Produto } from './model/Produto';
 
 @Injectable()
@@ -10,4 +11,6 @@ export class Globals {
   payMeth: number = 0;
   qtdVezes: number = 0;
   selAddrName: String = "";
+
+  clienteLogado: Cliente = new Cliente();
 }

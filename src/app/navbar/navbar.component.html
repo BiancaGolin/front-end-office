@@ -38,9 +38,29 @@
     </ng-template>
 
         <!-- Se usuario logado, aparece uma mensagem "Olá, {nome do usuario cadastrado no BD}" -->
-        <div *ngIf='auth.bntSair()'>
-            Olá, {{nome}}
+        <!-- <div *ngIf='auth.bntSair()'>
+            Olá, {{globals.clienteLogado.nomeCliente}}
+        </div> -->
+
+
+        <div *ngIf='auth.bntSair()' class="col-md-1" id="info-login">
+            <div class="dropdown">
+                <a class="btn btn dropdown-toggle" style="background-color:#5560AA; color: white" href="#" role="button"
+                    id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Olá, <b>{{globals.clienteLogado.nomeCliente}}</b>
+                </a>
+
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item" routerLink="/meus-pedidos">Meus Pedidos</a>
+                    <a class="dropdown-item" routerLink="/editar-cliente">Alterar Cadastro</a>
+                    <a class="dropdown-item" href="#">Sair</a>
+                </div>
+            </div>
         </div>
+        
+
+
+
         
         <!-- Cesta EM IMPLEMENTAÇAO-->
         <div class="col-md-1" id="cesta">
@@ -48,9 +68,9 @@
         </div>
 
         <!-- Se usuario logado, aparece botão de SAIR -->
-        <div class="col-md-1" id="login" *ngIf='auth.bntSair()'>
+        <!-- <div class="col-md-1" id="login" *ngIf='auth.bntSair()'>
             <a class="nav-link text-uppercase text-light" (click)='sair()'><img id="cesta" src="../assets/img/sair.png" alt="Logoutompras"></a>
-        </div>
+        </div> -->
     </nav>
 
     <!-- Menu -->

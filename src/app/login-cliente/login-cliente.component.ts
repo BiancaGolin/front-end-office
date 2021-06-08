@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
+import { Globals } from '../globals';
+import { Cliente } from '../model/Cliente';
 import { ClienteLogin } from '../model/ClienteLogin';
 import { AlertasService } from '../service/alertas.service';
 import { AuthService } from '../service/auth.service';
@@ -13,12 +15,16 @@ import { AuthService } from '../service/auth.service';
 export class LoginClienteComponent implements OnInit {
   
   clienteLogin: ClienteLogin = new ClienteLogin()
+  globals: Globals;
   
   constructor(
     private alerta : AlertasService,
     private authService: AuthService,
-    private router: Router
-  ) { }
+    private router: Router,
+    globals: Globals
+  ) {
+    this.globals = globals;
+  }
 
   ngOnInit(): void {
   }
@@ -36,7 +42,9 @@ export class LoginClienteComponent implements OnInit {
       console.log(environment.nomeCliente)   
       console.log(environment.idCliente)
 
-      this.router.navigate(['/area-cliente'])
+      this.findByIdCliente(resp.idCliente)
+
+      this.router.navigate(['/home'])
 
 
     }, erro =>{
@@ -44,6 +52,12 @@ export class LoginClienteComponent implements OnInit {
         this.alerta.showAlertDanger('Usuário ou senha incorretos!')
         
       }
+    })
+  }
+
+  findByIdCliente(id: number) {
+    this.authService.getByIdCliente(id).subscribe((resp: Cliente) => {
+      this.globals.clienteLogado = resp
     })
   }
 
