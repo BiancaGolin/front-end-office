@@ -3,12 +3,27 @@
 
         <div id="linha"></div>
 
+        <div class="container">
+
+            <div class="row pt-4  justify-content-center" id="pesquisa">
+                <div class="col">
+                    <input class="form-control mr-sm-3 col-md-9" id="pesquisa-input" placeholder="Procure no Mercadogue"
+                        aria-label="Search" style="width: 700px;" [(ngModel)]='nomeProduto'>
+                </div>
+
+                <div class="col-1">
+                    <button (click)='findByNomeProduto()' id="btn-pesquisar">Pesquisar</button>
+                </div>
+            </div>            
+        </div>
+
+
         <div class="row" id="pagina-atual">
             <h5>Compre no Mercadogue</h5>
         </div>
 
-        <div class="container">
-            <div class="card-deck" *ngFor="let mercadoria of listaProdutos">
+        <div class="container-home">
+            <div class="card-deck" *ngFor='let mercadoria of listaProdutos | paginate: {itemsPerPage: 10, currentPage: paginaAtual}; let i=index'>
                 <div class="card">
                     <img class="card-img-top" src="{{mercadoria.imagem[0].path}}" alt="Imagem de capa do card">
                     <div class="card-body">
@@ -26,4 +41,10 @@
             </div>
         </div>
     </div>
+
+    <div class="paginacao">
+        <pagination-controls (pageChange)="paginaAtual = $event" previousLabel="Anterior" nextLabel="Próximo">
+        </pagination-controls>
+    </div>
+    
 </body>

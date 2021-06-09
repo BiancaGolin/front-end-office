@@ -1,7 +1,9 @@
 /* Tela */
-body{
+.body-gray{
     background-color: #EFEFEF;
     font-family: Calibri;
+    margin-top: -2rem;
+    margin-bottom: -1rem;
 }
 
 /*Header*/

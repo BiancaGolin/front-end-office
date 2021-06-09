@@ -13,6 +13,18 @@ body {
   background: linear-gradient(to left, #5560AA, #F77759);
 }
 
+.form-signin {
+  width: 100%;
+}
+
+.form-signin .btn {
+  font-size: 80%;
+  border-radius: 5rem;
+  letter-spacing: .1rem;
+  font-weight: bold;
+  padding: 1rem;
+  transition: all 0.2s;
+}
 /*Header*/
 .navbar{
   background-color: #5560AA;

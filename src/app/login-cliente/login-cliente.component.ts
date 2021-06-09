@@ -27,6 +27,8 @@ export class LoginClienteComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.clienteLogin.emailCliente = ""
+    this.clienteLogin.senhaCliente = ""
   }
 
   entrar() {

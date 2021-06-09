@@ -7,6 +7,7 @@
 body{
     background-color: #EFEFEF;
     font-family: Calibri;
+    margin-bottom: -2rem;
 }
 /* Página atual */
 #pagina-atual h5{
@@ -15,6 +16,7 @@ body{
     font-weight: bolder;
     text-align: left;
     margin-left: 1vw;
+    margin-top: px;
 }
 .icone{
     width: 30px;

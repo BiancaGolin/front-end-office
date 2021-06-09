@@ -3,6 +3,46 @@ body{
     font-family: Calibri;
 }
 
+.paginacao{
+    display: flex;
+    justify-content: space-around;
+}
+
+
+/*Botões*/
+.botoes{
+    margin-left: 70%;
+    padding: 2vw;
+    font-family: 'Century Gothic', sans-serif;
+}
+.botoes #btn-cancelar{    
+    background-color: #F77759;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.3);
+    border-color: transparent; 
+    font-weight: bold;
+    color: white;
+    padding: 8px 15px;
+    margin-right: 0.5vw;
+    outline: none;    
+}
+.botoes #btn-confirmar{
+    background-color: #00D9CA;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.3);
+    border-color: transparent;
+    font-weight: bold;
+    color: white;
+    padding: 8px 15px;
+    outline: none;
+}
+.botoes #btn-cancelar:hover{
+    border-color: #F77759;
+}
+.botoes #btn-confirmar:hover{
+    border-color: #00D9CA;
+}
+
 /*Header*/
 .navbar{
     background-color: #5560AA;

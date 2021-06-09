@@ -1,87 +1,94 @@
-<div class="container">
-    <div class="nomeProduto">
-        <div id="container-voltar">
-            <a href="../Paginas/home.html">
-                <img class="icone" src="../assets/img/Voltar.png" alt="Voltar"></a>
-        </div>
-        <div class="descricao">
-            <h5>Resumo do Pedido</h5>
-        </div>
-    </div>
+<body class="body-gray">
 
-    <br><br>
+    <div class="container">
+        <div class="nomeProduto">
+            <div id="container-voltar">
+                <a href="../Paginas/home.html">
+                    <img class="icone" src="../assets/img/Voltar.png" alt="Voltar"></a>
+            </div>
+            <div class="descricao">
+                <h5>Resumo do Pedido</h5>
+            </div>
+        </div>
 
-    <div class="cardResumo" style="display: inline-flex;">
-        <div class="card w-65 mb-5">
-            <div class="card-header">
-                <h4>Itens do Pedido</h4>
-            </div>
-            <div class="card-body" style="display: inline-flex;" *ngFor="let produto of this.globals.cesta; let i = index">
-                <div class="imgProduto" style="margin-right: 2rem;">
-                    <a class="imgproduto"><img src="{{produto.imagem[0].path}}" style="width: 80px;"></a>
-                </div>
-                <div class="infoProduto" style="margin-right: 2rem;">
-                    <p class="card-text">{{produto.nomeProduto}}</p>
-                    <p class="card-text">R${{produto.preco | number : '1.2'}}</p>
-                    <p class="card-text">{{globals.qnt[i]}} unidade(s)</p>
-                </div>
-                <div class="precoProduto">
-                    <p><b>Total do item</b></p>
-                    <p>R${{totalIndividual[i] | number : '1.2'}}</p>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Pagamento e entrega -->
-        <div class="card w-65 mb-5">
-            <div class="card-header">
-                <h4>Pagamento e Entrega</h4>
-            </div>
-            <div class="card-body" style="display: inline-flex;">
-                <div class="infoEntrega" style="margin-right: 2rem;">
-                    <p class="card-text"><b>Endereço de entrega</b></p>
-                    <p class="card-text">{{globals.selAddrName}}</p>
-                </div>
+        <br><br>
 
-            </div>
-            <div class="card-body" style="display: inline-flex;">
-                <div class="FormaPagamento">
-                    <p><b>Forma de Pagamento</b></p>
-                    <p>{{payMethName}}</p>
-                    <p *ngIf='globals.payMeth == 0'>{{globals.qtdVezes}}x sem Juros</p>
+        <div class="cardResumo" style="display: inline-flex;">
+            <div class="card w-65 mb-5">
+                <div class="card-header">
+                    <h4>Itens do Pedido</h4>
+                </div>
+                <div class="card-body" style="display: inline-flex;"
+                    *ngFor="let produto of this.globals.cesta; let i = index">
+                    <div class="imgProduto" style="margin-right: 2rem;">
+                        <a class="imgproduto"><img src="{{produto.imagem[0].path}}" style="width: 80px;"></a>
+                    </div>
+                    <div class="infoProduto" style="margin-right: 2rem;">
+                        <p class="card-text">{{produto.nomeProduto}}</p>
+                        <p class="card-text">R${{produto.preco | number : '1.2'}}</p>
+                        <p class="card-text">{{globals.qnt[i]}} unidade(s)</p>
+                    </div>
+                    <div class="precoProduto">
+                        <p><b>Total do item</b></p>
+                        <p>R${{totalIndividual[i] | number : '1.2'}}</p>
+                    </div>
                 </div>
             </div>
-            <div class="card-body" style="display: inline-flex;">
-                <div class="Quantidade" style="margin-right: 2rem;">
-                    <p class="card-text"><b>Quantidade de itens:</b> {{qtdTotal}}</p>
-                    <p class="card-text"><b>Subtotal:</b> R${{subtotal | number : '1.2'}}</p>
-                    <p class="card-text"><b>Frete:</b> R${{frete | number : '1.2'}} <i></i></p>
+
+            <!-- Pagamento e entrega -->
+            <div class="card w-65 mb-5">
+                <div class="card-header">
+                    <h4>Pagamento e Entrega</h4>
+                </div>
+                <div class="card-body" style="display: inline-flex;">
+                    <div class="infoEntrega" style="margin-right: 2rem;">
+                        <p class="card-text"><b>Endereço de entrega</b></p>
+                        <p class="card-text">{{globals.selAddrName}}</p>
+                    </div>
+
+                </div>
+                <div class="card-body" style="display: inline-flex;">
+                    <div class="FormaPagamento">
+                        <p><b>Forma de Pagamento</b></p>
+                        <p>{{payMethName}}</p>
+                        <p *ngIf='globals.payMeth == 0'>{{globals.qtdVezes}}x sem Juros</p>
+                    </div>
+                </div>
+                <div class="card-body" style="display: inline-flex;">
+                    <div class="Quantidade" style="margin-right: 2rem;">
+                        <p class="card-text"><b>Quantidade de itens:</b> {{qtdTotal}}</p>
+                        <p class="card-text"><b>Subtotal:</b> R${{subtotal | number : '1.2'}}</p>
+                        <p class="card-text"><b>Frete:</b> R${{frete | number : '1.2'}} <i></i></p>
+                    </div>
+                </div>
+                <div id="totalPedido">
+                    <!-- <p><b>Total do pedido: R${{total | number : '1.2'}}</b></p> -->
+                    <p><b class=" mr-2">Total do pedido: <span class="mr-2"> </span> R${{total | number : '1.2'}}</b>
+                    </p>
                 </div>
             </div>
-            <div id="totalPedido">
-                <!-- <p><b>Total do pedido: R${{total | number : '1.2'}}</b></p> -->
-                <p><b class=" mr-2">Total do pedido: <span class="mr-2"> </span> R${{total | number : '1.2'}}</b></p>
+        </div>
+
+        <br><br>
+
+        <!-- Concluir compra -->
+        <div id="container1-total">
+            <button type="button" id="btn-confirmar" (click)="finalizarCompra()">Concluir compra</button>
+            <a (click)="backToPayment()">
+                <p><u>Voltar para a forma de pagamento e entrega</u></p>
+            </a>
+        </div>
+
+        <!-- Modal de sucesso do pedido -->
+        <div id="btn-confirmar-modal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h4>Sucesso!</h4>
+                <br>
+                <p>Pedido <b>{{pagePedNum}}</b> efetuado e aguardando pagamento.</p>
+                <p>Acompanhe a sua compra na página "Meus pedidos".</p>
             </div>
         </div>
     </div>
-    
-    <br><br>
-    
-    <!-- Concluir compra -->
-    <div id="container1-total">
-        <button type="button" id="btn-confirmar" (click)="finalizarCompra()">Concluir compra</button>
-        <a (click)="backToPayment()"><p><u>Voltar para a forma de pagamento e entrega</u></p></a> 
-    </div>
-    
-    <!-- Modal de sucesso do pedido -->
-    <div id="btn-confirmar-modal" class="modal">
-        <!-- Modal content -->
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h4>Sucesso!</h4>
-            <br>
-            <p>Pedido <b>{{pagePedNum}}</b> efetuado e aguardando pagamento.</p>
-            <p>Acompanhe a sua compra na página "Meus pedidos".</p>
-        </div>
-    </div>
-</div>
+</body>

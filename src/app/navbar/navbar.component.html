@@ -1,7 +1,7 @@
 <header>
     <nav class="navbar navbar-light col-sm-12">
         <!-- Logo -->
-        <div class="col-md-3 col-sm-8">
+        <div class="col-sm-8">
             <div class="container-logo">
                 <a routerLink='/home'><img id="logo" src="../assets/img/LogoMercadogue.png" alt="Logo Mercadogue"></a>
             </div>
@@ -14,13 +14,13 @@
 
         <!-- Pesquisa -->
         <ng-template [ngIf]="auth.bntSair()" [ngIf]="auth.btnFuncLogin()">
-        <div class="col-md-6 float-left" id="pesquisa">
+<!--         <div class="col-md-6 float-left" id="pesquisa">
             <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-3 col-md-9" id="pesquisa-input" type="search"
                     placeholder="Procure no Mercadogue" aria-label="Pesquisar">
                 <button type="submit" id="btn-pesquisar">Pesquisar</button>
             </form>
-        </div>
+        </div> -->
     </ng-template>
 
         <!-- Login -->

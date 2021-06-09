@@ -1,6 +1,5 @@
 <body>
-    <div class="container-lg">
-                       
+    <div class="container-lg">                       
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 col-xl-9 mx-auto">
@@ -12,17 +11,15 @@
                             <h2 class="card-title text-center">Login</h2>
                             <div class="form-signin">
                                 <div class="form-label-group">
-                                    <input type="text" id="inputUserame" class="form-control" placeholder="Usuário" [(ngModel)]='clienteLogin.emailCliente'
-                                        required autofocus>
-                                    <label for="inputUserame">Usuário</label>
+                                    <input type="text" id="inputUserame" class="form-control pl-2" [(ngModel)]='clienteLogin.emailCliente' required autofocus>
+                                    <label class="pl-2" *ngIf='clienteLogin.emailCliente == "" ' for="inputUserame">Usuário</label>
                                 </div>
 
                                 <hr>
 
                                 <div class="form-label-group">
-                                    <input type="password" id="inputPassword" class="form-control" placeholder="Senha" [(ngModel)]='clienteLogin.senhaCliente'
-                                        required>
-                                    <label for="inputPassword">Senha</label>
+                                    <input type="password" id="inputPassword" class="form-control pl-2" [(ngModel)]='clienteLogin.senhaCliente' required>
+                                    <label class="pl-2" *ngIf='clienteLogin.senhaCliente == "" 'for="inputPassword">Senha</label>
                                 </div>
 
                                 <button class="btn btn-lg btn-primary btn-block text-uppercase"

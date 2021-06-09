@@ -49,6 +49,7 @@ body{
     color: white;
     padding: 8px 15px;
     outline: none;
+    display: inline-block;
 }
 #btn-pesquisar:hover{
     border-color: #F77759;
@@ -126,12 +127,16 @@ input:placeholder-shown{
     margin: 10px;
     padding-bottom: 10px;
 }
+.paginacao{
+    display: flex;
+    justify-content: space-around;
+}
 
 /* .card{
     width: 15vw;
 } */
 
-.container{
+.container-home{
     width: 90%;
     max-width: 1240px;
     margin: 0 auto;
@@ -385,7 +390,7 @@ input:placeholder-shown{
         margin-left: -1vw;
     }
     #pesquisa-input{
-        width: 70%;
+        width: 100%;
     }
     #linha{
         height: 100px;
@@ -450,7 +455,7 @@ input:placeholder-shown{
         margin-left: -1vw;
     }
     #pesquisa-input{
-        width: 70%;
+        width: 100%;
     }
     #login{
         width: 35%;

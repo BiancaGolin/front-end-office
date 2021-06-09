@@ -7,6 +7,18 @@ body{
     font-family: Calibri;
 }
 
+#pagina-atual h5{
+    color: #5560AA;
+    font-family: Century Gothic;
+    font-weight: bolder;
+    text-align: left;
+    margin-left: 1vw;
+}
+
+.icone{
+    width: 30px;
+}
+
 /*Header*/
 #container-logo{
     margin-left: 1.5vw;

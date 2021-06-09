@@ -1,5 +1,5 @@
 <body>
-
+    <div class="container-lg">
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 col-xl-9 mx-auto">
@@ -9,24 +9,21 @@
                         </div>
                         <div class="card-body">
                             <h2 class="card-title text-center">Funcionário</h2>
-                            
-                            
+                            <div class="form-signin"></div>
                                 <div class="form-label-group">
-                                    <input type="text" id="inputUserame" class="form-control" placeholder="Usuário" [(ngModel)]='usuarioLogin.email'
-                                        required autofocus>
-                                    <label for="inputUserame">Usuário</label>
+                                    <input type="text" id="inputUserame" class="form-control pl-2"  [(ngModel)]='usuarioLogin.email' required autofocus>
+                                    <label class="pl-2" *ngIf='usuarioLogin.email == "" ' for="inputUserame">Usuário</label>
                                 </div>
 
                                 <hr>
 
                                 <div class="form-label-group">
-                                    <input type="password" id="inputPassword" class="form-control" placeholder="Senha" [(ngModel)]='usuarioLogin.senha'
-                                        required>
-                                    <label for="inputPassword">Senha</label>
+                                    <input type="password" id="inputPassword" class="form-control pl-2" [(ngModel)]='usuarioLogin.senha' required>
+                                    <label class="pl-2" *ngIf='usuarioLogin.senha == "" ' for="inputPassword">Senha</label>
                                 </div>
 
-                                <button class="btn btn-lg btn-primary btn-block text-uppercase"
-                                    type="submit" (click)='entrar()'>Entrar</button>
+                                <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" (click)='entrar()'>Entrar</button>
+                            </div>
                         </div>
                     </div>
                 </div>

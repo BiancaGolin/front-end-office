@@ -22,6 +22,8 @@ export class LoginUsuarioComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.usuarioLogin.email = ""
+    this.usuarioLogin.senha = ""
   }
 
   entrar() {

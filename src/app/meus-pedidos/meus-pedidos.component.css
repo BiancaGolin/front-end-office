@@ -2,6 +2,7 @@
 body{
     background-color: #EFEFEF;
     font-family: Calibri;
+    margin-bottom: -3rem;
 }
 
 .paginacao{
@@ -9,6 +10,13 @@ body{
     justify-content: space-around;
 }
 
+#pagina-atual h5{
+    color: #5560AA;
+    font-family: Century Gothic;
+    font-weight: bolder;
+    text-align: left;
+    margin-left: 1vw;
+}
 
 /*Header*/
 .navbar{

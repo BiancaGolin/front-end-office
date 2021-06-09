@@ -8,8 +8,8 @@
   }
 
 body{
-    background-color: darkgray;
-    font-family: Calibri;
+  background: #5560AA;
+  background: linear-gradient(to left, #5560AA, #F77759);
 }
 
 /*Header*/
